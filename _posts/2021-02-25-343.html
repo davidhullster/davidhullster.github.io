@@ -1,0 +1,35 @@
+---
+layout: post
+title: 'Kubernetes: UPGRADE FAILED: another operation (install/upgrade/rollback) is
+  in progress'
+date: 2021-02-25 19:10:47.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- kubernetes
+- Tech
+tags: []
+meta:
+  _last_editor_used_jetpack: block-editor
+  _publicize_job_id: '55264623629'
+  timeline_notification: '1614280252'
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/2021/02/25/343/"
+---
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code># troubleshoot error: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress (the release that was in progress didn't show when I ran helm ls -n &lt;namespace&gt;)
+
+helm delete &lt;release that's in progress&gt; -n &lt;namespace&gt;
+
+example:
+&gt;&gt;helm delete inventory-api-development -n development
+release "inventory-api-development" uninstalled</code></pre>
+<p><!-- /wp:code --></p>

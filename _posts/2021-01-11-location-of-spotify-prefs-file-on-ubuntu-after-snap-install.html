@@ -1,0 +1,35 @@
+---
+layout: post
+title: Location of Spotify prefs file on Ubuntu after Snap install
+date: 2021-01-11 23:51:55.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _last_editor_used_jetpack: block-editor
+  _publicize_job_id: '53318408403'
+  timeline_notification: '1610409121'
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/2021/01/11/location-of-spotify-prefs-file-on-ubuntu-after-snap-install/"
+---
+<p><!-- wp:paragraph --></p>
+<p>/home/&lt;USER&gt;/snap/spotify/current/.config/spotify/prefs </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Set app.window.position.saved value to fix maximized window at startup</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>    app.window.position.saved=false</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>&gt;&gt; :~/snap/spotify$ cat current/.config/spotify/prefs<br />autologin.blob=&lt;long_string&gt;<br />autologin.saved_credentials="{\"&lt;long_string2&gt;\"]}"<br />autologin.canonical_username="&lt;long_string3&gt;"<br />app.window.position.x=72<br />autologin.username=""&lt;long_string3&gt;<br />app.window.position.saved=true<br />app.window.position.height=836<br />app.autostart-mode=""<br />app.window.position.y=64<br />storage.last-location="/home/&lt;user_name&gt;/snap/spotify/common/.cache/spotify/Storage"<br />app.window.position.width=1528<br />core.clock_delta=1<br />app.last-launched-version="1.1.46.916.g416cacf1"<br />app.autostart-configured=true</p>
+<p><!-- /wp:paragraph --></p>

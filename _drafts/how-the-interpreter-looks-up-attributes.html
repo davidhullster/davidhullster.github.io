@@ -1,0 +1,35 @@
+---
+layout: post
+title: How the interpreter looks up attributes
+date: 
+type: post
+parent_id: '0'
+published: false
+password: ''
+status: draft
+categories: []
+tags: []
+meta: {}
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/"
+---
+<p><!-- wp:paragraph --></p>
+<p>So what is happening in the Python interpreter when you write programs with classes, subclasses, and instances of both parent classes and subclasses?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>This is how the interpreter looks up attributes:</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>First, it checks for an <strong>instance variable</strong> or an <strong>instance method</strong> by the name it’s looking for.</li>
+<li>If an instance variable or method by that name is not found, it checks for a <strong>class variable. </strong></li>
+<li>If no class variable is found, it looks for a class variable in the <strong>parent</strong> class.</li>
+<li>If no class variable is found, the interpreter looks for a class variable in the <strong>parent-of-parent </strong>class.</li>
+<li>This process goes on until the <strong>last ancestor</strong> is reached, at which point Python will signal an <strong>error</strong>.</li>
+</ol>
+<p><!-- /wp:list --></p>

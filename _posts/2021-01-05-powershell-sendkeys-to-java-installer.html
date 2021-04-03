@@ -1,0 +1,29 @@
+---
+layout: post
+title: Powershell sendKeys to Java installer
+date: 2021-01-05 23:13:29.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _last_editor_used_jetpack: block-editor
+  _publicize_job_id: '53066181332'
+  timeline_notification: '1609888413'
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/2021/01/05/powershell-sendkeys-to-java-installer/"
+---
+<p><!-- wp:paragraph --></p>
+<p>[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")[void] [System.Reflection.Assembly]::LoadWithPartialName("'Microsoft.VisualBasic")[Microsoft.VisualBasic.Interaction]::AppActivate($conf.installerMainTitle)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>[System.Windows.Forms.SendKeys]::SendWait(%n)</p>
+<p><!-- /wp:paragraph --></p>

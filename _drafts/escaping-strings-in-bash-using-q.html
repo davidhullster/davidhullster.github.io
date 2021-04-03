@@ -1,0 +1,39 @@
+---
+layout: post
+title: Escaping strings in Bash using !:q
+date: 
+type: post
+parent_id: '0'
+published: false
+password: ''
+status: draft
+categories: []
+tags: []
+meta: {}
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/"
+---
+<p><!-- wp:heading {"level":4} --></p>
+<h4>TIL this trick, <a href="https://twitter.com/phphys/status/1311727268398465029">via Pascal Hirsch</a> on Twitter. Enter a line of Bash starting with a <code>#</code> comment, then run <code>!:q</code> on the next line to see what that would be with proper Bash escaping applied.</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:syntaxhighlighter/code --></p>
+<pre class="wp-block-syntaxhighlighter-code">https://til.simonwillison.net/til/til/bash_escaping-a-string.md
+
+bash-3.2$ # This string 'has single' "and double" quotes and a $
+bash-3.2$ !:q
+'# This string '\''has single'\'' "and double" quotes and a $'
+bash: # This string 'has single' "and double" quotes and a $: command not found
+</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p>
+<p>How does this work?&nbsp;<a href="https://twitter.com/mountain_ghosts/status/1311767073933099010">James Coglan explains</a>:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:quote --></p>
+<blockquote class="wp-block-quote"><p>The&nbsp;<code>!</code>&nbsp;character begins a history expansion;&nbsp;<code>!string</code>&nbsp;produces the last command beginning with&nbsp;<code>string</code>, and&nbsp;<code>:q</code>&nbsp;is a modifier that quotes the result; so I'm guessing this is equivalent to&nbsp;<code>!string</code>&nbsp;where&nbsp;<code>string</code>&nbsp;is&nbsp;<code>""</code>, so it produces the most recent command, just like&nbsp;<code>!!</code>&nbsp;does</p>
+</blockquote>
+<p><!-- /wp:quote --></p>

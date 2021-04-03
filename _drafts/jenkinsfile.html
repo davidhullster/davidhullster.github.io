@@ -1,0 +1,119 @@
+---
+layout: post
+title: Jenkinsfile
+date: 
+type: post
+parent_id: '0'
+published: false
+password: ''
+status: draft
+categories: []
+tags: []
+meta:
+  _last_editor_used_jetpack: block-editor
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/"
+---
+<p><!-- wp:paragraph --></p>
+<p>pipeline {<br />agent { label 'linux_python3' }<br />environment {<br />SPLUNK_ENV='DEV'<br />}<br />stages {<br />stage('Generate Coverage') {<br />steps {<br />sh '''<br />#!/bin/bash<br />set -e +x<br />python3 -m pip install virtualenv --user<br />export PATH=$PATH:~/.local/bin</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code --></p>
+<pre class="wp-block-syntaxhighlighter-code">                #setup the virtual environment
+                virtualenv -p python3 virtenv
+
+                #enter the virtual environment and install all the required libraries
+                source virtenv/bin/activate
+                pip uninstall coverage -y
+                pip install --no-index --find-links=./ips_manager_automation/pip_downloads -r requirements.txt
+                coverage run -m unittest tests/test.py
+                coverage xml
+            '''
+        }
+    }
+    stage('SonarQube Analysis') {
+        environment {
+            scannerHome = tool 'SonarQube Scanner 4.0'
+        }
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                sh '''
+                    ${scannerHome}/bin/sonar-scanner \
+                        -D sonar.projectKey=REPOSITORY_NAME
+                '''
+                }
+            }
+        }
+    stage("Quality Gate") {
+        steps {
+            waitForQualityGate abortPipeline: false
+        }
+    }
+    stage('Python Unit Test') {
+        steps {
+            sh '''
+            #!/bin/bash
+            set -e +x
+            pip install virtualenv --user
+            export PATH=$PATH:~/.local/bin
+
+            #setup the virtual environment
+            virtualenv -p python3 virtenv
+            # zip up the shortcut .lnk files
+            python ./ips_manager_automation/zip_shortcuts.py
+            #enter the virtual environment and install all the required libraries
+            source virtenv/bin/activate
+            pip install --no-index --find-links=./project_name/pip_downloads -r requirements.txt
+            python -m unittest tests/test.py
+            '''
+        }
+    }
+    stage("build distribution") {
+        steps {
+            // sh 'python setup.py egg_info -b ".`date +%Y%m%d`-`git rev-parse --short HEAD`" build sdist --formats=zip'
+            sh 'python setup.py egg_info build sdist --formats=zip'
+            sh 'ls -l '
+        }
+    }
+    stage('Upload to Artifactory') {
+  when {
+      branch "Manager"
+    beforeAgent true
+  }
+  steps {
+    rtUpload (
+      serverId: 'Artifactory NGEN DSO',
+      spec:
+        '''
+          {
+            "files": [
+              {
+                "pattern": "dist/project-name*",
+                "target": "REPO_NAME/project-name/"
+              }
+            ]
+          }
+        '''
+    )
+    rtPublishBuildInfo ( serverId: 'Artifactory' )
+  }
+}
+}
+post {
+    always {
+        emailext (
+            recipientProviders: [developers()], 
+            subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to:  'employee1@example.com, employee2@example.com, employee3@example.com',
+            body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+Check console output at $BUILD_URL to view the results.''')
+               }
+          }
+     }
+}</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>

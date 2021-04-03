@@ -29,8 +29,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
+gem "jekyll"
+gem "minimal-mistakes-jekyll"
+
 # Build settings
-theme: jekyll-theme-architect
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-include-cache
@@ -54,3 +57,22 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # links
+  - scope:
+      path: "links"
+      type: links
+    values:
+      sidebar:
+        nav: "links"

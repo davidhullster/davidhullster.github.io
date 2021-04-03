@@ -1,0 +1,196 @@
+---
+layout: post
+title: Create flask container on CentOs/RedHat
+date: 
+type: post
+parent_id: '0'
+published: false
+password: ''
+status: draft
+categories: []
+tags: []
+meta: {}
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/"
+---
+<p><!-- wp:syntaxhighlighter/code {"language":"bash"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">
+Launch a container with the CentOS image.
+
+lxc launch images:centos/7/amd64 Backend
+
+Enter the container.
+lxc exec Backend bash
+
+Configure the Container
+Create a backend user (-m creates home directory)
+useradd backend -m
+
+Create a password for the newly created user.
+passwd backend
+
+Install git and vim.
+yum install git vim
+
+Switch to the backend user.
+su backend
+
+Change directories.
+cd /home/backend/
+
+Get the project from GitHub.
+git clone https://github.com/ErminLA/Containers.git
+
+Copy a couple of files from the repository to the current directory.
+cp /home/backend/Containers/app.py .
+cp /home/backend/Containers/our-app.service .
+
+Remove the Containers directory.
+rm -rf /home/backend/Containers
+
+Log out as the backend user.
+exit
+
+Install some prerequisites.
+yum install python36 python36-devel -y
+
+Log back in as backend.
+su backend
+
+Install some more prerequisites.
+pip3 install --user flask flask_cors mysql-connector waitress
+
+Log out of the backend user.
+exit
+
+Log out of the container.
+exit
+
+Display container information. Copy the IPV4 address for the database. This will be referred to as &lt;DATABASE_IP&gt; through the rest of this lab.
+lxc list
+
+Connect to the container.
+lxc exec Backend bash
+
+Log back in as backend.
+su backend
+
+Edit the app.py file.
+vim /home/backend/app.py
+
+Find the section in the file for \@app.route("/motd") and change the line defining mariadb_connection:
+Change user='chronic' to user='cloud_user'
+Change host='10.95.211.29' to host='&lt;DATABASE_IP&gt;'
+
+Find the section in the file for \@app.route("/set_motd") and change the line defining mariadb_connection:
+Change user='chronic' to user='cloud_user'
+Change host='10.95.211.29' to host='&lt;DATABASE_IP&gt;'
+Save the changes and exit the editor.
+
+On the Container, Daemonize the Process
+Make a directory.
+mkdir /home/backend/our-backend
+
+Log out of backend.
+exit
+
+Copy the our-app.service file.
+cp /home/backend/our-app.service /etc/systemd/system/
+
+Verify the contents of the file.
+vim /etc/systemd/system/our-app.service
+
+Exit the editor without making any changes.
+
+Move the app.py file.
+mv /home/backend/app.py /home/backend/our-backend/app.py
+
+Change the permissions on the file. Note that this is done later in the video but is put here to avoid errors that occur in the lab.
+chmod 500 /home/backend/our-backend/app.py
+
+Reload daemons.
+systemctl daemon-reload
+
+Start the our-app service.
+
+systemctl start our-app
+Enable our-app.
+
+systemctl enable our-app
+Verify that the service is working.
+
+systemctl status our-app
+On the Container, Install and Configure Apache Web Server for a Virtual Host to Accept Connections on Port 80
+Install httpd.
+
+yum install httpd
+Start and enable the httpd service.
+
+systemctl start httpd
+systemctl enable httpd
+Verify the service is running.
+
+systemctl status httpd
+Create some necessary directories.
+
+mkdir /etc/httpd/sites-enabled
+mkdir /etc/httpd/sites-available
+Create a configuration file.
+
+vim /etc/httpd/sites-available/our-name.com.conf
+Paste the following into the file.
+
+&lt;VirtualHost *:80&gt;
+ProxyPass          /    http://127.0.0.1:8080/
+ProxyPassReverse   /    http://127.0.0.1:8080/
+
+&lt;Proxy http://127.0.0.1:8080/&gt;
+        Require all granted
+        Options None
+&lt;/Proxy&gt;
+&lt;/VirtualHost&gt;
+Save the changes and exit the editor.
+
+Edit the httpd service configuration file.
+
+vim /etc/httpd/conf/httpd.conf
+Find the line that says Listen 80 and edit it to the following.
+
+Listen 0.0.0.0:80
+Add the following to the end of the file.
+
+IncludeOptional sites-enabled/*.conf
+Save the changes and exit the editor.
+
+Create a link for the our-name.com.conf file.
+
+ln -s /etc/httpd/sites-available/our-name.com.conf /etc/httpd/sites-enabled/our-name.com.conf
+Create a Redirect on the Host
+Exit the container.
+
+exit
+List the containers.
+
+lxc list
+Create the redirect. Make sure to replace &lt;BACKEND_IP&gt; with the IP displayed in response to the previous command.
+
+lxc config device add Backend myport80 proxy listen=tcp:0.0.0.0:80 connect=tcp:&lt;BACKEND_IP&gt;:80
+Verify the Back End is Accessible with curl from a Playground Instance
+Open a playground instance.
+
+Install curl if it is not already installed.
+
+sudo yum install curl
+Attempt to connect to the back end. Make sure to substitute the &lt;PUBLIC_IP&gt; of the test server. These should return responses if everything is working correctly.
+
+curl http://&lt;PUBLIC_IP&gt;/
+curl http://&lt;PUBLIC_IP&gt;/random_number
+curl http://&lt;PUBLIC_IP&gt;/youtube_video
+Conclusion
+Congratulations, you've completed this hands-on lab!</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>

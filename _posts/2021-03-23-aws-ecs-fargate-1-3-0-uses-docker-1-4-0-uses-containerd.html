@@ -1,0 +1,30 @@
+---
+layout: post
+title: AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd
+date: 2021-03-23 20:50:59.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- aws
+- Tech
+- terraform
+tags: []
+meta:
+  _last_editor_used_jetpack: block-editor
+  timeline_notification: '1616532663'
+  _publicize_job_id: '56302580752'
+author:
+  login: thatsd
+  email: davidhullster@gmail.com
+  display_name: davidhullster
+  first_name: ''
+  last_name: ''
+permalink: "/2021/03/23/aws-ecs-fargate-1-3-0-uses-docker-1-4-0-uses-containerd/"
+---
+<p><!-- wp:paragraph --></p>
+<p>In terraform the ECS version can be specified with 'platform_version'</p>
+<p><code>resource "aws_ecs_service" "main" { </code><br />  <code>name = "tools-ecs-service" cluster = aws_ecs_cluster.main.id </code><br />  <code>task_definition = aws_ecs_task_definition.app.arn </code><br />  <code>desired_count = var.app_count </code><br />  <code>launch_type = "FARGATE" </code><br />  <code>platform_version = "1.3.0"</code></p>
+<p><!-- /wp:paragraph --></p>

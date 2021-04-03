@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <title>Distributed Data Management</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>Distributed Data Management</h1>
+    <section>
+      <p><!-- wp:list --></p>
+<ul>
+<li>Each microservice should have its own data persistence layer</li>
+<li>distributed microservice architectures trade <strong>consistency</strong> for <strong>performance</strong></li>
+<li>need to embrace eventual consistency</li>
+<li>you end up with some partial transactions, so we need some control logic to redo already processed transactions</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Distributed Saga Pattern</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>In the case of a failed transaction Saga orchestrates a series of compensating transactions that undo the changes that were made </li>
+<li>AWS Step Functions make it easy to implement a Saga execution coordinator</li>
+</ul>
+<p><!-- /wp:list --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

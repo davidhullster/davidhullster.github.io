@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <title>Kubernetes delete all running pods</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>Kubernetes delete all running pods</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p><code>kubectl delete pods -n development `kubectl get pods -n development | grep Running | awk '{print $1}'</code>`</p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <title>Configuration Management and Infrastructure as Code</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>Configuration Management and Infrastructure as Code</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p><strong>CloudFormation Template Errors</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Invalid Value or Unsupported Resource Property
+<ul>
+<li>EITHER Parameter naming mistake</li>
+<li>OR Property names are unsupported</li>
+</ul>
+</li>
+<li>Resource Failed to Stabilize
+<ol>
+<li>timeout exceeded, or</li>
+<li>AWS service isn't available, or</li>
+<li>AWS service was interrupted</li>
+</ol>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Stack Fails to Roll Back</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>most often happens when deployment account has permission to create stacks
+<ul>
+<li>but lacks permission to modify or delete stacks</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>EC2 Auto Scaling</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>add <strong>hooks</strong> to launching and terminating stages of instance <strong>lifecycle</strong>
+<ul>
+<li>hooks can send <strong>SNS</strong> notification and <strong>hold</strong> the instance in Pending state</li>
+<li><strong>trigger</strong> a Lambda function from the SNS topic</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Elastic Network Interface (ENI)</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>EC2 AutoScaling does not allow specifying a <strong>second</strong> ENI in the Launch Configuration</li>
+<li>aws:createENI is <strong>not</strong> a valid SSM automation document action</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>CloudFormation</strong> <strong>Resource Replacement</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>RDS DB port changed
+<ul>
+<li>if "Port" attribute on AWS:RDS:DBInstance has update requirement of "Replacement"
+<ul>
+<li>DB will be replaced with new instance with possible data loss</li>
+<li>DB will have to be restored from backups</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>CloudFormation DependsOn Resource</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>ensure first stack sends <strong>completion</strong> signal before starting second stack</li>
+<li>add <strong>CreationPolicy</strong> with long <strong>timeout</strong> so first stack doesn't time out</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Create Thumbnail Images from Full-Size Images in S3</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>upload <strong>full-size</strong> image to S3</li>
+<li><strong>automate</strong> creating thumbnail images
+<ul>
+<li><strong>S3</strong> <strong>Event</strong> <strong>Trigger</strong> executes Lambda function</li>
+<li><strong>Lambda</strong> function creates <strong>thumbnail</strong> and saves it to a different bucket</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Fargate Configuration Errors</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><strong>Invalid CPU Setting</strong></li>
+<li><strong>Invalid Memory Setting</strong>
+<ul>
+<li>ensure values in Task Definition show as <strong>supported</strong> in documentation</li>
+</ul>
+</li>
+<li><strong>Repository Not Found</strong>
+<ul>
+<li>incorrect <strong>ECR image </strong>specification</li>
+<li>resolve by correctly updating <strong>URI</strong> or <strong>ARN</strong></li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Lambda Throttling</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Lamdba Throttle option used to troubleshoot Lambda function endless loops</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Step Function Best Practices</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>Avoid latency when polling for Activity Tasks</li>
+<li>Use ARN's instead of passing large payloads</li>
+<li>Avoid Reaching History Limit (writing/saving too much history)</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>OpsWorks</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>allows creating applications with pre-built <strong>layer</strong> templates
+<ul>
+<li>create servers, RDS instances, load balancers, etc.</li>
+</ul>
+</li>
+<li>allows using Chef-Solo recipes</li>
+<li>allows multiple access levels: i.e. <strong>deploy</strong> permission and <strong>manage</strong> permissions</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>EC2 Spread Placement</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>distribute EC2 instances across different AZ's</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Elastic Beanstalk</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>rolling deployment</li>
+<li>roll back with <strong>manual</strong> deployment</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Step Functions</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>error scenarios and retry strategies
+<ul>
+<li>runtime errors can occur in any stage
+<ul>
+<li>i.e. Lambda function throws exception</li>
+<li>i.e. Network exception, timeout</li>
+</ul>
+</li>
+<li>Runtime errors are handled differently than Failures
+<ul>
+<li>example: state machine definition errors</li>
+</ul>
+</li>
+<li>When state errors occur, default is to:
+<ul>
+<li>1) log error</li>
+<li>2) retry 1 time after 1 second
+<ul>
+<li>if retry fails, AWS Step Functions will fail execution entirely</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

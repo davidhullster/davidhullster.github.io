@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-04-03T12:10:04-07:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Install gopls</title><link href="/2021/04/02/install-gopls/" rel="alternate" type="text/html" title="Install gopls" /><published>2021-04-02T02:37:24-07:00</published><updated>2021-04-02T02:37:24-07:00</updated><id>/2021/04/02/install-gopls</id><content type="html" xml:base="/2021/04/02/install-gopls/">&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;Solves an issue where gopls hung in vim on Ubuntu and CentOS&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Vim hung with this a bottom of vim window: &lt;br /&gt;   vim-go: initializing gopls&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;ensure you're running the the latest go version, this worked for me on go1.16.3&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go get golang.org/x/tools/gopls@latest&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><summary type="html">Solves an issue where gopls hung in vim on Ubuntu and CentOS Vim hung with this a bottom of vim window: vim-go: initializing gopls ensure you're running the the latest go version, this worked for me on go1.16.3 go get golang.org/x/tools/gopls@latest</summary></entry><entry><title type="html">Jenkins API: curl with CSRF crumb and token</title><link href="/2021/03/27/jenkins-api-curl-with-csrf-crumb-and-token/" rel="alternate" type="text/html" title="Jenkins API: curl with CSRF crumb and token" /><published>2021-03-27T21:01:39-07:00</published><updated>2021-03-27T21:01:39-07:00</updated><id>/2021/03/27/jenkins-api-curl-with-csrf-crumb-and-token</id><content type="html" xml:base="/2021/03/27/jenkins-api-curl-with-csrf-crumb-and-token/">&lt;p&gt;&lt;!-- wp:group --&gt;&lt;/p&gt;
+&lt;div class=&quot;wp-block-group&quot;&gt;
+&lt;div class=&quot;wp-block-group__inner-container&quot;&gt;&lt;!-- wp:heading {&quot;level&quot;:4} --&gt;&lt;/p&gt;
+&lt;h4&gt;Create CSRF Crumb and save to Environment Variable $CRUMB&lt;/h4&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CRUMB=$(wget -q --auth-no-challenge --user JenkinsAdmin --password $PASSWORD --output-document - 'http://34.221.166.10:9090/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,&quot;:&quot;,//crumb)')&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ echo $CRUMB&lt;br /&gt;Jenkins-Crumb:12345c720376d5e9edc957ddbb0027a88b639eb74888adafc54615bfbf7c8c5&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:heading {&quot;level&quot;:4} --&gt;&lt;/p&gt;
+&lt;h4&gt;Save JenkinsAdmin token to $TOKEN&lt;/h4&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;TOKEN=12345efe5700dd9a3334f8581885d498a0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:heading {&quot;level&quot;:4} --&gt;&lt;/p&gt;
+&lt;h4&gt;Start build on existing job 'pipeline1' $I returns html response&lt;/h4&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;curl -I -X POST http://JenkinsAdmin:$TOKEN@34.221.166.10:9090/job/pipeline1/build -H &quot;$CRUMB&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:heading {&quot;level&quot;:4} --&gt;&lt;/p&gt;
+&lt;h4&gt;Copy a job's config.xml to local 'jobConfig.xml' file&lt;/h4&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;curl -X GET http://JenkinsAdmin:$TOKEN@34.221.166.10:9090/job/pipeline1/config.xml -H &quot;$CRUMB&quot; -o ./jobconfig.xml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:heading {&quot;level&quot;:4} --&gt;&lt;/p&gt;
+&lt;h4&gt;Create new job from saved 'jobConfig.xml' file&lt;/h4&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;curl -s -X POST http://JenkinsAdmin:$TOKEN@34.221.166.10:9090/createItem?name='job/backend/copyone' --data-binary @jobconfig.xml -H &quot;$CRUMB&quot; -H &quot;Content-Type:text/xml&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:heading {&quot;level&quot;:4} --&gt;&lt;/p&gt;
+&lt;h4&gt;Create new job from jobconfig.xml into folder (note added path after servername:port)&lt;/h4&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;curl -s -X POST 'http://JenkinsAdmin:12345efe5700dd9a3334f8581885d498a0@34.221.166.10:9090/job/backend/job/tomcat/createItem?name=copyfour' --data-binary @jobconfig.xml -H &quot;$CRUMB&quot; -H &quot;Content-Type:text/xml&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- /wp:group --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="jenkins" /><category term="Tech" /><summary type="html">Create CSRF Crumb and save to Environment Variable $CRUMB CRUMB=$(wget -q --auth-no-challenge --user JenkinsAdmin --password $PASSWORD --output-document - 'http://34.221.166.10:9090/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,&quot;:&quot;,//crumb)') $ echo $CRUMBJenkins-Crumb:12345c720376d5e9edc957ddbb0027a88b639eb74888adafc54615bfbf7c8c5 Save JenkinsAdmin token to $TOKEN TOKEN=12345efe5700dd9a3334f8581885d498a0 Start build on existing job 'pipeline1' $I returns html response curl -I -X POST http://JenkinsAdmin:$TOKEN@34.221.166.10:9090/job/pipeline1/build -H &quot;$CRUMB&quot; Copy a job's config.xml to local 'jobConfig.xml' file curl -X GET http://JenkinsAdmin:$TOKEN@34.221.166.10:9090/job/pipeline1/config.xml -H &quot;$CRUMB&quot; -o ./jobconfig.xml Create new job from saved 'jobConfig.xml' file curl -s -X POST http://JenkinsAdmin:$TOKEN@34.221.166.10:9090/createItem?name='job/backend/copyone' --data-binary @jobconfig.xml -H &quot;$CRUMB&quot; -H &quot;Content-Type:text/xml&quot; Create new job from jobconfig.xml into folder (note added path after servername:port) curl -s -X POST 'http://JenkinsAdmin:12345efe5700dd9a3334f8581885d498a0@34.221.166.10:9090/job/backend/job/tomcat/createItem?name=copyfour' --data-binary @jobconfig.xml -H &quot;$CRUMB&quot; -H &quot;Content-Type:text/xml&quot;</summary></entry><entry><title type="html">AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd</title><link href="/2021/03/23/aws-ecs-fargate-1-3-0-uses-docker-1-4-0-uses-containerd/" rel="alternate" type="text/html" title="AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd" /><published>2021-03-23T20:50:59-07:00</published><updated>2021-03-23T20:50:59-07:00</updated><id>/2021/03/23/aws-ecs-fargate-1-3-0-uses-docker-1-4-0-uses-containerd</id><content type="html" xml:base="/2021/03/23/aws-ecs-fargate-1-3-0-uses-docker-1-4-0-uses-containerd/">&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;In terraform the ECS version can be specified with 'platform_version'&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;resource &quot;aws_ecs_service&quot; &quot;main&quot; { &lt;/code&gt;&lt;br /&gt;  &lt;code&gt;name = &quot;tools-ecs-service&quot; cluster = aws_ecs_cluster.main.id &lt;/code&gt;&lt;br /&gt;  &lt;code&gt;task_definition = aws_ecs_task_definition.app.arn &lt;/code&gt;&lt;br /&gt;  &lt;code&gt;desired_count = var.app_count &lt;/code&gt;&lt;br /&gt;  &lt;code&gt;launch_type = &quot;FARGATE&quot; &lt;/code&gt;&lt;br /&gt;  &lt;code&gt;platform_version = &quot;1.3.0&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="aws" /><category term="Tech" /><category term="terraform" /><summary type="html">In terraform the ECS version can be specified with 'platform_version' resource &quot;aws_ecs_service&quot; &quot;main&quot; { name = &quot;tools-ecs-service&quot; cluster = aws_ecs_cluster.main.id task_definition = aws_ecs_task_definition.app.arn desired_count = var.app_count launch_type = &quot;FARGATE&quot; platform_version = &quot;1.3.0&quot;</summary></entry><entry><title type="html">Change committer name and email in Git history</title><link href="/2021/03/20/change-committer-name-and-email-in-git-history/" rel="alternate" type="text/html" title="Change committer name and email in Git history" /><published>2021-03-20T17:29:28-07:00</published><updated>2021-03-20T17:29:28-07:00</updated><id>/2021/03/20/change-committer-name-and-email-in-git-history</id><content type="html" xml:base="/2021/03/20/change-committer-name-and-email-in-git-history/">&lt;p&gt;&lt;!-- wp:heading {&quot;level&quot;:1} --&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;!-- /wp:heading --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;!/bin/sh&lt;br /&gt;&lt;code&gt;git filter-branch --env-filter '&lt;br /&gt;OLD_EMAIL=&quot;bad-email-address@example.com&quot;&lt;br /&gt;CORRECT_NAME=&quot;FULL NAME&quot;&lt;br /&gt;CORRECT_EMAIL=&quot;EMAIL ADDRESS@example.com&quot;&lt;br /&gt;if [ &quot;$GIT_COMMITTER_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]&lt;br /&gt;then&lt;br /&gt;export GIT_COMMITTER_NAME=&quot;$CORRECT_NAME&quot;&lt;br /&gt;export GIT_COMMITTER_EMAIL=&quot;$CORRECT_EMAIL&quot;&lt;br /&gt;fi&lt;br /&gt;if [ &quot;$GIT_AUTHOR_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]&lt;br /&gt;then&lt;br /&gt;export GIT_AUTHOR_NAME=&quot;$CORRECT_NAME&quot;&lt;br /&gt;export GIT_AUTHOR_EMAIL=&quot;$CORRECT_EMAIL&quot;&lt;br /&gt;fi&lt;br /&gt;' --tag-name-filter cat -- --branches --tags&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="git" /><category term="Tech" /><summary type="html">!/bin/shgit filter-branch --env-filter 'OLD_EMAIL=&quot;bad-email-address@example.com&quot;CORRECT_NAME=&quot;FULL NAME&quot;CORRECT_EMAIL=&quot;EMAIL ADDRESS@example.com&quot;if [ &quot;$GIT_COMMITTER_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]thenexport GIT_COMMITTER_NAME=&quot;$CORRECT_NAME&quot;export GIT_COMMITTER_EMAIL=&quot;$CORRECT_EMAIL&quot;fiif [ &quot;$GIT_AUTHOR_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]thenexport GIT_AUTHOR_NAME=&quot;$CORRECT_NAME&quot;export GIT_AUTHOR_EMAIL=&quot;$CORRECT_EMAIL&quot;fi' --tag-name-filter cat -- --branches --tags</summary></entry><entry><title type="html">Kubernetes: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress</title><link href="/2021/02/25/343/" rel="alternate" type="text/html" title="Kubernetes: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress" /><published>2021-02-25T19:10:47-08:00</published><updated>2021-02-25T19:10:47-08:00</updated><id>/2021/02/25/343</id><content type="html" xml:base="/2021/02/25/343/">&lt;p&gt;&lt;!-- wp:code --&gt;&lt;/p&gt;
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;# troubleshoot error: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress (the release that was in progress didn't show when I ran helm ls -n &amp;lt;namespace&amp;gt;)
+
+helm delete &amp;lt;release that's in progress&amp;gt; -n &amp;lt;namespace&amp;gt;
+
+example:
+&amp;gt;&amp;gt;helm delete inventory-api-development -n development
+release &quot;inventory-api-development&quot; uninstalled&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;!-- /wp:code --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="kubernetes" /><category term="Tech" /><summary type="html"># troubleshoot error: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress (the release that was in progress didn't show when I ran helm ls -n &amp;lt;namespace&amp;gt;)</summary></entry><entry><title type="html">Kubernetes delete all running pods</title><link href="/2021/02/24/kubernetes-delete-all-running-pods/" rel="alternate" type="text/html" title="Kubernetes delete all running pods" /><published>2021-02-24T04:18:46-08:00</published><updated>2021-02-24T04:18:46-08:00</updated><id>/2021/02/24/kubernetes-delete-all-running-pods</id><content type="html" xml:base="/2021/02/24/kubernetes-delete-all-running-pods/">&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kubectl delete pods -n development `kubectl get pods -n development | grep Running | awk '{print $1}'&lt;/code&gt;`&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="aws" /><category term="kubernetes" /><category term="Tech" /><summary type="html">kubectl delete pods -n development `kubectl get pods -n development | grep Running | awk '{print $1}'`</summary></entry><entry><title type="html">AWS create-stack aws cli capabilities and parameters</title><link href="/2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters/" rel="alternate" type="text/html" title="AWS create-stack aws cli capabilities and parameters" /><published>2021-02-23T23:21:27-08:00</published><updated>2021-02-23T23:21:27-08:00</updated><id>/2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters</id><content type="html" xml:base="/2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters/">&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/&quot;&gt;https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;for i in clients inventory renting resource; &lt;/code&gt;&lt;br /&gt;  &lt;code&gt;do echo ${i}-api; &lt;/code&gt;&lt;br /&gt;    &lt;code&gt;aws cloudformation create-stack &lt;/code&gt;&lt;br /&gt;        &lt;code&gt;--stack-name development-iam-policy-${i}-api &lt;/code&gt;&lt;br /&gt;&lt;code&gt;    --template-body file://${i}-api/infra/cloudformation/iam-policy.json &lt;/code&gt;&lt;br /&gt;        &lt;code&gt;--parameters ParameterKey=Namespace,ParameterValue=development &lt;/code&gt;&lt;br /&gt;        &lt;code&gt;--capabilities CAPABILITY_NAMED_IAM; &lt;/code&gt;&lt;br /&gt;    &lt;code&gt;echo =====; done&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="aws" /><category term="CAPABILITY_IAM" /><category term="capability" /><summary type="html">https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/ for i in clients inventory renting resource; do echo ${i}-api; aws cloudformation create-stack --stack-name development-iam-policy-${i}-api --template-body file://${i}-api/infra/cloudformation/iam-policy.json --parameters ParameterKey=Namespace,ParameterValue=development --capabilities CAPABILITY_NAMED_IAM; echo =====; done</summary></entry><entry><title type="html">Powershell API Call with base64 encoded auth</title><link href="/2021/02/20/powershell-api-call-with-base64-encoded-auth/" rel="alternate" type="text/html" title="Powershell API Call with base64 encoded auth" /><published>2021-02-20T00:05:53-08:00</published><updated>2021-02-20T00:05:53-08:00</updated><id>/2021/02/20/powershell-api-call-with-base64-encoded-auth</id><content type="html" xml:base="/2021/02/20/powershell-api-call-with-base64-encoded-auth/">&lt;p&gt;&lt;!-- wp:syntaxhighlighter/code {&quot;language&quot;:&quot;powershell&quot;} --&gt;&lt;/p&gt;
+&lt;pre class=&quot;wp-block-syntaxhighlighter-code&quot;&gt;# Ignore Certificate Issues
+add-type @&quot;
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class TrustAllCertsPolicy : ICertificatePolicy {
+        public bool CheckValidationResult(
+            ServicePoint srvPoint, X509Certificate certificate,
+            WebRequest request, int certificateProblem) {
+            return true;
+        }
+    }
+&quot;@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+function getSession($url) {
+    $creds = 'YWRtaW46YWRtaW4xMjM='
+    
+    $requestString = 'session'
+
+    $fullUrl = $url + $requestString
+    $headers= @{
+        'NSM-SDK-API' = $creds
+        'Accept' = 'application/vnd.nsm.v1.0+json'
+        'Content-Type' = 'application/json'
+        }
+
+    # Get Session token Output to file version
+    #Invoke-RestMethod -Method 'Get' -Uri $fullUrl -Headers $headers -OutFile output.csv
+
+    # Get Session Token
+    $sessionToken = Invoke-RestMethod -Method 'Get' -Uri $fullUrl -Headers $headers
+    Write-Host Your session token is: $sessionToken.session
+    
+    return $sessionToken
+
+}
+
+function apiCall($apiToken, $method, $url, $requestUri) { 
+    
+    $callUrl = $url + $requestUri
+    $headers= @{
+        'NSM-SDK-API' = $apiToken
+        'Accept' = 'application/vnd.nsm.v1.0+json'
+        'Content-Type' = 'application/json'
+        }
+   
+    if ($method -eq 'GET') {
+        $apiCallOutput = Invoke-RestMethod -Method 'GET' -Uri $callUrl -Headers $headers -Verbose
+    } elseif ($method -eq 'POST') {
+         $apiCallOutput = Invoke-RestMethod -Method 'POST' -Uri $callUrl -Headers $headers -Verbose
+    } else {
+        Write-Host &quot;Method ---&amp;gt;&amp;gt; &quot; +($method) &quot;is not yet defined in the api script&quot;
+        $apiCallOutput = 'none'
+    }
+    return $apiCallOutput
+    }
+
+
+
+$serverIP = '10.10.17.148'
+$url = 'https://'+($serverIP)+'/sdkapi/'
+
+# Get Session Token
+$sessionToken = getSession $url
+$token = $sessionToken.session+':'+$sessionToken.userId
+# Convert token to base64
+$Bytes = [System.Text.Encoding]::UTF8.GetBytes($token)
+#$enc = [System.Text.Encoding]::ASCII
+#$enc.GetString($Bytes)
+$apiToken =[System.Convert]::ToBase64String($Bytes)
+$apiToken.TrimEnd()
+
+# Get Heartbeat to test 
+$requestUri = 'heartbeat'
+$method = 'GET'
+$heartbeat = apiCall $apiToken $method $url $requestUri
+
+# Global Auto Ack
+$requestUri = 'globalautoack'
+$method = 'GET'
+$globalautoackInfo = apiCall $apiToken $method $url $requestUri
+
+# Domain Info
+$requestUri = 'domain'
+$method = 'GET'
+$domainInfo = apiCall $apiToken $method $url $requestUri
+
+
+# If only one domain
+$domainInfo.DomainDescriptor.id
+&lt;/pre&gt;
+&lt;p&gt;&lt;!-- /wp:syntaxhighlighter/code --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="powershell" /><summary type="html"># Ignore Certificate Issues add-type @&quot; using System.Net; using System.Security.Cryptography.X509Certificates; public class TrustAllCertsPolicy : ICertificatePolicy { public bool CheckValidationResult( ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem) { return true; } } &quot;@ [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy</summary></entry><entry><title type="html">mock mail server in python that writes to stdout</title><link href="/2021/02/17/mock-mail-server-in-python-that-writes-to-stdout/" rel="alternate" type="text/html" title="mock mail server in python that writes to stdout" /><published>2021-02-17T00:23:31-08:00</published><updated>2021-02-17T00:23:31-08:00</updated><id>/2021/02/17/mock-mail-server-in-python-that-writes-to-stdout</id><content type="html" xml:base="/2021/02/17/mock-mail-server-in-python-that-writes-to-stdout/">&lt;p&gt;&lt;!-- wp:syntaxhighlighter/code --&gt;&lt;/p&gt;
+&lt;pre class=&quot;wp-block-syntaxhighlighter-code&quot;&gt;python -m smtpd -n -c DebuggingServer localhost:8025&lt;/pre&gt;
+&lt;p&gt;&lt;!-- /wp:syntaxhighlighter/code --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><category term="Tech" /><category term="Python" /><summary type="html">python -m smtpd -n -c DebuggingServer localhost:8025</summary></entry><entry><title type="html">boot.sh: Docker container start-up script – explains use of ‘bash exec’</title><link href="/2021/02/17/boot-sh-docker-container-start-up-script-explains-use-of-bash-exec/" rel="alternate" type="text/html" title="boot.sh: Docker container start-up script – explains use of ‘bash exec’" /><published>2021-02-17T00:09:29-08:00</published><updated>2021-02-17T00:09:29-08:00</updated><id>/2021/02/17/boot-sh-docker-container-start-up-script-explains-use-of-bash-exec</id><content type="html" xml:base="/2021/02/17/boot-sh-docker-container-start-up-script-explains-use-of-bash-exec/">&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:syntaxhighlighter/code --&gt;&lt;/p&gt;
+&lt;pre class=&quot;wp-block-syntaxhighlighter-code&quot;&gt;#!/bin/sh
+source venv/bin/activate
+flask db upgrade
+exec gunicorn -b :5000 --access-logfile - --error-logfile - microblog:app&lt;/pre&gt;
+&lt;p&gt;&lt;!-- /wp:syntaxhighlighter/code --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- wp:paragraph --&gt;&lt;/p&gt;
+&lt;p&gt;Note the&amp;nbsp;&lt;code&gt;exec&lt;/code&gt;&amp;nbsp;that precedes the gunicorn command. In a shell script,&amp;nbsp;&lt;code&gt;exec&lt;/code&gt;&amp;nbsp;triggers the process running the script to be replaced with the command given, instead of starting it as a new process. This is important, because Docker associates the life of the container to the first process that runs on it. In cases like this one, where the start up process is not the main process of the container, you need to make sure that the main process takes the place of that first process to ensure that the container is not terminated early by Docker.&lt;/p&gt;
+&lt;p&gt;&lt;!-- /wp:paragraph --&gt;&lt;/p&gt;</content><author><name>{&quot;login&quot;=&gt;&quot;thatsd&quot;, &quot;email&quot;=&gt;&quot;davidhullster@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;davidhullster&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>davidhullster@gmail.com</email></author><summary type="html">#!/bin/sh source venv/bin/activate flask db upgrade exec gunicorn -b :5000 --access-logfile - --error-logfile - microblog:app Note the&amp;nbsp;exec&amp;nbsp;that precedes the gunicorn command. In a shell script,&amp;nbsp;exec&amp;nbsp;triggers the process running the script to be replaced with the command given, instead of starting it as a new process. This is important, because Docker associates the life of the container to the first process that runs on it. In cases like this one, where the start up process is not the main process of the container, you need to make sure that the main process takes the place of that first process to ensure that the container is not terminated early by Docker.</summary></entry></feed>

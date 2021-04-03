@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <title>Powershell string check for null or empty</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>Powershell string check for null or empty</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p>if([string]::IsNullOrEmpty($VERSION)){</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;"No&nbsp;NSM&nbsp;Version&nbsp;Found"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$installType&nbsp;=&nbsp;'new&nbsp;install'</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>}</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>$VERSION -notmatch "\S"</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code --></p>
+<pre class="wp-block-syntaxhighlighter-code">&gt; $null  -notmatch "\S"
+True
+&gt; "   "  -notmatch "\S"
+True
+&gt; " x "  -notmatch "\S"
+False</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

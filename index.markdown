@@ -4,4 +4,3 @@
 
 layout: default
 ---
-<H1>Scratches</H1>

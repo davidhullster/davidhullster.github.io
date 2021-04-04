@@ -1,4 +1,4 @@
 ---
 title: Blog
-layout: posts
+layout: page
 ---

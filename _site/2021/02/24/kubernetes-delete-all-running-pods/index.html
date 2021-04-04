@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/css/main.scss" />
-    <title>{{ page.title }}</title>
+    <title>Kubernetes delete all running pods</title>
   </head>
   <body>
     <nav>
@@ -12,9 +12,13 @@
       <a href="/about/">About</a>
       <hr>
     </nav>
-    <h1>{{ page.title }}</h1>
+    <h1>Kubernetes delete all running pods</h1>
     <section>
-      {{ content }}
+      <p><!-- wp:paragraph --></p>
+<p><code>kubectl delete pods -n development `kubectl get pods -n development | grep Running | awk '{print $1}'</code>`</p>
+<p><!-- /wp:paragraph --></p>
+
+
     </section>
     <footer>
       &copy; davidhullster

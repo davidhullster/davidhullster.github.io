@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/css/main.scss" />
-    <title>{{ page.title }}</title>
+    <title>mock mail server in python that writes to stdout</title>
   </head>
   <body>
     <nav>
@@ -12,9 +12,13 @@
       <a href="/about/">About</a>
       <hr>
     </nav>
-    <h1>{{ page.title }}</h1>
+    <h1>mock mail server in python that writes to stdout</h1>
     <section>
-      {{ content }}
+      <p><!-- wp:syntaxhighlighter/code --></p>
+<pre class="wp-block-syntaxhighlighter-code">python -m smtpd -n -c DebuggingServer localhost:8025</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+
+
     </section>
     <footer>
       &copy; davidhullster

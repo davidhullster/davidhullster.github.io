@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.scss" />
+    <title>List installed applications in Windows</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>List installed applications in Windows</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p>Get-CimInstance win32_product | Select-Object Name, PackageName, InstallDate | Out-GridView</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>look in both locations for installed software:<br />-&gt;HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall (no results on my Win10 install)<br />-&gt;HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall</p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

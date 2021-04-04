@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.scss" />
+    <title>AWS Policies and Standards Automation</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>AWS Policies and Standards Automation</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p><strong>AWS Config</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><strong>Error</strong>: "We are unable to complete the request at this time. Please contact AWS Support."
+<ul>
+<li>either AWS Config <strong>Aggregator limit </strong>has been reached
+<ul>
+<li>default is 50 configuration aggregators</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>OR <strong>StartConfigRulesEvaluation</strong> API has exceeded more than<strong> one request</strong> per minute</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Amazon States Language</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><strong>InputPath</strong> --&gt; selects which parts of the JSON input to pass to the task of the Task state</li>
+<li><strong>Parameters</strong> --&gt; pass collection of key-value pairs.
+<ul>
+<li>Values are either static values defined in your state configuration</li>
+<li>OR selected from the input using the path</li>
+</ul>
+</li>
+<li><strong>OutputPath</strong> --&gt; filters the JSON output to <strong>further</strong> limit info passed to Output</li>
+<li><strong>ResultPath</strong> --&gt; selects what combination of the state <strong>input</strong> and the task <strong>result</strong> to pass to the output</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>AWS Support Plans</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Trust Advisor Checks
+<ul>
+<li>only Business and Enterprise support has <strong>all</strong> Trust Advisor Checks enabled</li>
+</ul>
+</li>
+<li>Enterprise Support Plan
+<ul>
+<li>has better response time, but only for business applications:
+<ul>
+<li>Microsoft</li>
+<li>SAP</li>
+<li>Oracle</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>AWS Systems Manager</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><strong>Run Command</strong> Feature
+<ul>
+<li>install ssm <strong>agent</strong></li>
+<li>ensure required <strong>roles</strong> configured</li>
+</ul>
+</li>
+<li>AWS Systems Manager Patch Manager</li>
+<li>AWS Systems Manager Maintenance Windows</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Amazon Macie</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>use machine learning to scan S3 buckets
+<ul>
+<li>scan for PII</li>
+<li>create PII dashboards and alerts</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Trusted Advisor</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Business Level
+<ul>
+<li>includes Cost Optimization suggestions</li>
+</ul>
+</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>AWS Secrets Manager</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>store database passwords</li>
+<li><strong>limit</strong> access to only developers</li>
+<li>rotate passwords on a <strong>schedule</strong></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>AWS Config</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><strong>record</strong> configuration changes</li>
+<li>store <strong>snapshots</strong> of configuration at regular intervals</li>
+<li>AWS Config data from <strong>multiple</strong> accounts can be aggregated into a <strong>single</strong> account</li>
+<li><strong>Built-In</strong> Rules
+<ul>
+<li>s3-bucket-server-side-encryption-enabled</li>
+<li>iam-user-mfa-enabled</li>
+</ul>
+</li>
+<li><strong>tag</strong> resources</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

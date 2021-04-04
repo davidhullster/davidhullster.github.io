@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/css/main.scss" />
-    <title>{{ page.title }}</title>
+    <title>AWS Canonical ID - get via command line (aws cli)</title>
   </head>
   <body>
     <nav>
@@ -12,9 +12,13 @@
       <a href="/about/">About</a>
       <hr>
     </nav>
-    <h1>{{ page.title }}</h1>
+    <h1>AWS Canonical ID - get via command line (aws cli)</h1>
     <section>
-      {{ content }}
+      <p><!-- wp:paragraph --></p>
+<p>aws s3api list-buckets --query Owner.ID --output text</p>
+<p><!-- /wp:paragraph --></p>
+
+
     </section>
     <footer>
       &copy; davidhullster

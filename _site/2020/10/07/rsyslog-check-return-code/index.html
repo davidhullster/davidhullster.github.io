@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.scss" />
+    <title>rsyslog check return code</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>rsyslog check return code</h1>
+    <section>
+      <p><!-- wp:syntaxhighlighter/code {"language":"bash"} --></p>
+<pre class="wp-block-syntaxhighlighter-code">#!/bin/bash
+
+rsyslogd -N1
+
+retCode=$?
+
+if [ "$retCode" -eq 0 ]
+then
+	echo ryslogd succeeded with return code: "$retCode"
+else
+	echo rsyslogd failed with return code: "$retCode"
+        exit 1
+fi
+echo "rsyslogd check completed"</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

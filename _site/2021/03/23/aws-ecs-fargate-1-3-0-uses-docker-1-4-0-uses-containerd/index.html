@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.scss" />
+    <title>AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p>In terraform the ECS version can be specified with 'platform_version'</p>
+<p><code>resource "aws_ecs_service" "main" { </code><br />  <code>name = "tools-ecs-service" cluster = aws_ecs_cluster.main.id </code><br />  <code>task_definition = aws_ecs_task_definition.app.arn </code><br />  <code>desired_count = var.app_count </code><br />  <code>launch_type = "FARGATE" </code><br />  <code>platform_version = "1.3.0"</code></p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

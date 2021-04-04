@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.scss" />
+    <title>Powershell loop to create AzureDevOps pipelines</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>Powershell loop to create AzureDevOps pipelines</h1>
+    <section>
+      <p><!-- wp:paragraph --></p>
+<p>$pipeline_names = $("pipeline1", "pipeline2")<br />$environment_name = 'test_environment'<br />$branch = 'master'</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>cd C:\\repo\directory<br />foreach ($pipeline in $pipeline_names) { az pipelines create --name ${pipeline}-deployment --description "Deploy ${pipeline} into ${environment_name}" --repository ${repo_name} --repository-type tfsgit --branch ${branch} --yml-path ${pipeline}\${environment_name}\pipeline.yaml }</p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

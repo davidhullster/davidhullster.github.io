@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/main.scss" />
+    <title>Using Data Management tools to redo transactions</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Posts</a>
+      <a href="/about/">About</a>
+      <hr>
+    </nav>
+    <h1>Using Data Management tools to redo transactions</h1>
+    <section>
+      <p><!-- wp:list --></p>
+<ul>
+<li>Microservices need a way to synchronize their data and roll back state, where possible.</li>
+<li>AWS Step functions allow implementation of a Saga Execution Coordinator
+<ul>
+<li>Builds a centralized store of critical reference data </li>
+<li>curated by master data management tools and procedures</li>
+</ul>
+</li>
+<li>Using Lambda and scheduled Amazon CloudWatch events you can build a simple cleanup and deduplication mechanism</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Event Sourcing is useful where state changes affect multiple microservices
+<ul>
+<li>Persists every application change as an event record</li>
+<li>Doesn't record application state</li>
+<li>Data is stored as a stream of events</li>
+</ul>
+</li>
+<li>State can be determined and reconstructed at any point in time</li>
+<li>Produces a persistent audit trail</li>
+<li>Assists in debugging</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>
+
+
+    </section>
+    <footer>
+      &copy; davidhullster
+    </footer>
+  </body>
+</html>

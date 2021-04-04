@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/css/main.scss" />
-    <title>{{ page.title }}</title>
+    <title>Powershell 2.0 get ip address (Windows 2008)</title>
   </head>
   <body>
     <nav>
@@ -12,9 +12,13 @@
       <a href="/about/">About</a>
       <hr>
     </nav>
-    <h1>{{ page.title }}</h1>
+    <h1>Powershell 2.0 get ip address (Windows 2008)</h1>
     <section>
-      {{ content }}
+      <p><!-- wp:paragraph --></p>
+<p>&nbsp;ip_address&nbsp;=&nbsp;(Get-WmiObject&nbsp;-Class&nbsp;Win32_NetworkAdapterConfiguration&nbsp;-Filter&nbsp;'IPEnabled&nbsp;=&nbsp;True').IPAddress</p>
+<p><!-- /wp:paragraph --></p>
+
+
     </section>
     <footer>
       &copy; davidhullster

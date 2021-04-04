@@ -3,5 +3,5 @@ layout: default
 title: About
 permalink: /about/
 ---
-
-<p>A place for me to do some writing, about this and that.</p>
+<h3>Writing, about this and about that.</h3>
+{% include figure2.html %}

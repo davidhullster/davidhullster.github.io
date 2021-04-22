@@ -19,3 +19,20 @@ layout: posts
   }
 }
 </pre>
+<p>The <b>generate</b> attribute is used to inform Terragrunt to generate the <br>
+    Terraform code for configuring the backend. <br>
+    When you run any Terragrunt command, Terragrunt <br>
+    will generate a <i>backend.tf</i> file with the contents <br>
+    set to the terraform block that configures the s3 backend, <br>
+    just like what we had before in each <i>main.tf</i> file.<br>
+    The final step is to update each of the child terragrunt.hcl <br>
+    files to tell them to include the configuration<br>
+    from the root terragrunt.hcl:
+    
+    # stage/mysql/terragrunt.hcl
+</p>
+<pre>
+    include {
+      path = find_in_parent_folders()
+    }
+</pre>

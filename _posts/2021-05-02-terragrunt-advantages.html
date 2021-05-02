@@ -14,12 +14,21 @@ layout: posts
       let’s say we want to make a change to our VPC Terraform module. Ideally, that change should be 
       deployed as an artifact, tagged with a proper version and distributed to all environments. 
       Terragrunt solves this by sourcing a particular branch/tag for its deployment.
-    • no possibility of keeping the Terraform backend configuration DRY across all our environments 
-      (S3 state bucket, region, DynamoDB table etc): for every sub-component (EKS, S3, IAM, MSK etc) 
-      of our infrastructure we had to redefine the Terraform backend configuration over and over again. More sub-components, and more pain for our SRE team. Terragrunt solves this issue by using the path_relative_to_include()
+    • no possibility of keeping the Terraform backend 
+      configuration DRY across all our environments 
+      (S3 state bucket, region, DynamoDB table etc): 
+      for every sub-component (EKS, S3, IAM, MSK etc) 
+      of our infrastructure we had to redefine the 
+      Terraform backend configuration over and over 
+      again. More sub-components, and more pain for 
+      our SRE team. Terragrunt solves this issue by 
+      using the path_relative_to_include()
       function to figure out the current directory.
-    • when the Terraform code grows significantly enough, it must be organised into folders. 
-      Terraform has no way of running a global plan or apply command across all those folders. 
-      Terragrunt has a plan-all and apply-all to make it easier to run the Terraform code across 
-      all folders.
+    • when the Terraform code grows significantly 
+      enough, it must be organised into folders. 
+      Terraform has no way of running a global 
+      plan or apply command across all those folders. 
+      Terragrunt has a plan-all and apply-all 
+      to make it easier to run the Terraform code 
+      across all folders.
  </pre>

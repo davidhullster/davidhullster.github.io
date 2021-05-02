@@ -18,13 +18,13 @@ meta:
   _publicize_job_id: '55191812593'
   _oembed_3d72ede95a24fba1156b40fa0984fd18: "{{unknown}}"
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2021/02/24/kubernetes-delete-all-running-pods/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><code>kubectl delete pods -n development `kubectl get pods -n development | grep Running | awk '{print $1}'</code>`</p>
-<p><!-- /wp:paragraph --></p>
+

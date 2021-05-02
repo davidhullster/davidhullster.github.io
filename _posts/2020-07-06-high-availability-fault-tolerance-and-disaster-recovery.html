@@ -13,17 +13,17 @@ meta:
   _publicize_job_id: '46236056302'
   timeline_notification: '1594000848'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><strong>AWS Solution to migrate data from relational database to DynamoDB</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>use Amazon DMS to migrate data to a DynamoDB table</li>
 <li>create a task in an object mapping rule to copy needed relational DB tables to DynamoDB</li>
@@ -34,11 +34,11 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Amazon Aurora Read Replica Errors</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>a configuration change was made, now the following errors occur:
 <ul>
@@ -48,11 +48,11 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </li>
 <li>Resolution: ensure max_allowed_packet parameter on the Read Replica is set to the same value as it is on the Source DB</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Connect AWS SSO to Microsoft ActiveDirectory</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Connect AWS SSO to Microsoft ActiveDirectory</li>
 <li>AWS SSO with ActiveDirectory allows both types of user credentials:
@@ -63,11 +63,11 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </li>
 <li>You can't use UPN if you have two-step verification plus Content-Aware verification</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>AWS Organizations and AWS Managed Microsoft AD</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>AWS Organizations and AWS Managed Microsoft AD must be in the same region and in the same account</li>
 <li>Implement AWS Organizations with 'All Features' enabled
@@ -78,32 +78,32 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 <li>Ensure the number of SSO Permission Sets are less than 500</li>
 <li>Ensure the number of Microsoft AD Groups is less than 1500</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Amazon DynamoDB Global Tables</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Global Tables create a multi-master and multi-region data store</li>
 <li>DynamoDB Streams will propogate changes between the replicas</li>
 <li>enables multi-region replication</li>
 <li>enables multi-master writes</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Canary Deployments Rout53 Configuration</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Install new app in new Auto Scaling Group</li>
 <li>Use 'Weighted Routing' policy in Route53</li>
 <li>use 5%, 50% 100% traffic to new ASG if tests are successful</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>CloudFormation UpdateReplacePolicy</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>use on resources that are important not to replace
 <ul>
@@ -112,11 +112,11 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </li>
 <li>set UpdateReplacePolicy to Retain</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>CloudFormation Change Set</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>CloudFormation Change Sets allow previewing the effects of a change
 <ul>
@@ -124,20 +124,20 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>IPv6 with ALB's and NLB's</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>currently, only Application Load Balancers support IPv6</li>
 <li>currently, NLB's do not support IPv6</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Troubleshoot DynamoDB Latency</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Implement DAX cluster to cache common queries
 <ul>
@@ -151,14 +151,14 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </li>
 <li>Use AWS SDK in development to make AWS X-Ray tracing available</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>AWS DirectConnect limits data traversing the Internet</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>provision an AWS DirectConnect connection to your local router in your datacenter</li>
 <li>connect the DirectConnect connection to your VPC</li>
 <li>push backups via DirectConnect</li>
 </ul>
-<p><!-- /wp:list --></p>
+

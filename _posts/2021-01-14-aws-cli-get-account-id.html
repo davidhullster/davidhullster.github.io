@@ -17,19 +17,19 @@ meta:
   timeline_notification: '1610635019'
   _oembed_47ac60f877b171359f076ded1bf39a2b: "{{unknown}}"
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2021/01/14/aws-cli-get-account-id/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p>To launch these stacks, I will need the AWS account ID for each account. If you don’t know the account IDs, you can get them from the AWS CLI by using the&nbsp;<code>sts get-caller-identity</code>&nbsp;command.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>#CentralAccount ID
+
+
+<pre><code>#CentralAccount ID
 aws sts get-caller-identity –profile CentralAccount ––query 'Account'
 #DevAccount ID
 aws sts get-caller-identity –profile DevAccount ––query 'Account'</code></pre>
-<p><!-- /wp:code --></p>
+

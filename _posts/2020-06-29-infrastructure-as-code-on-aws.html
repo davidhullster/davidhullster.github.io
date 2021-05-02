@@ -13,17 +13,17 @@ meta:
   _publicize_job_id: '45974775750'
   timeline_notification: '1593400505'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><strong>Introduction</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Cloud computing takes advantage of virtualization to enabled on-demand provisioning of compute, network and storage</li>
 <li>Manual processes have disadvantages:
@@ -41,11 +41,11 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Infrastructure Resource Lifecycle</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Figure: Infrastructure Resource Lifecycle
 <ol>
@@ -93,40 +93,40 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Resource Provisioning</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Organizations need a repeatable process for instantiating resources consistently</li>
 <li>Infrastructure as Code using CloudFormation provides the framework for this process</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>AWS Cloudformation</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Use templates written in YAML or JSON to describe the collection of AWS resources, their associated dependencies and required runtime parameters</li>
 <li>Templates can repeatedly create identical copies of the same stack across AWS Regions</li>
 <li>After deploying, you can modify and update them in a controlled and predictable way</li>
 <li>Effect is that you have version control for your infrastructure</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Template Anatomy</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Templates contain parameters, resource declarations and outputs</li>
 <li>Templates can reference other templates</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Figure: example of AWS CloudFormation YAML Template</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Parameters Section: Template requests the name of an EC2 Key Pair from the user</li>
 <li>Resource Section: Creates an EC2 instance using that key pair
@@ -136,9 +136,9 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:code --></p>
-<pre class="wp-block-code"><code>Parameters:
+
+
+<pre><code>Parameters:
   KeyName:
     Description: The EC2 key pair to allow SSH access to the instance
     Type: AWS::EC2::KeyPair::KeyName
@@ -158,11 +158,11 @@ Resources:
         FromPort: '80'
         ToPort: '80'
         CidrIp: 0.0.0.0/0</code></pre>
-<p><!-- /wp:code --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Change Sets</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Change Sets feature allows previewing proposed changes to a stack with actually updating the stack</li>
 <li>Control ability to create and view change sets with IAM</li>
@@ -174,4 +174,4 @@ Resources:
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
+

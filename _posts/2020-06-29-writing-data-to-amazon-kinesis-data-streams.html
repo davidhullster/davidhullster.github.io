@@ -13,14 +13,14 @@ meta:
   timeline_notification: '1593406839'
   _publicize_job_id: '45976804461'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 ---
-<p><!-- wp:list --></p>
+
 <ul>
 <li>A producer is an application that writes data to Amazon Kinesis Data Streams</li>
 <li>An Amazon Kinesis Data Streams producer is an application that puts user data records into a Kineses data stream</li>
@@ -30,11 +30,11 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Benefits of using Kinesis Data Streams</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Common use is the real-time aggregation of data, followed by loading the data into a data warehouse or map-reduce cluster</li>
 <li>Data on Kinesis data streams are ensured of durability and scalability</li>
@@ -50,11 +50,11 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Creating and Updating Data Streams</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Amazon Kinesis Data Streams ingests data, stores the data and makes it available for consumption</li>
 <li>Unit of data stored by Kinesis data streams is a <strong>data record</strong></li>
@@ -64,11 +64,11 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Data Shards</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>A shard <strong>has</strong> a sequence of data records in a stream</li>
 <li>When you <strong>create</strong> a stream, you specify the <strong>number</strong> of shards for the stream</li>
@@ -84,11 +84,11 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 <li>A <strong>producer</strong> puts data records into shards</li>
 <li>A <strong>consumer</strong> gets data records from shards</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Re-sharding Errors with Kinesis Data Streams</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>When sharding some streams, an <strong>extra shard </strong>can be left after the operation finishes</li>
 <li>If an even number of shards was requested, the number of open shards became odd</li>
@@ -104,4 +104,4 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </li>
 <li>This can normally be resolved by finding the ShardID with the next adjacent Hash Key value, and merging the small shard into that shard</li>
 </ul>
-<p><!-- /wp:list --></p>
+

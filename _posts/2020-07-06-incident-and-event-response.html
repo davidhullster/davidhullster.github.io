@@ -9,22 +9,11 @@ password: ''
 status: publish
 categories: []
 tags: []
-meta:
-  _wp_old_date: '2020-07-05'
-  _publicize_job_id: '46235607301'
-  timeline_notification: '1593999389'
-author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
-  first_name: ''
-  last_name: ''
-permalink: "/2020/07/06/incident-and-event-response/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><strong>Amazon CloudSearch vs ElasticSearch</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li><strong>CloudSearch</strong> is a <strong>managed</strong> service
 <ul>
@@ -39,20 +28,20 @@ permalink: "/2020/07/06/incident-and-event-response/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Amazon Inspector</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>automated security <strong>assessment</strong></li>
 <li><strong>network</strong> assessment check does not require agent install</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Kinesis Data Streams Performance</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li><strong>develop</strong> code using <strong>Kinesis Producer Library</strong> to put data onto the streams</li>
 <li>use a <strong>Small Producer</strong> with the Kinesis Producer Library
@@ -73,11 +62,11 @@ permalink: "/2020/07/06/incident-and-event-response/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Kinesis Stream Re-Sharding Error</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>scaled stream by increasing consumers (KCL) and <strong>re-sharding</strong> the stream</li>
 <li>after <strong>re-sharding</strong> an <strong>extra</strong> shard was produced
@@ -88,4 +77,4 @@ permalink: "/2020/07/06/incident-and-event-response/"
 <li>resolve by <strong>merging</strong> small shard with <strong>adjacent</strong> shard</li>
 <li>the difference between <strong>StartingHashKey</strong> and <strong>EndingHashKey</strong> is normally large</li>
 </ul>
-<p><!-- /wp:list --></p>
+

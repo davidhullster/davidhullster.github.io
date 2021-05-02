@@ -17,16 +17,16 @@ meta:
   timeline_notification: '1614122491'
   _publicize_job_id: '55183843388'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><a href="https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/">https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/</a></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><code>for i in clients inventory renting resource; </code><br />  <code>do echo ${i}-api; </code><br />    <code>aws cloudformation create-stack </code><br />        <code>--stack-name development-iam-policy-${i}-api </code><br /><code>    --template-body file://${i}-api/infra/cloudformation/iam-policy.json </code><br />        <code>--parameters ParameterKey=Namespace,ParameterValue=development </code><br />        <code>--capabilities CAPABILITY_NAMED_IAM; </code><br />    <code>echo =====; done</code></p>
-<p><!-- /wp:paragraph --></p>
+

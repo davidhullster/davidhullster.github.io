@@ -16,32 +16,32 @@ meta:
   timeline_notification: '1606850798'
   _publicize_job_id: '51714083586'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2020/12/01/powershell-string-check-for-null-or-empty/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p>if([string]::IsNullOrEmpty($VERSION)){</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;"No&nbsp;NSM&nbsp;Version&nbsp;Found"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$installType&nbsp;=&nbsp;'new&nbsp;install'</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p>}</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
+
+
 <p>$VERSION -notmatch "\S"</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:syntaxhighlighter/code --></p>
-<pre class="wp-block-syntaxhighlighter-code">&gt; $null  -notmatch "\S"
+
+
+<pre>&gt; $null  -notmatch "\S"
 True
 &gt; "   "  -notmatch "\S"
 True
 &gt; " x "  -notmatch "\S"
 False</pre>
-<p><!-- /wp:syntaxhighlighter/code --></p>
+

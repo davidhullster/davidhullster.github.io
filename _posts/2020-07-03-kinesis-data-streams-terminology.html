@@ -13,17 +13,17 @@ meta:
   _publicize_job_id: '46131132084'
   timeline_notification: '1593745372'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><strong>Kinesis Data Stream</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>A Kinesis data stream is set of shards. Each shard is a sequence of data records.
 <ul>
@@ -31,11 +31,11 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Data Record</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>A data record is the unit of data stored in a Kinesis data stream. Data records are composed of a sequence number, a partition key, and a data blob.
 <ul>
@@ -45,11 +45,11 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Retention Period</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>the retention period is the length of time that data records are accessible after they are added to the stream.</li>
 <li>A streams retention period is set to a default of 24 hours after creation</li>
@@ -60,36 +60,36 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Producer</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Producers put records into Amazon Kinesis Data Streams. For example, a web server sending log data to a stream is a producer.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Consumer</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Consumers get records from Amazon Kinesis Data Streams and process them</li>
 <li>These consumers are known as Amazon Kinesis Data Streams Applications.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Amazon Kinesis Data Streams Application</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>An Amazon Kinesis Data Streams application is a consumer of a stream that commonly runs on a fleet of EC2 instances.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Shard</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>A shard is a uniquely identified sequence of data records in a stream.</li>
 <li>A stream is composed of one or more shards</li>
@@ -98,31 +98,31 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 <li>The total capacity of the stream is the sum of the capacity of its shards.</li>
 <li>If you data rate increases, you can increase or decrease the number of shards allocated to your stream</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Partition Key</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>A partition key is used to group data by shard within a stream.</li>
 <li>Kinesis data streams segregates the data records belonging to a stream into multiple shards.</li>
 <li>It uses the partition key that is associated with each data record to determine which shard a given data record belongs to.</li>
 <li>When an application puts data into a stream, it must specify a partition key.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Sequence Number</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Each data record has a sequence number that is unique per partition-key within its shard</li>
 <li>Kinesis Data Streams assigns the sequence number after you write to the stream with <code>client.putRecords or client.putRecord</code>. Sequence numbers for the same partition key generally increase over time. The longer the time period between requests, the larger the sequence numbers become.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Kinesis Client Library</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>The Kinesis Client Library is compiled into your application to enable fault-tolerant consumption of data from the stream.</li>
 <li>The Kinesis Client Library ensures that every shard has a record processor running and processing that shard.</li>
@@ -130,23 +130,23 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 <li>The Kinesis Client Library uses an Amazon DynamoDB table to store control data.</li>
 <li>It creates one table per application that is processing data.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Application Name</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>The name of the Amazon Kinesis Data Streams application identifies the application.</li>
 <li>Each of your applications must have a unique name that is scoped to the AWS account and Region used by the application</li>
 <li>This name is used as a name for the control table in Amazon DynamoDB and the namespace for Amazon CloudWatch metrics.</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Server Side Encryption</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Amazon Kinesis Data Streams can automatically encrypt sensitive data as a producer enters it into the stream</li>
 <li>Kinesis Data Streams uses AWS KMS master keys for encryption</li>
 </ul>
-<p><!-- /wp:list --></p>
+

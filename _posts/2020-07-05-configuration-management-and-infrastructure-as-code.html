@@ -13,17 +13,17 @@ meta:
   timeline_notification: '1593958550'
   _publicize_job_id: '46219159643'
 author:
-  login: thatsd
-  email: davidhullster@gmail.com
-  display_name: davidhullster
+  
+  
+  
   first_name: ''
   last_name: ''
 permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><strong>CloudFormation Template Errors</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Invalid Value or Unsupported Resource Property
 <ul>
@@ -39,11 +39,11 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ol>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Stack Fails to Roll Back</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>most often happens when deployment account has permission to create stacks
 <ul>
@@ -51,11 +51,11 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>EC2 Auto Scaling</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>add <strong>hooks</strong> to launching and terminating stages of instance <strong>lifecycle</strong>
 <ul>
@@ -64,20 +64,20 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Elastic Network Interface (ENI)</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>EC2 AutoScaling does not allow specifying a <strong>second</strong> ENI in the Launch Configuration</li>
 <li>aws:createENI is <strong>not</strong> a valid SSM automation document action</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>CloudFormation</strong> <strong>Resource Replacement</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>RDS DB port changed
 <ul>
@@ -90,20 +90,20 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>CloudFormation DependsOn Resource</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>ensure first stack sends <strong>completion</strong> signal before starting second stack</li>
 <li>add <strong>CreationPolicy</strong> with long <strong>timeout</strong> so first stack doesn't time out</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Create Thumbnail Images from Full-Size Images in S3</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>upload <strong>full-size</strong> image to S3</li>
 <li><strong>automate</strong> creating thumbnail images
@@ -113,11 +113,11 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Fargate Configuration Errors</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li><strong>Invalid CPU Setting</strong></li>
 <li><strong>Invalid Memory Setting</strong>
@@ -132,29 +132,29 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Lambda Throttling</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>Lamdba Throttle option used to troubleshoot Lambda function endless loops</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Step Function Best Practices</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list {"ordered":true} --></p>
+
+
 <ol>
 <li>Avoid latency when polling for Activity Tasks</li>
 <li>Use ARN's instead of passing large payloads</li>
 <li>Avoid Reaching History Limit (writing/saving too much history)</li>
 </ol>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>OpsWorks</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>allows creating applications with pre-built <strong>layer</strong> templates
 <ul>
@@ -164,28 +164,28 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 <li>allows using Chef-Solo recipes</li>
 <li>allows multiple access levels: i.e. <strong>deploy</strong> permission and <strong>manage</strong> permissions</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>EC2 Spread Placement</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>distribute EC2 instances across different AZ's</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Elastic Beanstalk</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>rolling deployment</li>
 <li>roll back with <strong>manual</strong> deployment</li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><strong>Step Functions</strong></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
+
+
 <ul>
 <li>error scenarios and retry strategies
 <ul>
@@ -213,6 +213,6 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 </ul>
-<p><!-- /wp:list --></p>
-<p><!-- wp:paragraph --></p>
-<p><!-- /wp:paragraph --></p>
+
+
+

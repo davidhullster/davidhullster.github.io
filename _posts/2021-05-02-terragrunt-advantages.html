@@ -5,15 +5,22 @@ layout: posts
 <pre>
   Terraform weaknesses that can be helped with Terragrunt:
 
-    • the lack of Terraform module dependencies: it is not possible to dependency chain two modules 
-      in Terraform because it’s simply not supported. Terragrunt solves this by implementing the 
-      _dependencies_ statement that allows other modules to be executed first.
-    • no retries on known errors: some Terraform errors will go away just by rerunning the apply 
-      command
-    • no possibility to deploy the same version of a Terraform module across all our environments: 
-      let’s say we want to make a change to our VPC Terraform module. Ideally, that change should be 
-      deployed as an artifact, tagged with a proper version and distributed to all environments. 
-      Terragrunt solves this by sourcing a particular branch/tag for its deployment.
+    • the lack of Terraform module dependencies: 
+      it is not possible to dependency chain two modules 
+      in Terraform because it’s simply not supported. 
+      Terragrunt solves this by implementing the 
+      _dependencies_ statement that allows other 
+      modules to be executed first.
+    • no retries on known errors: some Terraform errors 
+      will go away just by rerunning the apply command
+    • no possibility to deploy the same version of a 
+      Terraform module across all our environments: 
+      let’s say we want to make a change to our VPC 
+      Terraform module. Ideally, that change should be 
+      deployed as an artifact, tagged with a proper 
+      version and distributed to all environments. 
+      Terragrunt solves this by sourcing a particular 
+      branch/tag for its deployment.
     • no possibility of keeping the Terraform backend 
       configuration DRY across all our environments 
       (S3 state bucket, region, DynamoDB table etc): 

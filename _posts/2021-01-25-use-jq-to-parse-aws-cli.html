@@ -5,19 +5,19 @@ categories:
 - aws
 - jq
 ---
-<p><!-- wp:paragraph --></p>
+
 <p><code>## outputs JSON</code><br /><code>aws ec2 describe-instances --region us-east-2 |jq "[<br />.Reservations | .[] | .Instances | .[] |<br />{instanceId: .InstanceId, launchTime: .LaunchTime,<br />state: .State, stateReason: .StateReason}<br />]"</code></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><code>aws ec2 describe-instances --region us-east-2 | jq "[.Reservations | .[] | .Instances | .[] | {instanceId: .InstanceId, launchTime: .LaunchTime, state: .State, stateReason: .StateReason}]"</code></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><code>aws ec2 describe-instances --region us-east-2 | select(.State.Name == \"running\")" | jq "[ .Reservations | .[] | .Instances | .[] | {instanceId: .InstanceId, launchTime: .LaunchTime, state: .State, stateReason: .StateReason} ]"</code></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><code>aws ec2 describe-vpcs | jq "[.Vpcs | .[] | .CidrBlock ]"</code></p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+
+
 <p><code>aws ec2 describe-subnets | jq '[.Subnets|.[]|{Subnet:.SubnetId,AZ:.AvailabilityZone}]'</code></p>
-<p><!-- /wp:paragraph --></p>
+
 <p>aws ec2 describe-instances --profile exp-dev --region us-east-1 | jq -c '.Reservations | .[] | .Instances | .[] | select (.ImageId == ${AMIID}) | .InstanceId,.PrivateIpAddress'</p>

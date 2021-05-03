@@ -3,7 +3,15 @@ layout: default
 sidebar:
   nav: "links"
 ---
-{{ content }}
+<!-- {{ content }} -->
+<script src="https://utteranc.es/client.js"
+    repo="davidhullster"
+    issue-term="pathname"
+    label="Comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
 <ul class="myposts">
 {% for post in site.posts %}
     <li><a href="{{ post.url }}">{{ post.title}}</a>

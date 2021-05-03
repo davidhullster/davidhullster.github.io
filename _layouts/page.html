@@ -4,14 +4,6 @@ sidebar:
   nav: "links"
 ---
 <!-- {{ content }} -->
-
-<ul class="myposts">
-{% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title}}</a>
-    <span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span>
-    </li>
-{% endfor %}
-</ul>
 <script src="https://utteranc.es/client.js"
         repo="davidhullster/davidhullster.github.io"
         issue-term="pathname"
@@ -19,3 +11,10 @@ sidebar:
         crossorigin="anonymous"
         async>
 </script>
+<ul class="myposts">
+{% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title}}</a>
+    <span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </li>
+{% endfor %}
+</ul>

@@ -3,13 +3,18 @@ layout: default
 sidebar:
   nav: "links"
 ---
-
-{{ content }}
-<script src="https://utteranc.es/client.js"
+<html>
+  <head>
+    <script src="https://utteranc.es/client.js"
         repo="davidhullster"
         issue-term="pathname"
         label="Comment"
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script>
+    </script>
+  </head>
+<body>
+{{ content }}
+</body>
+</html>

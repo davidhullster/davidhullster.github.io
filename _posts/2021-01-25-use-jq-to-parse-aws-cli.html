@@ -21,3 +21,6 @@ categories:
 <p><code>aws ec2 describe-subnets | jq '[.Subnets|.[]|{Subnet:.SubnetId,AZ:.AvailabilityZone}]'</code></p>
 
 <p>aws ec2 describe-instances --profile exp-dev --region us-east-1 | jq -c '.Reservations | .[] | .Instances | .[] | select (.ImageId == ${AMIID}) | .InstanceId,.PrivateIpAddress'</p>
+
+<h4>ConfigService get rule names that contain a string</h4>
+<p>aws configservice describe-config-rules --profile exp-dev --region us-east-1 | jq -c '.ConfigRules| .[] | select(.ConfigRuleName | test("AWSControlTower") | not) | .ConfigRuleName'</p>

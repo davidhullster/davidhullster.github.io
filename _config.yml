@@ -20,18 +20,35 @@
 
 title: Scratches
 email: davidhullster
+header-img: img/home.jpeg
 description: >- # this means to ignore newlines until "baseurl:"
   Tips worth saving
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  davidhullster
 
 
 # Build settings
-theme: jekyll-theme-minimal
+remote_theme: huxpro/huxpro.github.io
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+paginate: 10
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -71,3 +88,8 @@ defaults:
     values:
       sidebar:
         nav: "links"
+
+# Sidebar settings
+sidebar: true   # default true
+sidebar-about-description: "Sell me this pen..."
+sidebar-avatar: /img/building-skyshot.jpeg     # use absolute URL.

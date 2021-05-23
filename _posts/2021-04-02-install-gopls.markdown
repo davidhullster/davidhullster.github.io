@@ -19,14 +19,15 @@ author:
 permalink: "/2021/04/02/install-gopls/"
 ---
 
-<p>Solves an issue where gopls hung in vim on Ubuntu and CentOS</p>
+Solves an issue where gopls hung in vim on Ubuntu and CentOS
 
 
-<p><code>Vim hung with this a bottom of vim window: <br />   vim-go: initializing gopls</code></p>
+Vim hung with this a bottom of vim window:    
+<pre>vim-go: initializing gopls</pre>
 
 
-<p>ensure you're running the the latest go version, this worked for me on go1.16.3</p>
+ensure you're running the the latest go version, this worked for me on go1.16.3
 
 
-<p><code>go get golang.org/x/tools/gopls@latest</code></p>
+<pre>go get golang.org/x/tools/gopls@latest</pre>
 

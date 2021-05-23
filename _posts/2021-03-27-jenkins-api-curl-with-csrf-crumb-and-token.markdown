@@ -59,4 +59,3 @@ permalink: "/2021/03/27/jenkins-api-curl-with-csrf-crumb-and-token/"
 
 <p><code>curl -s -X POST 'http://JenkinsAdmin:12345efe5700dd9a3334f8581885d498a0@34.221.166.10:9090/job/backend/job/tomcat/createItem?name=copyfour' --data-binary @jobconfig.xml -H "$CRUMB" -H "Content-Type:text/xml"</code></p>
 
-</div>

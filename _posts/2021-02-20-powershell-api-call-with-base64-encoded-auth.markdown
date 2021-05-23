@@ -19,9 +19,8 @@ author:
   'Scratches'
 permalink: "/2021/02/20/powershell-api-call-with-base64-encoded-auth/"
 ---
-<p></p>
-# Ignore Certificate Issues
-add-type @"
+<pre># Ignore Certificate Issues
+>add-type @"
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     public class TrustAllCertsPolicy : ICertificatePolicy {
@@ -110,5 +109,5 @@ $domainInfo = apiCall $apiToken $method $url $requestUri
 
 # If only one domain
 $domainInfo.DomainDescriptor.id
-
+</pre>
 

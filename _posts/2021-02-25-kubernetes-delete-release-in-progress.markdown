@@ -5,11 +5,13 @@ title: 'Kubernetes: UPGRADE FAILED: another operation (install/upgrade/rollback)
   in progress'
 ---
 
-<p># troubleshoot error: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress (the release that was in progress didn't show when I ran helm ls -n &lt;namespace&gt;)
+# troubleshoot error: 
+<pre>UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress</pre>
+ (the release that was in progress didn't show when I ran helm ls -n &lt;namespace&gt;)
 
-helm delete &lt;release that's in progress&gt; -n &lt;namespace&gt;
+<pre>helm delete &lt;release that's in progress&gt; -n &lt;namespace&gt;</pre>
 
 example:
-&gt;&gt;helm delete inventory-api-development -n development
-release "inventory-api-development" uninstalled
+<pre>&gt;&gt;helm delete inventory-api-development -n development
+release "inventory-api-development" uninstalled</pre>
 

@@ -92,4 +92,4 @@ defaults:
 # Sidebar settings
 sidebar: true   # default true
 sidebar-about-description: "Sell me this pen..."
-sidebar-avatar: /img/building-skyshot.jpeg     # use absolute URL.
+sidebar-avatar: /img/about-bg-typewriter.jpeg     # use absolute URL.

@@ -1,5 +1,6 @@
 ---
 layout: posts
+header-img: "img/post-bg-2015a.jpeg"
 title: Kinesis Data Streams Terminology
 date: 2020-07-03 03:02:49.000000000 -07:00
 type: post
@@ -13,11 +14,7 @@ meta:
   _publicize_job_id: '46131132084'
   timeline_notification: '1593745372'
 author:
-  
-  
-  
-  first_name: ''
-  last_name: ''
+  'Scratches'
 permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 ---
 
@@ -25,7 +22,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 
 
 <ul>
-<li>A Kinesis data stream is set of shards. Each shard is a sequence of data records.
+<li>A Kinesis data stream is set of shards. <br>Each shard is a sequence of data records.
 <ul>
 <li>each data record in a shard has a sequence number, assigned by Kinesis Streams.</li>
 </ul>
@@ -37,7 +34,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 
 
 <ul>
-<li>A data record is the unit of data stored in a Kinesis data stream. Data records are composed of a sequence number, a partition key, and a data blob.
+<li>A data record is the unit of data stored in a Kinesis data stream. <br>Data records are composed of a sequence number, a partition key, and a data blob.
 <ul>
 <li>a data blob is an immutable sequence of bytes</li>
 <li>Kinesis Data Streams does not inspect, interpret or change the data in the blob in any way</li>
@@ -66,7 +63,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 
 
 <ul>
-<li>Producers put records into Amazon Kinesis Data Streams. For example, a web server sending log data to a stream is a producer.</li>
+<li>Producers put records into Amazon Kinesis Data Streams. <br>For example, a web server sending log data to a stream is a producer.</li>
 </ul>
 
 
@@ -116,7 +113,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 
 <ul>
 <li>Each data record has a sequence number that is unique per partition-key within its shard</li>
-<li>Kinesis Data Streams assigns the sequence number after you write to the stream with <code>client.putRecords or client.putRecord</code>. Sequence numbers for the same partition key generally increase over time. The longer the time period between requests, the larger the sequence numbers become.</li>
+<li>Kinesis Data Streams assigns the sequence number after you write to the stream with <code>client.putRecords or client.putRecord</code>. <br>Sequence numbers for the same partition key generally increase over time. <br>The longer the time period between requests, the larger the sequence numbers become.</li>
 </ul>
 
 

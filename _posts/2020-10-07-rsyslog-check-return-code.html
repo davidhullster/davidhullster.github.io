@@ -1,5 +1,6 @@
 ---
 layout: posts
+header-img: "img/post-bg-2015a.jpeg"
 title: rsyslog check return code
 date: 2020-10-07 03:18:06.000000000 -07:00
 type: post
@@ -20,15 +21,11 @@ meta:
   _publicize_job_id: '49645203310'
   _last_editor_used_jetpack: block-editor
 author:
-  
-  
-  
-  first_name: ''
-  last_name: ''
+  'Scratches'
 permalink: "/2020/10/07/rsyslog-check-return-code/"
 ---
 <p></p>
-<pre>#!/bin/bash
+#!/bin/bash
 
 rsyslogd -N1
 
@@ -41,5 +38,5 @@ else
 	echo rsyslogd failed with return code: "$retCode"
         exit 1
 fi
-echo "rsyslogd check completed"</pre>
+echo "rsyslogd check completed"
 

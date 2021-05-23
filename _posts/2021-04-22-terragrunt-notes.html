@@ -1,9 +1,10 @@
 ---
 layout: posts
+header-img: "img/post-bg-2015a.jpeg"
 ---
 <p>you can define your backend configuration just once in the root terragrunt.hcl file</p>
     <p># stage/terragrunt.hcl</p>
-<pre>remote_state {
+remote_state {
   backend = "s3"
   generate = {
     path      = "backend.tf"
@@ -18,9 +19,9 @@ layout: posts
     dynamodb_table = "my-lock-table"
   }
 }
-</pre>
+
 <p>The <b>generate</b> attribute is used to inform Terragrunt to generate the <br>
-    Terraform code for configuring the backend. <br>
+    Terraform code for configuring the backend. <br><br>
     When you run any Terragrunt command, Terragrunt <br>
     will generate a <i>backend.tf</i> file with the contents <br>
     set to the terraform block that configures the s3 backend, <br>
@@ -31,8 +32,8 @@ layout: posts
     
     # stage/mysql/terragrunt.hcl
 </p>
-<pre>
+
     include {
       path = find_in_parent_folders()
     }
-</pre>
+

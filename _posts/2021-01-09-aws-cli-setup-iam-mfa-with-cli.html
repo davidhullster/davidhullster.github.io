@@ -1,5 +1,6 @@
 ---
 layout: posts
+header-img: "img/post-bg-2015a.jpeg"
 title: AWS CLI - setup iam mfa with cli
 date: 2021-01-09 16:05:33.000000000 -08:00
 type: post
@@ -19,19 +20,15 @@ meta:
   timeline_notification: '1610208338'
   _publicize_job_id: '53221318804'
 author:
-  
-  
-  
-  first_name: ''
-  last_name: ''
+  'Scratches'
 permalink: "/2021/01/09/aws-cli-setup-iam-mfa-with-cli/"
 ---
 
-<pre >aws iam create-virtual-mfa-device --virtual-mfa-device-name {username} outfile /home/{username}/QRCode.png --bootstrap-method QRCodePNG
+aws iam create-virtual-mfa-device --virtual-mfa-device-name {username} outfile /home/{username}/QRCode.png --bootstrap-method QRCodePNG
 
 aws iam enable-mfa-device --user-name {username} --serial-number arn:aws:iam::{useridnumber}:mfa/{username} --authentication-code-1 {code1} --authentication-code-2 {code2}
 
-QRCode.png can be copied to S3 to setup virtual MFA device like Google Authenticator</pre>
+QRCode.png can be copied to S3 to setup virtual MFA device like Google Authenticator
 
 
 

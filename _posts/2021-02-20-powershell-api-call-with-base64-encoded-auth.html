@@ -1,5 +1,6 @@
 ---
 layout: posts
+header-img: "img/post-bg-2015a.jpeg"
 title: Powershell API Call with base64 encoded auth
 date: 2021-02-20 00:05:53.000000000 -08:00
 type: post
@@ -15,15 +16,11 @@ meta:
   _publicize_job_id: '55022020408'
   timeline_notification: '1613779555'
 author:
-  
-  
-  
-  first_name: ''
-  last_name: ''
+  'Scratches'
 permalink: "/2021/02/20/powershell-api-call-with-base64-encoded-auth/"
 ---
 <p></p>
-<pre># Ignore Certificate Issues
+# Ignore Certificate Issues
 add-type @"
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
@@ -113,5 +110,5 @@ $domainInfo = apiCall $apiToken $method $url $requestUri
 
 # If only one domain
 $domainInfo.DomainDescriptor.id
-</pre>
+
 

@@ -1,5 +1,6 @@
 ---
 layout: posts
+header-img: "img/post-bg-2015a.jpeg"
 title: Infrastructure as Code on AWS
 date: 2020-06-29 03:15:01.000000000 -07:00
 type: post
@@ -13,11 +14,7 @@ meta:
   _publicize_job_id: '45974775750'
   timeline_notification: '1593400505'
 author:
-  
-  
-  
-  first_name: ''
-  last_name: ''
+  'Scratches'
 permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 ---
 
@@ -138,7 +135,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<pre><code>Parameters:
+<p>Parameters:
   KeyName:
     Description: The EC2 key pair to allow SSH access to the instance
     Type: AWS::EC2::KeyPair::KeyName
@@ -157,7 +154,7 @@ Resources:
       - IpProtocol: tcp
         FromPort: '80'
         ToPort: '80'
-        CidrIp: 0.0.0.0/0</code></pre>
+        CidrIp: 0.0.0.0/0
 
 
 <p><strong>Change Sets</strong></p>

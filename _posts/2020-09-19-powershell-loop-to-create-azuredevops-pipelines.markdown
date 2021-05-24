@@ -21,9 +21,17 @@ author:
   'Scratches'
 permalink: "/2020/09/19/powershell-loop-to-create-azuredevops-pipelines/"
 ---
-
+<pre>
 $pipeline_names = $("pipeline1", "pipeline2")$environment_name = 'test_environment'$branch = 'master'
+</pre>
 
-
-cd C:\\repo\directoryforeach ($pipeline in $pipeline_names) { az pipelines create --name ${pipeline}-deployment --description "Deploy ${pipeline} into ${environment_name}" --repository ${repo_name} --repository-type tfsgit --branch ${branch} --yml-path ${pipeline}\${environment_name}\pipeline.yaml }
-
+<pre>
+cd C:\\repo\directory
+foreach ($pipeline in $pipeline_names) { 
+  az pipelines create --name ${pipeline}-deployment 
+    --description "Deploy ${pipeline} into ${environment_name}" 
+    --repository ${repo_name} 
+    --repository-type tfsgit 
+    --branch ${branch} 
+    --yml-path ${pipeline}\${environment_name}\pipeline.yaml }
+</pre>

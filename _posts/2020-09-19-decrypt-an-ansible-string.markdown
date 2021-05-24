@@ -20,6 +20,6 @@ permalink: "/2020/09/19/decrypt-an-ansible-string/"
 
 This will prompt for vault password
 
-
+<pre>
 ansible-vault decrypt oo-encrypted.txt --output=/dev/stderr &gt; /dev/null
-
+</pre>

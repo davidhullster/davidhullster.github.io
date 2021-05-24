@@ -15,8 +15,10 @@ meta:
   _publicize_job_id: '49001427581'
 author:
   'Scratches'
-permalink: "/2020/09/19/ansible-encrypt-strin/"
+permalink: "/2020/09/19/ansible-encrypt-string/"
 ---
 
+### Encrypt string for use in ansible vault
+<pre>
 echo -n ${pwdstring} | ansible-vault encrypt_string --vault-password-file ${pwdFile} --stdin-name ApplicationPassword
-
+</pre>

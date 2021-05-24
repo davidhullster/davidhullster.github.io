@@ -17,6 +17,10 @@ author:
   'Scratches'
 permalink: "/2020/09/19/ansible-install-on-ubuntu/"
 ---
-
-sudo apt updatesudo apt install software-properties-commonsudo apt-add-repository --yes --update ppa:ansible/ansiblesudo apt install ansible
-
+#### Add ppa repo for ansible install on ubuntu
+<pre>
+sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+</pre>

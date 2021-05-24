@@ -12,6 +12,8 @@ categories:
 - Tech
 tags:
 - Python
+- mail server
+- DebuggingServer
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '54879448395'
@@ -21,5 +23,5 @@ author:
 permalink: "/2021/02/17/mock-mail-server-in-python-that-writes-to-stdout/"
 ---
 
-python -m smtpd -n -c DebuggingServer localhost:8025
+<pre>python -m smtpd -n -c DebuggingServer localhost:8025</pre>
 

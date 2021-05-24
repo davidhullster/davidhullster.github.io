@@ -18,17 +18,33 @@ author:
   'Scratches'
 permalink: "/2021/01/05/create-launch-template-in-aws-cli/"
 ---
-
-<p>aws ec2 create-launch-template --launch-template-name <code>my-template-for-auto-scaling</code> --version-description <code>version1</code> \ --launch-template-data file://config.json</p>
-
-
-<p><em>config.json</em></p>
-
-
-<p>{ "ImageId":"<code>ami-04d5cc9b88example</code>", "InstanceType":"<code>t2.micro</code>", "SecurityGroupIds":["<code>sg-903004f88example</code>"] }</p>
+<pre>
+aws ec2 create-launch-template 
+  --launch-template-name my-template-for-auto-scaling 
+  --version-description version1
+  --launch-template-data file://config.json
+</pre>
 
 
+<em>config.json</em>
+
+<pre>
+{ 
+  "ImageId":"ami-04d5cc9b88example", 
+  "InstanceType":"t2.micro", 
+  "SecurityGroupIds":["sg-903004f88example"] 
+}
+</pre>
 
 
-<p>aws ec2 create-launch-template --launch-template-name my-template-for-auto-scaling --version-description version1 \<br />--launch-template-data '{"ImageId":"ami-04d5cc9b88example","InstanceType":"t2.micro","SecurityGroupIds":["sg-903004f88example"]}'</p>
-
+<pre>
+aws ec2 create-launch-template 
+  --launch-template-name my-template-for-auto-scaling 
+  --version-description version1 
+  --launch-template-data 
+    '{
+      "ImageId":"ami-04d5cc9b88example",
+      "InstanceType":"t2.micro",
+      "SecurityGroupIds":["sg-903004f88example"]
+      }'
+</pre>

@@ -28,17 +28,13 @@ author:
   'Scratches'
 permalink: "/2020/10/29/windows-create-secure-creds/"
 ---
+#### In a secure Windows environment, create a SecureString to authenticate between Windows computers
+<pre>
+$adminName = 'admin-username'
 
-<p>$adminName = 'admin-username'</p>
+$pw = 'St00p1dP@ssw0rd'
 
+$pwSecure = $pw | ConvertTo-SecureString -AsPlainText -Force
 
-<p>$pw = 'St00p1dP@ssw0rd'</p>
-
-
-<p>$pwSecure = $pw | ConvertTo-SecureString -AsPlainText -Force</p>
-
-
-<p>$cred = New-Object pscredential ($adminName, $pwSecure)</p>
-
-
-
+$cred = New-Object pscredential ($adminName, $pwSecure)
+</pre>

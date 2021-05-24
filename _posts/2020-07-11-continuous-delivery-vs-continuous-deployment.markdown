@@ -34,7 +34,7 @@ permalink: "/2020/07/11/continuous-delivery-vs-continuous-deployment/"
 </ul>
 
 
-<p><strong>Rolling Out a Change to Production</strong></p>
+<strong>Rolling Out a Change to Production</strong>
 
 
 <ul>
@@ -55,7 +55,7 @@ permalink: "/2020/07/11/continuous-delivery-vs-continuous-deployment/"
 </ul>
 
 
-<p><strong>Benefits of Continuous Delivery</strong></p>
+<strong>Benefits of Continuous Delivery</strong>
 
 
 <ul>
@@ -66,7 +66,7 @@ permalink: "/2020/07/11/continuous-delivery-vs-continuous-deployment/"
 </ul>
 
 
-<p><strong>Automate the Software Release Process</strong></p>
+<strong>Automate the Software Release Process</strong>
 
 
 <ul>
@@ -85,7 +85,7 @@ permalink: "/2020/07/11/continuous-delivery-vs-continuous-deployment/"
 </ul>
 
 
-<p><strong>Improve Developer Productivity</strong></p>
+<strong>Improve Developer Productivity</strong>
 
 
 <ul>
@@ -101,7 +101,7 @@ permalink: "/2020/07/11/continuous-delivery-vs-continuous-deployment/"
 </ul>
 
 
-<p><strong>Improve Code Quality</strong></p>
+<strong>Improve Code Quality</strong>
 
 
 <ul>
@@ -117,7 +117,7 @@ permalink: "/2020/07/11/continuous-delivery-vs-continuous-deployment/"
 </ul>
 
 
-<p><strong>Deliver Updates Faster</strong></p>
+<strong>Deliver Updates Faster</strong>
 
 
 <ul>

@@ -9,7 +9,7 @@ published: true
 password: ''
 status: publish
 categories: []
-tags: []
+tags: ['aws', 'cloudwatch', 'collectd', 'Amazon Linux2', 'amazon-linux-extras']
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1610868854'

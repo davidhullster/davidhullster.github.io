@@ -10,7 +10,10 @@ password: ''
 status: publish
 categories:
 - powershell
-tags: []
+- script
+- api automation
+- base64
+tags: ['powershell', 'script', 'api automation', 'base64']
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '55022020408'

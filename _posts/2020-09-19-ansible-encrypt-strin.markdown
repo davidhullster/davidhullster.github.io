@@ -18,5 +18,5 @@ author:
 permalink: "/2020/09/19/ansible-encrypt-strin/"
 ---
 
-<p>echo -n ${pwdstring} | ansible-vault encrypt_string --vault-password-file ${pwdFile} --stdin-name ApplicationPassword</p>
+echo -n ${pwdstring} | ansible-vault encrypt_string --vault-password-file ${pwdFile} --stdin-name ApplicationPassword
 

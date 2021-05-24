@@ -23,14 +23,39 @@ author:
 permalink: "/2020/10/05/docker-notes/"
 ---
 
-<p>Dockerfile:</p>
-<p>FROM alpine:latest<br />RUN apk upgrade<br />RUN apk add nginx<br />COPY files/default.conf /etc/nginx/conf.d/default.conf<br />RUN mkdir -p /var/www/html<br />WORKDIR /var/www/html<br />COPY --chown=nginx:nginx /files/html/ .<br />EXPOSE 80<br />CMD [ "nginx", "-g", "pid /tmp/nginx.pid; daemon off;" ]</p>
+#### Dockerfile:
+<pre>
+FROM alpine:latest
+RUN apk upgrade
+RUN apk add nginx
+COPY files/default.conf /etc/nginx/conf.d/default.conf
+RUN mkdir -p /var/www/html
+WORKDIR /var/www/html
+COPY --chown=nginx:nginx /files/html/ .
+EXPOSE 80
+CMD [ "nginx", "-g", "pid /tmp/nginx.pid; daemon off;" ]
+</pre>
+#### Docker CLI history
+<pre>
+docker run --name web -dt nginx
+docker container ls
+ls webfiles/
+cat webfiles/default.conf
+ls webfiles/html/
+docker exec web mkdir /var/www
+docker cp webfiles/default.conf web:/etc/nginx/conf.d/default/conf
+docker cp webfiles/default.conf web:/etc/nginx/conf.d/default.conf
+docker cp webfiles/html/ web:/var/www/
+docker exec web ls /var/www/html/
+docker exec web chown -R nginx:nginx /var/www/html
+docker exec web nginx -s reload
+docker inspect web | grep IPAddress
+curl 172.17.0.2
+docker commit web web-image
+docker run -dt --name web01 -p 80:80 web-image
+curl localhost
+docker stop web
+docker rm web
+</pre>
 
-
-<p><code>docker run --name web -dt nginx<br />docker container ls<br />ls<br />ls webfiles/<br />cat webfiles/default.conf<br />ls webfiles/html/<br />docker exec web mkdir /var/www<br />docker cp webfiles/default.conf web:/etc/nginx/conf.d/default/conf<br />docker cp webfiles/default.conf web:/etc/nginx/conf.d/default.conf<br />docker cp webfiles/html/ web:/var/www/<br />docker exec web ls /var/www/html/<br />docker exec web chown -R nginx:nginx /var/www/html<br />docker exec web nginx -s reload<br />docker inspect web | grep IPAddress<br />curl 172.17.0.2<br />docker commit web web-image<br />docker run -dt --name web01 -p 80:80 web-image<br />curl localhost<br />docker stop web<br />docker rm web</code></p>
-
-
-<p>docker run -d --name treatseekers -p 80:80 spacebones/doge</p>
-
-
-
+<pre>docker run -d --name treatseekers -p 80:80 spacebones/doge</pre>

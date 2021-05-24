@@ -29,7 +29,7 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 
 
-<p><strong>Benefits of using Kinesis Data Streams</strong></p>
+<strong>Benefits of using Kinesis Data Streams</strong>
 
 
 <ul>
@@ -49,7 +49,7 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 
 
-<p><strong>Creating and Updating Data Streams</strong></p>
+<strong>Creating and Updating Data Streams</strong>
 
 
 <ul>
@@ -63,7 +63,7 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 
 
-<p><strong>Data Shards</strong></p>
+<strong>Data Shards</strong>
 
 
 <ul>
@@ -83,7 +83,7 @@ permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
 </ul>
 
 
-<p><strong>Re-sharding Errors with Kinesis Data Streams</strong></p>
+<strong>Re-sharding Errors with Kinesis Data Streams</strong>
 
 
 <ul>

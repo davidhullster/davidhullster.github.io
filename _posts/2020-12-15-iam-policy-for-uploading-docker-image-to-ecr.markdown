@@ -18,6 +18,24 @@ author:
   'Scratches'
 permalink: "/2020/12/15/iam-policy-for-uploading-docker-image-to-ecr/"
 ---
-
-<p><code>{<br />"Version": "2012-10-17",<br />"Statement": [<br />{<br />"Sid": "VisualEditor0",<br />"Effect": "Allow",<br />"Action": [<br />"ecr:CreateRepository",<br />"ecr:CompleteLayerUpload",<br />"ecr:GetAuthorizationToken",<br />"ecr:UploadLayerPart",<br />"ecr:InitiateLayerUpload",<br />"ecr:BatchCheckLayerAvailability",<br />"ecr:PutImage"<br />],<br />"Resource": "*"<br />}<br />]<br />}</code></p>
-
+<pre>
+{
+  "Version": "2012-10-17","Statement": 
+    [
+      {
+        "Sid": "",
+        "Effect": "Allow","Action": 
+          [
+            "ecr:CreateRepository",
+            "ecr:CompleteLayerUpload",
+            "ecr:GetAuthorizationToken",
+            "ecr:UploadLayerPart",
+            "ecr:InitiateLayerUpload",
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:PutImage"
+          ],
+        "Resource": "*"
+      }
+    ]
+  }
+</pre>

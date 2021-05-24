@@ -18,11 +18,11 @@ author:
 permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 ---
 
-<p><strong>AWS Config</strong></p>
+<strong>AWS Config</strong>
 
 
 <ul>
-<li><strong>Error</strong>: "We are unable to complete the request at this time. <br>Please contact AWS Support."
+<li><strong>Error</strong>: "We are unable to complete the request at this time. Please contact AWS Support."
 <ul>
 <li>either AWS Config <strong>Aggregator limit </strong>has been reached
 <ul>
@@ -37,7 +37,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>Amazon States Language</strong></p>
+<strong>Amazon States Language</strong>
 
 
 <ul>
@@ -53,7 +53,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>AWS Support Plans</strong></p>
+<strong>AWS Support Plans</strong>
 
 
 <ul>
@@ -76,7 +76,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>AWS Systems Manager</strong></p>
+<strong>AWS Systems Manager</strong>
 
 
 <ul>
@@ -91,7 +91,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>Amazon Macie</strong></p>
+<strong>Amazon Macie</strong>
 
 
 <ul>
@@ -104,7 +104,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>Trusted Advisor</strong></p>
+<strong>Trusted Advisor</strong>
 
 
 <ul>
@@ -116,7 +116,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>AWS Secrets Manager</strong></p>
+<strong>AWS Secrets Manager</strong>
 
 
 <ul>
@@ -126,7 +126,7 @@ permalink: "/2020/07/05/aws-policies-and-standards-automation/"
 </ul>
 
 
-<p><strong>AWS Config</strong></p>
+<strong>AWS Config</strong>
 
 
 <ul>

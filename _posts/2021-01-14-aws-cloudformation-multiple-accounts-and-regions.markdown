@@ -11,7 +11,7 @@ status: publish
 categories:
 - aws
 - Tech
-tags: []
+tags: ['aws', 'cloudformation', 'multiple accounts', 'multiple regions']
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1610635128'
@@ -21,5 +21,5 @@ author:
 permalink: "/2021/01/14/aws-cloudformation-multiple-accounts-and-regions/"
 ---
 
-<p><a href="https://aws.amazon.com/blogs/infrastructure-and-automation/multiple-account-multiple-region-aws-cloudformation/">https://aws.amazon.com/blogs/infrastructure-and-automation/multiple-account-multiple-region-aws-cloudformation/</a></p>
+<a href="https://aws.amazon.com/blogs/infrastructure-and-automation/multiple-account-multiple-region-aws-cloudformation/">https://aws.amazon.com/blogs/infrastructure-and-automation/multiple-account-multiple-region-aws-cloudformation/</a>
 

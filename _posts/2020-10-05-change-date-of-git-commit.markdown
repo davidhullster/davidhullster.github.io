@@ -21,11 +21,13 @@ author:
 permalink: "/2020/10/05/change-date-of-git-commit/"
 ---
 
-<p>git commit --amend --no-edit --date="2018-04-09"</p>
+<pre>git commit --amend --no-edit --date="2018-04-09"</pre>
 
 
-<p>OR</p>
+OR
 
 
-<p>GIT_COMMITTER_DATE="Tues 20 Oct 1987 12:00:00 PST" git commit --amend --no-edit --date "Tues 20 Oct 1987 12:00:00 PST"</p>
+<pre>GIT_COMMITTER_DATE="Tues 20 Oct 1987 12:00:00 PST" 
+git commit --amend --no-edit --date "Tues 20 Oct 1987 12:00:00 PST"
+</pre>
 

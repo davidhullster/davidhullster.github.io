@@ -11,7 +11,7 @@ status: publish
 categories:
 - aws
 - Tech
-tags: []
+tags: ['aws', 'account number', 'get-caller-id']
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '53433774754'

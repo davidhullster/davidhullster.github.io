@@ -18,7 +18,7 @@ author:
 permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 ---
 
-<p><strong>CloudFormation Template Errors</strong></p>
+<strong>CloudFormation Template Errors</strong>
 
 
 <ul>
@@ -38,7 +38,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Stack Fails to Roll Back</strong></p>
+<strong>Stack Fails to Roll Back</strong>
 
 
 <ul>
@@ -50,7 +50,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>EC2 Auto Scaling</strong></p>
+<strong>EC2 Auto Scaling</strong>
 
 
 <ul>
@@ -63,7 +63,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Elastic Network Interface (ENI)</strong></p>
+<strong>Elastic Network Interface (ENI)</strong>
 
 
 <ul>
@@ -72,7 +72,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>CloudFormation</strong> <strong>Resource Replacement</strong></p>
+<strong>CloudFormation</strong> <strong>Resource Replacement</strong>
 
 
 <ul>
@@ -89,7 +89,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>CloudFormation DependsOn Resource</strong></p>
+<strong>CloudFormation DependsOn Resource</strong>
 
 
 <ul>
@@ -98,7 +98,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Create Thumbnail Images from Full-Size Images in S3</strong></p>
+<strong>Create Thumbnail Images from Full-Size Images in S3</strong>
 
 
 <ul>
@@ -112,7 +112,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Fargate Configuration Errors</strong></p>
+<strong>Fargate Configuration Errors</strong>
 
 
 <ul>
@@ -131,7 +131,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Lambda Throttling</strong></p>
+<strong>Lambda Throttling</strong>
 
 
 <ul>
@@ -139,7 +139,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Step Function Best Practices</strong></p>
+<strong>Step Function Best Practices</strong>
 
 
 <ol>
@@ -149,7 +149,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ol>
 
 
-<p><strong>OpsWorks</strong></p>
+<strong>OpsWorks</strong>
 
 
 <ul>
@@ -159,11 +159,11 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 </li>
 <li>allows using Chef-Solo recipes</li>
-<li>allows multiple access levels: i.e. <br><strong>deploy</strong> permission and <strong>manage</strong> permissions</li>
+<li>allows multiple access levels: i.e. <strong>deploy</strong> permission and <strong>manage</strong> permissions</li>
 </ul>
 
 
-<p><strong>EC2 Spread Placement</strong></p>
+<strong>EC2 Spread Placement</strong>
 
 
 <ul>
@@ -171,7 +171,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Elastic Beanstalk</strong></p>
+<strong>Elastic Beanstalk</strong>
 
 
 <ul>
@@ -180,7 +180,7 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Step Functions</strong></p>
+<strong>Step Functions</strong>
 
 
 <ul>
@@ -188,8 +188,8 @@ permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
 <ul>
 <li>runtime errors can occur in any stage
 <ul>
-<li>i.e. <br>Lambda function throws exception</li>
-<li>i.e. <br>Network exception, timeout</li>
+<li>i.e. Lambda function throws exception</li>
+<li>i.e. Network exception, timeout</li>
 </ul>
 </li>
 <li>Runtime errors are handled differently than Failures

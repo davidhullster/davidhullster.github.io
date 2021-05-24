@@ -20,6 +20,13 @@ author:
   'Scratches'
 permalink: "/2020/12/02/aws-userdata-log-and-start-apache-aws-linux-rhel/"
 ---
-
-<p>!/bin/bash -xe<br />exec &gt; &gt;(tee /var/log/user-data.log|logger -t user-data -s 2&gt;/dev/console) 2&gt;&amp;1<br />yum -y update<br />echo "#### USERDATA START ####"<br />sudo yum install httpd -y<br />sudo systemctl start httpd.service<br />sudo systemctl enable httpd.service</p>
-
+<pre>
+!/bin/bash -xe
+  exec &gt; &gt;(tee /var/log/user-data.log|
+      logger -t user-data -s 2&gt;/dev/console) 2&gt;&amp;1
+      yum -y update
+      echo "#### USERDATA START ####"
+      sudo yum install httpd -y
+      sudo systemctl start httpd.service
+      sudo systemctl enable httpd.service
+</pre>

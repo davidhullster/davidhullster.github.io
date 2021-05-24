@@ -18,5 +18,5 @@ author:
 permalink: "/2020/06/25/service-meshes-are-transparent/"
 ---
 
-<p>application developers don't need to modify code to make their applications function in a service mesh</p>
+application developers don't need to modify code to make their applications function in a service mesh
 

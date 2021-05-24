@@ -20,25 +20,15 @@ author:
   'Scratches'
 permalink: "/2020/12/01/powershell-string-check-for-null-or-empty/"
 ---
-
-<p>if([string]::IsNullOrEmpty($VERSION)){</p>
-
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;"No&nbsp;NSM&nbsp;Version&nbsp;Found"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$installType&nbsp;=&nbsp;'new&nbsp;install'</p>
-
-
-<p>}</p>
-
-
-
-
-<p>$VERSION -notmatch "\S"</p>
-
-
-&gt; $null  -notmatch "\S"
-True
-&gt; "   "  -notmatch "\S"
-True
-&gt; " x "  -notmatch "\S"
-False
-
+<pre>
+if([string]::IsNullOrEmpty($VERSION)){
+  Write-Host "No NSM Version Found" $installType='new install'
+}
+</pre>
+<pre>
+$VERSION 
+  -notmatch "\S" &gt; $null  
+  -notmatch "\S" True &gt; "   "  
+  -notmatch "\S" True &gt; " x "  
+  -notmatch "\S" False
+</pre>

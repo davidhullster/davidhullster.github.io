@@ -18,7 +18,7 @@ author:
 permalink: "/2020/07/05/software-development-life-cycle/"
 ---
 
-<p><strong>Using CodePipeline Build and Deploy .Net Application</strong></p>
+<strong>Using CodePipeline Build and Deploy .Net Application</strong>
 
 
 <ul>
@@ -37,7 +37,7 @@ permalink: "/2020/07/05/software-development-life-cycle/"
 </ul>
 
 
-<p><strong>AWS CodeStar Roles</strong></p>
+<strong>AWS CodeStar Roles</strong>
 
 
 <ul>
@@ -47,7 +47,7 @@ permalink: "/2020/07/05/software-development-life-cycle/"
 </ul>
 
 
-<p><strong>CodePipeline and Jenkins</strong></p>
+<strong>CodePipeline and Jenkins</strong>
 
 
 <ul>
@@ -56,7 +56,7 @@ permalink: "/2020/07/05/software-development-life-cycle/"
 </ul>
 
 
-<p><strong>CodeCommit Notifications</strong></p>
+<strong>CodeCommit Notifications</strong>
 
 
 <ul>
@@ -69,7 +69,7 @@ permalink: "/2020/07/05/software-development-life-cycle/"
 </ul>
 
 
-<p><strong>CodePipeline Artifact Stores</strong></p>
+<strong>CodePipeline Artifact Stores</strong>
 
 
 <ul>
@@ -87,7 +87,7 @@ permalink: "/2020/07/05/software-development-life-cycle/"
 </ul>
 
 
-<p><strong>AWS Serverless Application Model</strong></p>
+<strong>AWS Serverless Application Model</strong>
 
 
 <ul>

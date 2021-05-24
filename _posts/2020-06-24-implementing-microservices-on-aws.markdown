@@ -21,7 +21,7 @@ author:
 permalink: "/2020/06/24/implementing-microservices-on-aws/"
 ---
 
-<p><strong>Service Meshes</strong></p>
+<strong>Service Meshes</strong>
 
 
 <ul>

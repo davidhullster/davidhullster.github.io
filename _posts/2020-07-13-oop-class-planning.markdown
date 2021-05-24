@@ -21,7 +21,7 @@ author:
 permalink: "/2020/07/13/oop-class-planning/"
 ---
 
-<p>Before you decide to define a new class, there are a few things to keep in mind, and questions you should ask yourself:</p>
+Before you decide to define a new class, there are a few things to keep in mind, and questions you should ask yourself:
 
 
 <ul>
@@ -32,7 +32,7 @@ permalink: "/2020/07/13/oop-class-planning/"
 <li>The answer to this question should help you decide what to <strong>call</strong> the class you define.</li>
 </ul>
 </li>
-<li><strong>What information should each instance have as instance variables?</strong> This is related to what an instance represents. <br>See if you can make it into a sentence. 
+<li><strong>What information should each instance have as instance variables?</strong> This is related to what an instance represents. See if you can make it into a sentence. 
 <ul>
 <li><em>“Each instance represents one <strong>song</strong> and each <strong>song</strong> has an <strong>artist</strong> and a <strong>title</strong> as instance variables.”</em> </li>
 </ul>
@@ -47,7 +47,7 @@ permalink: "/2020/07/13/oop-class-planning/"
 <li>Or for a tweet, does each tweet has a method that returns the length of the tweet’s message?</li>
 </ul>
 </li>
-<li><strong>What should the printed version of an instance look like?</strong> (This question will help you decide how to write the <code>__str__</code> method.)
+<li><strong>What should the printed version of an instance look like?</strong> (This question will help you decide how to write the __str__ method.)
 <ul>
 <li>“Each song printed out will show the song title and the artist’s name.” </li>
 <li>Or “Each Tweet printed out will show the username of the person who posted it and the message content of the tweet.”</li>
@@ -56,5 +56,5 @@ permalink: "/2020/07/13/oop-class-planning/"
 </ul>
 
 
-<p>After considering those questions and making decisions about how you’re going to get started with a class definition, you can begin to define your class.</p>
+After considering those questions and making decisions about how you’re going to get started with a class definition, you can begin to define your class.
 

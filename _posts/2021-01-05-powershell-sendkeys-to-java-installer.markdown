@@ -18,9 +18,12 @@ author:
   'Scratches'
 permalink: "/2021/01/05/powershell-sendkeys-to-java-installer/"
 ---
+##### We used this to enable sending keystrokes to a Java-based installer in Windows
+<pre>
+[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
+[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+[void] [System.Reflection.Assembly]::LoadWithPartialName("'Microsoft.VisualBasic")
+[Microsoft. VisualBasic.Interaction]::AppActivate($conf.installerMainTitle)
 
-<p>[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")[void] [System.Reflection.Assembly]::LoadWithPartialName("'Microsoft.VisualBasic")[Microsoft.VisualBasic.Interaction]::AppActivate($conf.installerMainTitle)</p>
-
-
-<p>[System.Windows.Forms.SendKeys]::SendWait(%n)</p>
-
+[System.Windows.Forms.SendKeys]::SendWait(%n)
+</pre>

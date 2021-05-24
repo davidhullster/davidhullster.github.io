@@ -12,7 +12,7 @@ categories:
 - aws
 - kubernetes
 - Tech
-tags: []
+tags: ['k8s','kubctl','pods']
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1614140330'
@@ -23,5 +23,6 @@ author:
 permalink: "/2021/02/24/kubernetes-delete-all-running-pods/"
 ---
 
-<p><code>kubectl delete pods -n development `kubectl get pods -n development | grep Running | awk '{print $1}'</code>`</p>
+<pre>kubectl delete pods -n development 
+        `kubectl get pods -n development | grep Running | awk '{print $1}'`</pre>
 

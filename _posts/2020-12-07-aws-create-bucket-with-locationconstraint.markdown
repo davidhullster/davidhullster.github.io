@@ -20,9 +20,12 @@ author:
   'Scratches'
 permalink: "/2020/12/07/aws-create-bucket-with-locationconstraint/"
 ---
-
-aws s3api create-bucket --bucket my-bucket --region us-west-2 
+#### Create S3 bucket in AWS CLI with LocationConstraint
+<pre>
+aws s3api create-bucket 
+  --bucket my-bucket 
+  --region us-west-2 
   --create-bucket-configuration LocationConstraint=us-west-2
-
+</pre>
 
 

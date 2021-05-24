@@ -18,7 +18,7 @@ author:
 permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 ---
 
-<p><strong>Introduction</strong></p>
+<strong>Introduction</strong>
 
 
 <ul>
@@ -40,7 +40,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<p><strong>Infrastructure Resource Lifecycle</strong></p>
+<strong>Infrastructure Resource Lifecycle</strong>
 
 
 <ul>
@@ -92,7 +92,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<p><strong>Resource Provisioning</strong></p>
+<strong>Resource Provisioning</strong>
 
 
 <ul>
@@ -101,7 +101,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<p><strong>AWS Cloudformation</strong></p>
+<strong>AWS Cloudformation</strong>
 
 
 <ul>
@@ -112,7 +112,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<p><strong>Template Anatomy</strong></p>
+<strong>Template Anatomy</strong>
 
 
 <ul>
@@ -121,7 +121,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<p><strong>Figure: example of AWS CloudFormation YAML Template</strong></p>
+<strong>Figure: example of AWS CloudFormation YAML Template</strong>
 
 
 <ul>
@@ -135,7 +135,7 @@ permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
 </ul>
 
 
-<p>Parameters:
+Parameters:
   KeyName:
     Description: The EC2 key pair to allow SSH access to the instance
     Type: AWS::EC2::KeyPair::KeyName
@@ -157,7 +157,7 @@ Resources:
         CidrIp: 0.0.0.0/0
 
 
-<p><strong>Change Sets</strong></p>
+<strong>Change Sets</strong>
 
 
 <ul>

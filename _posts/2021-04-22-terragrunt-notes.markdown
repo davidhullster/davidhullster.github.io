@@ -2,9 +2,9 @@
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
 ---
-you can define your backend configuration just once in the root terragrunt.hcl file<br><br>
+you can define your backend configuration just once in the root terragrunt.hcl file
    <pre> # stage/terragrunt.hcl
-   
+
       remote_state {
         backend = "s3"
         generate = {

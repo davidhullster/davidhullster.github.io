@@ -26,7 +26,7 @@ permalink: "/2020/06/25/distributed-data-management/"
 </ul>
 
 
-<p><strong>Distributed Saga Pattern</strong></p>
+<strong>Distributed Saga Pattern</strong>
 
 
 <ul>

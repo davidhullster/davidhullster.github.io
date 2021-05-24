@@ -18,8 +18,8 @@ author:
 permalink: "/2020/09/19/decrypt-an-ansible-string/"
 ---
 
-<p>This will prompt for vault password</p>
+This will prompt for vault password
 
 
-<p>ansible-vault decrypt oo-encrypted.txt --output=/dev/stderr &gt; /dev/null</p>
+ansible-vault decrypt oo-encrypted.txt --output=/dev/stderr &gt; /dev/null
 

@@ -21,5 +21,7 @@ author:
 permalink: "/2020/12/02/powershell-2-0-get-ip-address-on-windows/"
 ---
 
-<p>&nbsp;ip_address&nbsp;=&nbsp;(Get-WmiObject&nbsp;-Class&nbsp;Win32_NetworkAdapterConfiguration&nbsp;-Filter&nbsp;'IPEnabled&nbsp;=&nbsp;True').IPAddress</p>
+<pre>ip_address=(Get-WmiObject 
+                  -Class Win32_NetworkAdapterConfiguration 
+                  -Filter 'IPEnabled=True').IPAddress</pre>
 

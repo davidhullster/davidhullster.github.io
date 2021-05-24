@@ -24,15 +24,17 @@ author:
   'Scratches'
 permalink: "/2020/11/30/sub-process-usr-bin-dpkg-returned-an-error-code-1/"
 ---
+#### This was the help on dpkg errors when running yum updates in Windows WSL Ubuntu
+<pre>
+Options to Fix sub-process /usr/bin/dpkg returned an error code (1)
+sub-process returned an error code ubuntu updateMethod 1: Reconfigure dpkg Database
+If your package database has become corrupted, reconfiguring it can repair it.
 
-<p>Options to Fix sub-process /usr/bin/dpkg returned an error code (1)<br />sub-process returned an error code ubuntu update<br />Method 1: Reconfigure dpkg Database<br />If your package database has become corrupted, reconfiguring it can repair it.</p>
+Enter the following command:
+</pre>
+<pre>
+sudo dpkg --configure -a
+</pre>
 
-
-<p>Enter the following command:</p>
-
-
-<p><code>sudo dpkg --configure -a</code></p>
-
-
-<p>This command reconfigures packages that have been unpacked but not necessarily installed. <br>An interruption at the wrong time can cause this database to become corrupt. <br>This is especially helpful if you were running installation and the process was interrupted.</p>
+This command reconfigures packages that have been unpacked but not necessarily installed. An interruption at the wrong time can cause this database to become corrupt. This is especially helpful if you were running installation and the process was interrupted.
 

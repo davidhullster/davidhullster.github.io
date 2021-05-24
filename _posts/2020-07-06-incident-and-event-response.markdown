@@ -12,7 +12,7 @@ categories: []
 tags: []
 ---
 
-<p><strong>Amazon CloudSearch vs ElasticSearch</strong></p>
+<strong>Amazon CloudSearch vs ElasticSearch</strong>
 
 
 <ul>
@@ -31,7 +31,7 @@ tags: []
 </ul>
 
 
-<p><strong>Amazon Inspector</strong></p>
+<strong>Amazon Inspector</strong>
 
 
 <ul>
@@ -40,7 +40,7 @@ tags: []
 </ul>
 
 
-<p><strong>Kinesis Data Streams Performance</strong></p>
+<strong>Kinesis Data Streams Performance</strong>
 
 
 <ul>
@@ -65,7 +65,7 @@ tags: []
 </ul>
 
 
-<p><strong>Kinesis Stream Re-Sharding Error</strong></p>
+<strong>Kinesis Stream Re-Sharding Error</strong>
 
 
 <ul>

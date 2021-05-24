@@ -23,10 +23,14 @@ author:
   'Scratches'
 permalink: "/2021/01/09/aws-cli-setup-iam-mfa-with-cli/"
 ---
+#### Use AWS CLI to setup virtual MFA device token
+<pre>aws iam create-virtual-mfa-device 
+  --virtual-mfa-device-name {username} outfile /home/{username}/QRCode.png 
+  --bootstrap-method QRCodePNG</pre>
 
-aws iam create-virtual-mfa-device --virtual-mfa-device-name {username} outfile /home/{username}/QRCode.png --bootstrap-method QRCodePNG
-
-aws iam enable-mfa-device --user-name {username} --serial-number arn:aws:iam::{useridnumber}:mfa/{username} --authentication-code-1 {code1} --authentication-code-2 {code2}
+<pre>aws iam enable-mfa-device --user-name {username} 
+  --serial-number arn:aws:iam::{useridnumber}:mfa/{username} 
+  --authentication-code-1 {code1} --authentication-code-2 {code2}</pre>
 
 QRCode.png can be copied to S3 to setup virtual MFA device like Google Authenticator
 

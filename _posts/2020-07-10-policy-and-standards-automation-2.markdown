@@ -18,10 +18,10 @@ author:
 permalink: "/2020/07/10/policy-and-standards-automation-2/"
 ---
 
-<p><strong>AWS Secrets Manager</strong></p>
+<strong>AWS Secrets Manager</strong>
 
 
-<p><strong>Troubleshoot Cross-Account Secret Sharing</strong></p>
+<strong>Troubleshoot Cross-Account Secret Sharing</strong>
 
 
 <ul>
@@ -50,7 +50,7 @@ permalink: "/2020/07/10/policy-and-standards-automation-2/"
 <li>default is VersionStage: AWSCURRENT</li>
 </ul>
 </li>
-<li>To retrieve a previous version of a secret, pass the <br />SecretId and VersionStage: AWSPREVIOUS</li>
+<li>To retrieve a previous version of a secret, pass the SecretId and VersionStage: AWSPREVIOUS</li>
 <li>If you always want the current secret, don't specify VersionStage or VersionId at all
 <ul>
 <li>default is VersionStage AWSCURRENT </li>
@@ -59,7 +59,7 @@ permalink: "/2020/07/10/policy-and-standards-automation-2/"
 </ul>
 
 
-<p><strong>Rotate Secrets for non-RDS Database</strong></p>
+<strong>Rotate Secrets for non-RDS Database</strong>
 
 
 <ul>
@@ -76,11 +76,11 @@ permalink: "/2020/07/10/policy-and-standards-automation-2/"
 </ul>
 
 
-<p><strong>Steps of the Secrets Manager Lambda Function</strong></p>
+<strong>Steps of the Secrets Manager Lambda Function</strong>
 
 
 <ul>
-<li>When you specify a secret for a supported RDS database, a standard Lambda function is used to rotate the secret. <br>Steps in that Lambda function are:
+<li>When you specify a secret for a supported RDS database, a standard Lambda function is used to rotate the secret. Steps in that Lambda function are:
 <ul>
 <li><strong>createSecret</strong> Step
 <ul>
@@ -118,7 +118,7 @@ permalink: "/2020/07/10/policy-and-standards-automation-2/"
 </ul>
 
 
-<p><strong>Jira Setup on AWS</strong></p>
+<strong>Jira Setup on AWS</strong>
 
 
 <ul>

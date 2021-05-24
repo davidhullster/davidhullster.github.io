@@ -16,4 +16,4 @@ author:
   'Scratches'
 permalink: "/2012/01/31/i-hate-phone-interviews/"
 ---
-<p>Got yet another phone interview scheduled, it's a lousy way to find new employees, so hard to communicate. <br>I feel sorry for the candidate, half the time we bring them in and find out they're totally different in person. <br>Makes me wonder if the ones we reject in phone interviews might really be okay. <br>We'll never know, I guess.</p>
+Got yet another phone interview scheduled, it's a lousy way to find new employees, so hard to communicate. I feel sorry for the candidate, half the time we bring them in and find out they're totally different in person. Makes me wonder if the ones we reject in phone interviews might really be okay. We'll never know, I guess.

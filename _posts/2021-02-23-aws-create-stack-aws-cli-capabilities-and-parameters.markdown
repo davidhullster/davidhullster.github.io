@@ -13,6 +13,9 @@ categories:
 - CAPABILITY_IAM
 tags:
 - capability
+- aws
+- awscli
+- create-stack
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1614122491'
@@ -22,8 +25,16 @@ author:
 permalink: "/2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters/"
 ---
 
-<p><a href="https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/">https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/</a></p>
+<a href="https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/">https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/</a>
 
 
-<p><code>for i in clients inventory renting resource; </code><br />  <code>do echo ${i}-api; </code><br />    <code>aws cloudformation create-stack </code><br />        <code>--stack-name development-iam-policy-${i}-api </code><br /><code>    --template-body file://${i}-api/infra/cloudformation/iam-policy.json </code><br />        <code>--parameters ParameterKey=Namespace,ParameterValue=development </code><br />        <code>--capabilities CAPABILITY_NAMED_IAM; </code><br />    <code>echo =====; done</code></p>
-
+<pre>
+for i in clients inventory renting resource;
+  do echo ${i}-api;     
+    aws cloudformation create-stack --stack-name development-iam-policy-${i}-api
+    --template-body file://${i}-api/infra/cloudformation/iam-policy.json
+    --parameters ParameterKey=Namespace,ParameterValue=development
+    --capabilities CAPABILITY_NAMED_IAM;
+    echo =====; 
+  done
+</pre>

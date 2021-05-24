@@ -18,7 +18,7 @@ author:
 permalink: "/2020/07/06/aws-monitoring-and-logging/"
 ---
 
-<p><strong>AWS Lambda Monitoring</strong></p>
+<strong>AWS Lambda Monitoring</strong>
 
 
 <ul>
@@ -27,7 +27,7 @@ permalink: "/2020/07/06/aws-monitoring-and-logging/"
 </ul>
 
 
-<p><strong>Allow Cross-Account S3 Access</strong></p>
+<strong>Allow Cross-Account S3 Access</strong>
 
 
 <ul>
@@ -36,7 +36,7 @@ permalink: "/2020/07/06/aws-monitoring-and-logging/"
 </ul>
 
 
-<p><strong>AWS Secrets Manager</strong></p>
+<strong>AWS Secrets Manager</strong>
 
 
 <ul>
@@ -44,7 +44,7 @@ permalink: "/2020/07/06/aws-monitoring-and-logging/"
 </ul>
 
 
-<p><strong>AWS X-Ray</strong></p>
+<strong>AWS X-Ray</strong>
 
 
 <ul>

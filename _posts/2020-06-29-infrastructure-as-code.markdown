@@ -18,7 +18,7 @@ author:
 permalink: "/2020/06/29/infrastructure-as-code/"
 ---
 
-<p><strong>Reuseable Templates</strong></p>
+<strong>Reuseable Templates</strong>
 
 
 <ul>
@@ -38,7 +38,7 @@ permalink: "/2020/06/29/infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Template Linting</strong></p>
+<strong>Template Linting</strong>
 
 
 <ul>
@@ -50,7 +50,7 @@ permalink: "/2020/06/29/infrastructure-as-code/"
 </ul>
 
 
-<p><strong>Summary</strong></p>
+<strong>Summary</strong>
 
 
 <ul>

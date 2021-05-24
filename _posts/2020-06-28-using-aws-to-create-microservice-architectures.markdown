@@ -18,7 +18,7 @@ author:
 permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 ---
 
-<p><strong>User Interfaces</strong></p>
+<strong>User Interfaces</strong>
 
 
 <ul>
@@ -28,7 +28,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Microservices</strong></p>
+<strong>Microservices</strong>
 
 
 <ul>
@@ -37,7 +37,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Private Links</strong></p>
+<strong>Private Links</strong>
 
 
 <ul>
@@ -45,12 +45,12 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Data Store</strong></p>
+<strong>Data Store</strong>
 
 
 <ul>
 <li>Persist data needed by microservices</li>
-<li>Session data can be stored in in-memory caches, i.e. <br>memcached or redis</li>
+<li>Session data can be stored in in-memory caches, i.e. memcached or redis</li>
 <li>Amazon ElastiCache supports both memcached and redis</li>
 <li>Caches reduce read load on databases, resources can support more load</li>
 <li>Caches can reduce latency</li>
@@ -60,7 +60,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>API Implementation</strong></p>
+<strong>API Implementation</strong>
 
 
 <ul>
@@ -68,7 +68,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Serverless Microservices</strong></p>
+<strong>Serverless Microservices</strong>
 
 
 <ul>
@@ -79,7 +79,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Deploying Lambda-Based Applications</strong></p>
+<strong>Deploying Lambda-Based Applications</strong>
 
 
 <ul>
@@ -91,7 +91,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Distributed Systems Components</strong></p>
+<strong>Distributed Systems Components</strong>
 
 
 <ul>
@@ -106,7 +106,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Service Discovery</strong></p>
+<strong>Service Discovery</strong>
 
 
 <ul>
@@ -122,7 +122,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Service Meshes</strong></p>
+<strong>Service Meshes</strong>
 
 
 <ul>
@@ -134,7 +134,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Distributed Data Management</strong></p>
+<strong>Distributed Data Management</strong>
 
 
 <ul>
@@ -157,10 +157,10 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Asynchronous Communication and Lightweight Messaging</strong></p>
+<strong>Asynchronous Communication and Lightweight Messaging</strong>
 
 
-<p><strong>REST-Based Communication</strong> </p>
+<strong>REST-Based Communication</strong> 
 
 
 <ul>
@@ -173,7 +173,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Asynchronous Messaging and Event Passing</strong></p>
+<strong>Asynchronous Messaging and Event Passing</strong>
 
 
 <ul>
@@ -193,7 +193,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Orchestration and State Management</strong></p>
+<strong>Orchestration and State Management</strong>
 
 
 <ul>
@@ -208,7 +208,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Distributed Monitoring</strong></p>
+<strong>Distributed Monitoring</strong>
 
 
 <ul>
@@ -223,7 +223,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Monitoring</strong></p>
+<strong>Monitoring</strong>
 
 
 <ul>
@@ -238,7 +238,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Centralizing Logs</strong></p>
+<strong>Centralizing Logs</strong>
 
 
 <ul>
@@ -247,7 +247,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Distributed Tracing</strong></p>
+<strong>Distributed Tracing</strong>
 
 
 <ul>
@@ -257,7 +257,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Options for Log Analysis on AWS</strong></p>
+<strong>Options for Log Analysis on AWS</strong>
 
 
 <ul>
@@ -267,7 +267,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Chattiness</strong></p>
+<strong>Chattiness</strong>
 
 
 <ul>
@@ -276,7 +276,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Caching</strong></p>
+<strong>Caching</strong>
 
 
 <ul>
@@ -287,7 +287,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Auditing</strong></p>
+<strong>Auditing</strong>
 
 
 <ul>
@@ -296,7 +296,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Audit Trail</strong></p>
+<strong>Audit Trail</strong>
 
 
 <ul>
@@ -311,7 +311,7 @@ permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
 </ul>
 
 
-<p><strong>Events and Real-Time Actions</strong></p>
+<strong>Events and Real-Time Actions</strong>
 
 
 <ul>

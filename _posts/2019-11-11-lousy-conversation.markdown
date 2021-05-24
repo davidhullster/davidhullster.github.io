@@ -18,5 +18,5 @@ author:
 permalink: "/2019/11/11/lousy-conversation/"
 ---
 
-<p>I'm a terrible conversationalist, I lose track of my train of thought in the middle of talking, especially when I start to feel passionate about a subject, and have to stop to gather my thoughts. <br>If I ever recover where I was going, the conversation has moved on. <br>To paraphrase, the great Jon Lovitz, "See, how it works is, the <em>train moves</em>, not the station". <br>(okay, the quote doesn't work here, but it's funny anyway)</p>
+I'm a terrible conversationalist, I lose track of my train of thought in the middle of talking, especially when I start to feel passionate about a subject, and have to stop to gather my thoughts. If I ever recover where I was going, the conversation has moved on. To paraphrase, the great Jon Lovitz, "See, how it works is, the <em>train moves</em>, not the station". (okay, the quote doesn't work here, but it's funny anyway)
 

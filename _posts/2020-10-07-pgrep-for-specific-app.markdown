@@ -23,6 +23,7 @@ author:
   'Scratches'
 permalink: "/2020/10/07/pgrep-for-specific-app/"
 ---
-
-<p>top -p $(pgrep -d, "(events|sshd)")</p>
-
+## Make top return results for only one process
+<pre>
+top -p $(pgrep -d, "(events|sshd)")
+</pre>

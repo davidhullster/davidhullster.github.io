@@ -21,11 +21,14 @@ permalink: "/2021/02/17/boot-sh-docker-container-start-up-script-explains-use-of
 
 
 
+<pre>
 #!/bin/sh
 source venv/bin/activate
 flask db upgrade
 exec gunicorn -b :5000 --access-logfile - --error-logfile - microblog:app
+</pre>
 
+Note the __exec__ that precedes the **gunicorn** command. In a shell script, __exec__ triggers the process running the script to be **replaced** with the command given, instead of starting it as a **new** process. 
 
-<p>Note the&nbsp;<code>exec</code>&nbsp;that precedes the gunicorn command. <br>In a shell script,&nbsp;<code>exec</code>&nbsp;triggers the process running the script to be replaced with the command given, instead of starting it as a new process. <br>This is important, because Docker associates the life of the container to the first process that runs on it. <br>In cases like this one, where the start up process is not the main process of the container, you need to make sure that the main process takes the place of that first process to ensure that the container is not terminated early by Docker.</p>
+This is important, because Docker associates the life of the container to the first process that runs on it. In cases like this one, where the start up process is **not the main process** of the container, you need to make sure that the **main process** takes the place of that first process to ensure that the container is not **terminated early** by Docker.
 

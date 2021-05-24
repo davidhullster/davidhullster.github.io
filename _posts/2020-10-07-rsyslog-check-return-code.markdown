@@ -24,19 +24,19 @@ author:
   'Scratches'
 permalink: "/2020/10/07/rsyslog-check-return-code/"
 ---
-<p></p>
+<pre>
 #!/bin/bash
 
-rsyslogd -N1
+  rsyslogd -N1
 
-retCode=$?
+  retCode=$?
 
-if [ "$retCode" -eq 0 ]
-then
-	echo ryslogd succeeded with return code: "$retCode"
-else
-	echo rsyslogd failed with return code: "$retCode"
-        exit 1
-fi
-echo "rsyslogd check completed"
-
+  if [ "$retCode" -eq 0 ]
+  then
+    echo ryslogd succeeded with return code: "$retCode"
+  else
+    echo rsyslogd failed with return code: "$retCode"
+          exit 1
+  fi
+  echo "rsyslogd check completed"
+</pre>

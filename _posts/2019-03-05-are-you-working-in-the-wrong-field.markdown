@@ -22,17 +22,17 @@ author:
 permalink: "/2019/03/05/are-you-working-in-the-wrong-field/"
 ---
 
-<p>Nobody should expect to be paid for their passion, but your greatest satisfaction, your greatest benefit to your community is where you can actually contribute at your highest level. <br></p>
+Nobody should expect to be paid for their passion, but your greatest satisfaction, your greatest benefit to your community is where you can actually contribute at your highest level. 
 
 
-<p>Imagine that someone off the street came into your work and could do twice the work at higher quality than you in the same amount of time</p>
+Imagine that someone off the street came into your work and could do twice the work at higher quality than you in the same amount of time
 
 
-<p>Now imagine that you could do the same, with some training, in another field. <br></p>
+Now imagine that you could do the same, with some training, in another field. 
 
 
-<p>Wouldn't everyone benefit if the person off the street did your job, and you did whatever you were better at?</p>
+Wouldn't everyone benefit if the person off the street did your job, and you did whatever you were better at?
 
 
-<p>If your kid shows promise at fixing things, don't push him to become a lawyer, if she likes winning arguments, don't tell her she's a failure if she doesn't get an A in algebra.</p>
+If your kid shows promise at fixing things, don't push him to become a lawyer, if she likes winning arguments, don't tell her she's a failure if she doesn't get an A in algebra.
 

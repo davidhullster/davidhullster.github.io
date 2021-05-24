@@ -18,7 +18,7 @@ author:
 permalink: "/2020/09/19/linux-command-line-password-generator/"
 ---
 
-<p>alias mkpsswd='apg -s -a 1 -m 32 -n 4'</p>
+alias mkpsswd='apg -s -a 1 -m 32 -n 4'
 
 
    apg  [-a  algorithm]  [-M  mode]  [-E char_string] [-n num_of_pass] [-m
@@ -28,7 +28,7 @@ permalink: "/2020/09/19/linux-command-line-password-generator/"
        apg -a 0 -M sncl -n 6 -x 10 -m 8 (new style)
 
 If you want to generate really secure passwords, you should use  option -s.
-  To simplify apg usage, you can write a small shell script. <br>For example:
+  To simplify apg usage, you can write a small shell script. For example:
        [begin]----&gt; pwgen.sh
        #!/bin/sh
        /usr/local/bin/apg -m 8 -x 12 -s

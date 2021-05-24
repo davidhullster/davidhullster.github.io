@@ -18,7 +18,7 @@ author:
   'Scratches'
 permalink: "/2020/12/20/install-ruby-gem/"
 ---
-
+<pre>
 gem install tzinfo -v "~&gt; 1.2"
 gem install tzinfo-data
-
+</pre>

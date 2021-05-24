@@ -14,7 +14,7 @@ header-img: "img/post-bg-2015a.jpeg"
     _dependencies_ statement that allows other 
     modules to be executed first.
 
-  * <strong>no retries on known errors:</strong><br>
+  * <strong>no retries on known errors:</strong>
    some Terraform errors will go away just by rerunning the apply command
 
   * <strong>no possibility to deploy the same version of a 
@@ -28,7 +28,7 @@ header-img: "img/post-bg-2015a.jpeg"
 
   * <strong>no possibility of keeping the Terraform backend 
     configuration DRY across all our environments 
-    (S3 state bucket, region, DynamoDB table etc): </strong><br>
+    (S3 state bucket, region, DynamoDB table etc): </strong>
     for every sub-component (EKS, S3, IAM, MSK etc) 
     of our infrastructure we had to redefine the 
     Terraform backend configuration over and over 
@@ -37,7 +37,7 @@ header-img: "img/post-bg-2015a.jpeg"
     using the path_relative_to_include() function to figure out the current directory.
     
   * <strong>when the Terraform code grows significantly 
-    enough, it must be organised into folders:</strong><br> 
+    enough, it must be organised into folders:</strong> 
     Terraform has no way of running a global 
     plan or apply command across all those folders. 
     Terragrunt has a plan-all and apply-all 

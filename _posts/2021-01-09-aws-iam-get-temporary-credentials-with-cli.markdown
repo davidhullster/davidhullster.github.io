@@ -24,15 +24,16 @@ author:
 permalink: "/2021/01/09/aws-iam-get-temporary-credentials-with-cli/"
 ---
 
-<p>Run the&nbsp;<a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-session-token.html" target="_blank" rel="noreferrer noopener">sts get-session-token</a>&nbsp;AWS CLI command, replacing the variables with information from your account, resources, and MFA device:</p>
+Run the&nbsp;<a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-session-token.html" target="_blank" rel="noreferrer noopener">sts get-session-token</a>&nbsp;AWS CLI command, replacing the variables with information from your account, resources, and MFA device:
 
 
-$ aws sts get-session-token --serial-number arn-of-the-mfa-device --token-code code-from-token
+<pre>$ aws sts get-session-token --serial-number arn-of-the-mfa-device 
+  --token-code code-from-token
+</pre>
 
+You receive an output with temporary credentials and an expiration time (by default, 12 hours) similar to the following:
 
-<p>You receive an output with temporary credentials and an expiration time (by default, 12 hours) similar to the following:</p>
-
-
+<pre>
 {
     "Credentials": {
         "SecretAccessKey": "secret-access-key",
@@ -41,7 +42,7 @@ $ aws sts get-session-token --serial-number arn-of-the-mfa-device --token-code c
         "AccessKeyId": "access-key-id"
     }
 }
+</pre>
 
-
-<p><strong>Note:</strong>&nbsp;You can specify an expiration duration (in seconds) using the&nbsp;<strong>--duration-seconds</strong>&nbsp;option in the&nbsp;<strong>sts get-session-token</strong>&nbsp;command, where the value can range from 900 seconds (15 minutes) to 129600 seconds (36 hours). <br>If you are using root user credentials, the range is from 900 seconds (15 minutes) to 3600 seconds (1 hour).</p>
+<strong>Note:</strong>&nbsp;You can specify an expiration duration (in seconds) using the&nbsp;<strong>--duration-seconds</strong>&nbsp;option in the&nbsp;<strong>sts get-session-token</strong>&nbsp;command, where the value can range from 900 seconds (15 minutes) to 129600 seconds (36 hours). If you are using root user credentials, the range is from 900 seconds (15 minutes) to 3600 seconds (1 hour).
 

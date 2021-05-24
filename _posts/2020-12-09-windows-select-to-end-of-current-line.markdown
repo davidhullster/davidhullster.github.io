@@ -18,9 +18,6 @@ author:
   'Scratches'
 permalink: "/2020/12/09/windows-select-to-end-of-current-line/"
 ---
+##### Home key sends the cursor to start of line, Shift-END selects to end of line from cursor
 
-<p>{HOME} then +{End}</p>
-
-
-<p>Home key send cursor to start of line, Shift-END selects to end of line from cursor</p>
-
+<pre>{HOME} then +{End}</pre>

@@ -22,5 +22,5 @@ author:
 permalink: "/2020/09/19/get-versionid-of-object-in-s3-bucket/"
 ---
 
-<p>aws s3api list-object-versions --bucket ${bucket_name} --prefix ${bucket_path}/${object_name} | jq ".Versions[].VersionId"</p>
+aws s3api list-object-versions --bucket ${bucket_name} --prefix ${bucket_path}/${object_name} | jq ".Versions[].VersionId"
 

@@ -18,7 +18,7 @@ author:
 permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/"
 ---
 
-<p><strong>AWS Solution to migrate data from relational database to DynamoDB</strong></p>
+<strong>AWS Solution to migrate data from relational database to DynamoDB</strong>
 
 
 <ul>
@@ -26,14 +26,14 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 <li>create a task in an object mapping rule to copy needed relational DB tables to DynamoDB</li>
 <li>within object-mapping set Partition Key and Sort Key
 <ul>
-<li>i.e. <br>WeatherStationId as Partition key, and</li>
+<li>i.e. WeatherStationId as Partition key, and</li>
 <li>timestamp as Sort Key</li>
 </ul>
 </li>
 </ul>
 
 
-<p><strong>Amazon Aurora Read Replica Errors</strong></p>
+<strong>Amazon Aurora Read Replica Errors</strong>
 
 
 <ul>
@@ -47,7 +47,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>Connect AWS SSO to Microsoft ActiveDirectory</strong></p>
+<strong>Connect AWS SSO to Microsoft ActiveDirectory</strong>
 
 
 <ul>
@@ -62,7 +62,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>AWS Organizations and AWS Managed Microsoft AD</strong></p>
+<strong>AWS Organizations and AWS Managed Microsoft AD</strong>
 
 
 <ul>
@@ -77,7 +77,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>Amazon DynamoDB Global Tables</strong></p>
+<strong>Amazon DynamoDB Global Tables</strong>
 
 
 <ul>
@@ -88,7 +88,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>Canary Deployments Rout53 Configuration</strong></p>
+<strong>Canary Deployments Rout53 Configuration</strong>
 
 
 <ul>
@@ -98,7 +98,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>CloudFormation UpdateReplacePolicy</strong></p>
+<strong>CloudFormation UpdateReplacePolicy</strong>
 
 
 <ul>
@@ -111,7 +111,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>CloudFormation Change Set</strong></p>
+<strong>CloudFormation Change Set</strong>
 
 
 <ul>
@@ -123,7 +123,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>IPv6 with ALB's and NLB's</strong></p>
+<strong>IPv6 with ALB's and NLB's</strong>
 
 
 <ul>
@@ -132,7 +132,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>Troubleshoot DynamoDB Latency</strong></p>
+<strong>Troubleshoot DynamoDB Latency</strong>
 
 
 <ul>
@@ -150,7 +150,7 @@ permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 </ul>
 
 
-<p><strong>AWS DirectConnect limits data traversing the Internet</strong></p>
+<strong>AWS DirectConnect limits data traversing the Internet</strong>
 
 
 <ul>

@@ -18,11 +18,11 @@ author:
 permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 ---
 
-<p><strong>Kinesis Data Stream</strong></p>
+<strong>Kinesis Data Stream</strong>
 
 
 <ul>
-<li>A Kinesis data stream is set of shards. <br>Each shard is a sequence of data records.
+<li>A Kinesis data stream is set of shards. Each shard is a sequence of data records.
 <ul>
 <li>each data record in a shard has a sequence number, assigned by Kinesis Streams.</li>
 </ul>
@@ -30,11 +30,11 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Data Record</strong></p>
+<strong>Data Record</strong>
 
 
 <ul>
-<li>A data record is the unit of data stored in a Kinesis data stream. <br>Data records are composed of a sequence number, a partition key, and a data blob.
+<li>A data record is the unit of data stored in a Kinesis data stream. Data records are composed of a sequence number, a partition key, and a data blob.
 <ul>
 <li>a data blob is an immutable sequence of bytes</li>
 <li>Kinesis Data Streams does not inspect, interpret or change the data in the blob in any way</li>
@@ -44,7 +44,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Retention Period</strong></p>
+<strong>Retention Period</strong>
 
 
 <ul>
@@ -59,15 +59,15 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Producer</strong></p>
+<strong>Producer</strong>
 
 
 <ul>
-<li>Producers put records into Amazon Kinesis Data Streams. <br>For example, a web server sending log data to a stream is a producer.</li>
+<li>Producers put records into Amazon Kinesis Data Streams. For example, a web server sending log data to a stream is a producer.</li>
 </ul>
 
 
-<p><strong>Consumer</strong></p>
+<strong>Consumer</strong>
 
 
 <ul>
@@ -76,7 +76,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Amazon Kinesis Data Streams Application</strong></p>
+<strong>Amazon Kinesis Data Streams Application</strong>
 
 
 <ul>
@@ -84,7 +84,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Shard</strong></p>
+<strong>Shard</strong>
 
 
 <ul>
@@ -97,7 +97,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Partition Key</strong></p>
+<strong>Partition Key</strong>
 
 
 <ul>
@@ -108,16 +108,16 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Sequence Number</strong></p>
+<strong>Sequence Number</strong>
 
 
 <ul>
 <li>Each data record has a sequence number that is unique per partition-key within its shard</li>
-<li>Kinesis Data Streams assigns the sequence number after you write to the stream with <code>client.putRecords or client.putRecord</code>. <br>Sequence numbers for the same partition key generally increase over time. <br>The longer the time period between requests, the larger the sequence numbers become.</li>
+<li>Kinesis Data Streams assigns the sequence number after you write to the stream with client.putRecords or client.putRecord. Sequence numbers for the same partition key generally increase over time. The longer the time period between requests, the larger the sequence numbers become.</li>
 </ul>
 
 
-<p><strong>Kinesis Client Library</strong></p>
+<strong>Kinesis Client Library</strong>
 
 
 <ul>
@@ -129,7 +129,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Application Name</strong></p>
+<strong>Application Name</strong>
 
 
 <ul>
@@ -139,7 +139,7 @@ permalink: "/2020/07/03/kinesis-data-streams-terminology/"
 </ul>
 
 
-<p><strong>Server Side Encryption</strong></p>
+<strong>Server Side Encryption</strong>
 
 
 <ul>

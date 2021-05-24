@@ -18,7 +18,7 @@ author:
 permalink: "/2020/07/11/what-is-continuous-integration-and-continuous-delivery-deployment/"
 ---
 
-<p><strong>Continuous Integration</strong></p>
+<strong>Continuous Integration</strong>
 
 
 <ul>
@@ -65,7 +65,7 @@ permalink: "/2020/07/11/what-is-continuous-integration-and-continuous-delivery-d
 </ul>
 
 
-<p><strong>Continuous Delivery and Deployment</strong></p>
+<strong>Continuous Delivery and Deployment</strong>
 
 
 <ul>

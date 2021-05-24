@@ -22,6 +22,6 @@ author:
   'Scratches'
 permalink: "/2020/11/13/aws-canonical-id-get-via-command-line-aws-cli/"
 ---
-
-<p>aws s3api list-buckets --query Owner.ID --output text</p>
+#### List S3 buckets with AWS CLI and get Canonical ID
+<pre>aws s3api list-buckets --query Owner.ID --output text</pre>
 

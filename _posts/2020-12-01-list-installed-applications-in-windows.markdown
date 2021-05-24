@@ -21,11 +21,13 @@ author:
   'Scratches'
 permalink: "/2020/12/01/list-installed-applications-in-windows/"
 ---
+<pre>
+Get-CimInstance win32_product | Select-Object Name, PackageName, InstallDate | Out-GridView
+</pre>
 
-<p>Get-CimInstance win32_product | Select-Object Name, PackageName, InstallDate | Out-GridView</p>
 
 
-
-
-<p>look in both locations for installed software:<br />-&gt;HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall (no results on my Win10 install)<br />-&gt;HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall</p>
-
+look in both locations for installed software
+<pre>
+HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall (no results on my Win10 install)HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall
+</pre>

@@ -42,7 +42,7 @@ tags:
  jq -c '.Reservations | .[] | .Instances | .[] | 
     select (.ImageId == ${AMIID}) | .InstanceId,.PrivateIpAddress'</pre>
 
-#### ConfigService get rule names that contain a string
+#### ConfigService get rule names that do not contain a string
 <pre>aws configservice describe-config-rules --profile exp-dev --region us-east-1 | 
     jq -c '.ConfigRules| .[] | select(.ConfigRuleName | 
         test("AWSControlTower") | not) | .ConfigRuleName'</pre>

@@ -46,3 +46,8 @@ tags:
 <pre>aws configservice describe-config-rules --profile exp-dev --region us-east-1 | 
     jq -c '.ConfigRules| .[] | select(.ConfigRuleName | 
         test("AWSControlTower") | not) | .ConfigRuleName'</pre>
+
+#### ec2 describe-key-pairs that start with string
+<pre>aws ec2 describe-key-pairs 
+    --profile exp-devsecops --region us-east-1 
+        | jq -c '.KeyPairs | .[] | select( .KeyName | test("test-string"))'</pre>

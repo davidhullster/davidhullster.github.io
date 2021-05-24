@@ -91,5 +91,5 @@ defaults:
 
 # Sidebar settings
 sidebar: true   # default true
-sidebar-about-description: "Sell me this pen..."
+sidebar-about-description: "We have met the enemy, and they are us."
 sidebar-avatar: /img/about-bg-typewriter.jpeg     # use absolute URL.

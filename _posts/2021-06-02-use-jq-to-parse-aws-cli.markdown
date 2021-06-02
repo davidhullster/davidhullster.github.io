@@ -51,3 +51,19 @@ tags:
 <pre>aws ec2 describe-key-pairs 
     --profile exp-devsecops --region us-east-1 
         | jq -c '.KeyPairs | .[] | select( .KeyName | startswith("test-string"))'</pre>
+
+#### ec2 describe-instances select "Name" tags, launchTime, PubDNSName
+<pre>aws ec2 describe-instances --profile exp-labs --region us-east-1 \
+    | jq '.Reservations | .[] | .Instances | .[] \
+    | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .PublicDnsName ]' 
+[
+  "instance1",
+  "2021-07-30T18:55:23+00:00",
+  "ec2-3-86-245-113.compute-1.amazonaws.com"
+]
+[
+  "instance2",
+  "2021-07-30T18:55:23+00:00",
+  "ec2-52-91-167-140.compute-1.amazonaws.com"
+]
+</pre>

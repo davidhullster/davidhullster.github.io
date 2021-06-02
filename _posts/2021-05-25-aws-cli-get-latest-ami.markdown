@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: Use jq to parse AWS CLI
+title: AWS CLI get latest AMI
 categories:
 - aws
 - jq

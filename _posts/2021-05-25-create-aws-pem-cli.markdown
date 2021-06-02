@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: Use jq to parse AWS CLI
+title: Create AWS pem file with CLI
 categories:
 - aws
 - jq

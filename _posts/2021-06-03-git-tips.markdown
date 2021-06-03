@@ -2,7 +2,6 @@
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
 title: Git Tips
-date: 2021-03-20 17:29:28.000000000 -07:00
 type: post
 parent_id: '0'
 published: true
@@ -13,13 +12,29 @@ categories:
 - Tech
 tags: []
 meta:
-  _last_editor_used_jetpack: block-editor
-  _publicize_job_id: '56176203141'
-  timeline_notification: '1616261372'
 author:
   'Scratches'
 ---
-#### Git change date of commit
+### Git's HEAD pointer
+For me, the key to understanding how git works came when I grasped that the HEAD notation is similar to
+a window that can slide over a set of commits. The window can be moved to show a different commit, which
+makes it become the current commit. 
+
+HEAD is actually a reference, or a pointer, to a particular commit. There's a separate HEAD for your local 
+repository, and the remote repository (normally called 'origin'). When you complete a merge both the local and remote HEAD's will point to the same commit.
+
+### Git delete remote branch
+<pre>git push origin --delete feature/worthless-hack-branch</pre>
+
+### Git undo last commit (that's a tilde, not a dash)
+__soft leaves change in staging__
+<pre>git reset --soft HEAD~1</pre>
+__hard deletes change__
+<pre>git reset --hard HEAD~1
+
+</pre>
+
+### Git change date of commit
 <pre>git commit --amend --no-edit --date="2018-04-09"</pre>
 
 OR
@@ -28,7 +43,7 @@ OR
 git commit --amend --no-edit --date $GIT_COMMITTER_DATE
 </pre>
 
-#### Git change committer name and email
+### Git change committer name and email
 <pre>
 #!/bin/sh
 git filter-branch --env-filter 

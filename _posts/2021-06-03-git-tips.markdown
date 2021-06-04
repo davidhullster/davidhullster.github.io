@@ -23,6 +23,11 @@ makes it become the current commit.
 HEAD is actually a reference, or a pointer, to a particular commit. There's a separate HEAD for your local 
 repository, and the remote repository (normally called 'origin'). When you complete a merge both the local and remote HEAD's will point to the same commit.
 
+### Set git difftool and mergetool to use vimdiff
+<pre>git difftool --tool=vimdiff --no-prompt</pre>
+<pre>git config --global diff.tool vimdiff</pre>
+<pre>git config --global merge.tool vimdiff</pre>
+
 ### Git delete remote branch
 <pre>git push origin --delete feature/worthless-hack-branch</pre>
 

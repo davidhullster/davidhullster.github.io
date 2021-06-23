@@ -10,8 +10,7 @@ tags:
 - awscli
 - queries
 - filters
-- describe-instances
-- describe-subnets
+
 ---
 #### list load balancer attributes for each LoadBalancerArn
 <pre>

@@ -1,14 +1,14 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: AWS CLI Filters and Queries
+title: Combine Two Json API responses into a dict of lists
 categories:
 - aws
 tags:
-- aws
-- ebs
-- ec2
-- disk space
+- python
+- json
+- dict
+- api
 
 ---
 #### Take json response for 'apps' and combine it with json response for 'branches'

@@ -1,0 +1,26 @@
+---
+layout: posts
+header-img: "img/post-bg-2015a.jpeg"
+title: Vim Tips
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- vim
+- Tech
+tags: []
+meta:
+author:
+  'Scratches'
+---
+### Open a second file within same window
+<pre>
+  <ESC>:e <filename>
+</pre>
+
+### Switch __back__ to previous buffer ('file')
+<pre>
+  <ESC>:bn
+</pre>

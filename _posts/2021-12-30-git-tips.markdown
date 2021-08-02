@@ -35,8 +35,8 @@ repository, and the remote repository (normally called 'origin'). When you compl
 __soft leaves change in staging__
 <pre>git reset --soft HEAD~1</pre>
 __hard deletes change__
-<pre>git reset --hard HEAD~1
-
+<pre>
+git reset --hard HEAD~1
 </pre>
 
 ### Git change date of commit

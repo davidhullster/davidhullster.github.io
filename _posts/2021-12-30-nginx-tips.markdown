@@ -23,7 +23,7 @@ author:
     -out /etc/nginx/ssl/public.pem
 </pre>
 
-## Minimal Nginx Config to Use New Certificate
+### Minimal Nginx Config to Use New Certificate
 <pre>
   server {
     ...

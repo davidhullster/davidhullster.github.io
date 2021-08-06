@@ -17,10 +17,10 @@ author:
 ---
 ### Open a second file within same window
 <pre>
-  <ESC>:e <filename>
+  -ESC- :e $filename
 </pre>
 
 ### Switch __back__ to previous buffer ('file')
 <pre>
-  <ESC>:bn
+  -ESC- :bn
 </pre>

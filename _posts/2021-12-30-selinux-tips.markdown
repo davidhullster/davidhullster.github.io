@@ -16,7 +16,7 @@ author:
   'Scratches'
 ---
 ### ngx_modsecurity_module.so: failed to map segment from shared object: Permission Denied
-#### /var/log/nginx/error.log shows a Permission Denied error after trying to reload nginx after turning on ModSecurity you might need to configure SELinux to allow **executing** the modsecurity shared object:
+<b> if /var/log/nginx/error.log shows a Permission Denied error after trying to reload nginx after turning on ModSecurity you might need to configure SELinux to allow **executing** the modsecurity shared object:</b>
    
 <pre>
 semanage fcontext -a -t httpd_exec_t '/etc/nginx/modules(/.*)?'

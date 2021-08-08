@@ -3,4 +3,4 @@ title: Blog
 layout: blog
 ---
 ## Certainty
-### safety is the obsession of the elite
+### safety is the obsession of the timid

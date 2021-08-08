@@ -53,6 +53,7 @@ access on processes labeled httpd_t by default.#012Then you should report this a
 setsebool -P httpd_execmem 1
 </pre>
 <p>Then I was able to successfully restart the Node.js app</p>
+<br>
 
 ### Getting "Permission Denied while connectng to upstream" error in the Nginx error log. Resolved by enabling network access from nginx.
 <pre>

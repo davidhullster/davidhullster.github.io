@@ -55,7 +55,7 @@ setsebool -P httpd_execmem 1
 <p>Then I was able to successfully restart the Node.js app</p>
 <br>
 
-### Getting "Permission Denied while connectng to upstream" error in the Nginx error log. Resolved by enabling network access from nginx.
+<b>Getting "Permission Denied while connectng to upstream" error in the Nginx error log. Resolved by enabling network access from nginx.</b>
 <pre>
 setsebool -P http_can_network_connect 1
 </pre>

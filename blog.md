@@ -3,4 +3,4 @@ title: Blog
 layout: blog
 ---
 ## Certainty
-### safety is the obsession of the timid
+### we have met the enemy, and they are us

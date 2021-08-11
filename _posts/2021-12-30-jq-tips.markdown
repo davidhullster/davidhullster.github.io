@@ -38,18 +38,18 @@ tags:
 <pre>aws ec2 describe-subnets | jq '[.Subnets|.[]|{Subnet:.SubnetId,AZ:.AvailabilityZone}]'</pre>
 
 #### ec2 list amiId , instanceId and privateIp
-<pre>aws ec2 describe-instances --profile exp-dev --region us-east-1 |
+<pre>aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 |
  jq -c '.Reservations | .[] | .Instances | .[] | 
     select (.ImageId == ${AMIID}) | .InstanceId,.PrivateIpAddress'</pre>
 
 #### ConfigService get rule names that do not contain a string
-<pre>aws configservice describe-config-rules --profile exp-dev --region us-east-1 | 
+<pre>aws configservice describe-config-rules --profile $PROFILE_NAME --region us-east-1 | 
     jq -c '.ConfigRules| .[] | select(.ConfigRuleName | 
         test("AWSControlTower") | not) | .ConfigRuleName'</pre>
 
 #### ec2 describe-key-pairs that start with string
 <pre>aws ec2 describe-key-pairs 
-    --profile exp-devsecops --region us-east-1 
+    --profile $PROFILE_NAME --region us-east-1 
         | jq -c '.KeyPairs | .[] | select( .KeyName | startswith("test-string"))'</pre>
 
 #### ec2 describe-instances select "Name" tags, launchTime, PubDNSName

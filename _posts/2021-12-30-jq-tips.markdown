@@ -53,7 +53,7 @@ tags:
         | jq -c '.KeyPairs | .[] | select( .KeyName | startswith("test-string"))'</pre>
 
 #### ec2 describe-instances select "Name" tags, launchTime, PubDNSName
-<pre>aws ec2 describe-instances --profile exp-labs --region us-east-1 \
+<pre>aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 \
     | jq '.Reservations | .[] | .Instances | .[] \
     | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .PublicDnsName ]' 
 [

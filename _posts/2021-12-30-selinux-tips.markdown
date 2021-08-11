@@ -16,7 +16,9 @@ meta:
 author:
   'Scratches'
 ---
-### ngx_modsecurity_module.so: failed to map segment from shared object: Permission Denied
+### Updating SELinux Permissions for Nginx
+
+<b>ngx_modsecurity_module.so: failed to map segment from shared object: Permission Denied</b>
 <p>After installing a module in Nginx, /var/log/nginx/error.log can show a Permission Denied error when trying to reload nginx. You might need to configure SELinux to allow **executing** the shared object file: 
 
 <pre>
@@ -24,11 +26,12 @@ semanage fcontext -a -t httpd_exec_t '/etc/nginx/modules(/.*)?'
 
 restorecon -R -v /etc/nginx/modules
 </pre>
-
+<br>
 <p>On RHEL with a Node.js app that wouldn't start, I saw this error:
 <pre>
 Aug  8 16:19:20 ip-172-31-1-214 systemd[1]: Failed to start web-client Node.js service.
 </pre>
+<br>
 <p>I ran 'yum provides seinfo' and 'yum provides sealert' showed what to install to get more logging on SELinux errors. After the installs, starting my node service again gave me these verbose errors:
 <pre>
 Aug  8 16:19:20 ip-172-31-1-214 setroubleshoot[4026]: SELinux is preventing /usr/bin/node 
@@ -58,4 +61,25 @@ setsebool -P httpd_execmem 1
 <b>Getting "Permission Denied while connectng to upstream" error in the Nginx error log. Resolved by enabling network access from nginx.</b>
 <pre>
 setsebool -P http_can_network_connect 1
+</pre>
+<br>
+<b>Create semanage policy file by processing audit.log</b>
+<b>grep <application-name> /var/log/audit/audit.log and pipe to audit2allow -M <application-name></b>
+<pre>
+grep nginx /var/log/audit/audit.log | audit2allow -M nginx
+
+* this creates an SELinux policy file called nginx.pp, and a textual version of that as nginx.te
+* Run the following commands to enable the policy:
+    semodule -i nginx.pp
+    semodule --enable nginx
+* Also, view the `nginx.te` file and run the `restorecon -R -v` lines shown there to enable the policy you just imported.
+</pre>
+<br>
+<b>Installing audit2allow
+<pre>
+On Centos, running `yum provides audit2allow` returns:
+policycoreutils-python-2.5-34.el7.x86_64 : SELinux policy core python utilities
+  Repo        : base
+  Matched from:
+  Filename    : /usr/bin/audit2allow
 </pre>

@@ -1,0 +1,21 @@
+---
+layout: posts
+header-img: "img/post-bg-2015a.jpeg"
+title: Curl Tips
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- curl
+- Tech
+tags: []
+meta:
+author:
+  'Scratches'
+---
+### Send 'Host' header to localhost with a custom value
+<pre>
+  curl --header "Host: example.com localhost"
+</pre>

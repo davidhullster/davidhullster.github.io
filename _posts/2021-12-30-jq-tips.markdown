@@ -67,3 +67,7 @@ tags:
   "ec2-52-91-167-140.compute-1.amazonaws.com"
 ]
 </pre>
+
+<pre>
+aws ec2 describe-instances --profile ${PROFILE_NAME} --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value)]'
+</pre>

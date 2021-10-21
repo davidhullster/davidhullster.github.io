@@ -96,7 +96,6 @@ server {
 [AWS Nginx Proxy Config for OpenSearch](https://aws.amazon.com/premiumsupport/knowledge-center/opensearch-outside-vpc-nginx/)
 #### note you need to make the proxy_pass value an variable for nginx to re-evaluate it
 <pre>        set $proxy_pass_url https://vpc-exp-elasticsearch-XXXXX.us-east-1.es.amazonaws.com;
-        #set $proxy_pass_url https://172.19.251.238
         location ~ (/) {
                 proxy_pass          $proxy_pass_url;
 </pre>

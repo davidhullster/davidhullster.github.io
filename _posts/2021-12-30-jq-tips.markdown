@@ -68,6 +68,12 @@ tags:
 ]
 </pre>
 
+#### Name Tags
 <pre>
 aws ec2 describe-instances --profile ${PROFILE_NAME} --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value)]'
+</pre>
+
+#### PrivateIpAddress
+<pre>
+aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .PrivateIpAddress ]'
 </pre>

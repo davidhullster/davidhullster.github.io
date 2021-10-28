@@ -77,3 +77,9 @@ aws ec2 describe-instances --profile ${PROFILE_NAME} --region us-east-1 | jq '.R
 <pre>
 aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .PrivateIpAddress ]'
 </pre>
+
+#### KeyName and PrivateIpAddress
+
+<pre>
+kafka-ui % aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value), .KeyName, .PrivateIpAddress ]'
+</pre>

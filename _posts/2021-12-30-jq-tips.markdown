@@ -79,7 +79,11 @@ aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Res
 </pre>
 
 #### KeyName and PrivateIpAddress
-
 <pre>
-kafka-ui % aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value), .KeyName, .PrivateIpAddress ]'
+% aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | [(.Tags[]|select(.Key=="Name")|.Value), .KeyName, .PrivateIpAddress ]'
+</pre>
+
+#### Add All Users to a Specific Group
+<pre>
+for i in `aws iam list-users --profile $PROFILE_NAME | jq ".[] | .[] | .UserName" | sed 's/"//g'`; do aws iam add-user-to-group --user-name ${i} --group-name ReadOnly --profile $PROFILE_NAME; done 
 </pre>

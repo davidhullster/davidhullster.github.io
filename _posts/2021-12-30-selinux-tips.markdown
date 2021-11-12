@@ -83,3 +83,49 @@ policycoreutils-python-2.5-34.el7.x86_64 : SELinux policy core python utilities
   Matched from:
   Filename    : /usr/bin/audit2allow
 </pre>
+
+<pre>
+$> systemctl status web-client3
+Aug 15 13:23:01 ip-172-31-1-214.us-west-2.compute.internal systemd[1]: Failed to start web-client Node.js service.
+
+$> grep 'avc: denied' /var/log/audit/audit.log
+type=SYSCALL msg=audit(1629033781.299:4509): arch=c000003e syscall=49 success=no exit=-13 a0=12 a1=7ffca623f4b0 a2=1c a3=7ffca623f424 items=0 ppid=1 pid=21379 auid=4294967295 uid=65534 gid=65534 euid=65534 suid=65534 fsuid=65534 egid=65534 sgid=65534 fsgid=65534 tty=(none) ses=4294967295 comm="node" exe="/usr/bin/node" subj=system_u:system_r:httpd_t:s0 key=(null)ARCH=x86_64 SYSCALL=bind AUID="unset" UID="nobody" GID="nobody" EUID="nobody" SUID="nobody" FSUID="nobody" EGID="nobody" SGID="nobody" FSGID="nobody"
+type=AVC msg=audit(1629033781.299:4510): avc:  denied  { name_bind } for  pid=21379 comm="node" src=3101 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket permissive=0
+
+
+$> grep node /var/log/audit/audit.log | audit2allow -m node
+#============= httpd_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t self:process execmem;
+
+#!!!! This avc can be allowed using the boolean 'nis_enabled'
+allow httpd_t unreserved_port_t:tcp_socket name_bind;
+
+
+$> grep node /var/log/audit/audit.log | audit2allow -M node
+
+$> cat node.te
+cat node.te 
+
+module node 1.0;
+
+require {
+	type httpd_t;
+	type unreserved_port_t;
+	class process execmem;
+	class tcp_socket name_bind;
+}
+
+#============= httpd_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t self:process execmem;
+
+#!!!! This avc can be allowed using the boolean 'nis_enabled'
+allow httpd_t unreserved_port_t:tcp_socket name_bind;
+
+How to log server name when all upstream servers are local?
+$upstream_addr
+access_log /var/log/nginx/$host/$upstream_addr;
+</pre>

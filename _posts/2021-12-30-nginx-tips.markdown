@@ -90,5 +90,30 @@ server {
 		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	}
 }
+</pre>
 
+### Force Ngnix to do DNS resolution on proxy_pass URL's (every 5 minutes default)
+[AWS Nginx Proxy Config for OpenSearch](https://aws.amazon.com/premiumsupport/knowledge-center/opensearch-outside-vpc-nginx/)
+#### note you need to make the proxy_pass value an variable for nginx to re-evaluate it
+<pre>        set $proxy_pass_url https://vpc-exp-elasticsearch-XXXXX.us-east-1.es.amazonaws.com;
+        location ~ (/) {
+                proxy_pass          $proxy_pass_url;
+</pre>
+<pre>
+Navigate to the /etc/nginx/conf.d directory, and then create a file called default.conf. Modify the file with the following values:
+/etc/nginx/cert.crt: the path to your SSL certificate
+/etc/nginx/cert.key: the path to the private key that you generated for the SSL certificate
+$domain-endpoint: your OpenSearch Services endpoint
+$cognito_host: your Amazon Cognito user pool domain (that you configured in Step 2)
+
+You can use the sed command to assign $domain-endpoint and $cognito_host as variables, instead of replacing them directly in the default.conf file. Also, make sure to use HTTPS, or you might encounter an error.
+
+Important: The resolver parameter changes according to your VPC settings. The DNS resolver is located at your primary CIDR block's base IP plus two. For example, if you create a VPC with CIDR block 10.0.0.0/24, then your DNS resolver is located at 10.0.0.2.
+
+resolver 10.0.0.2 ipv6=off;
+
+server {
+    listen 443;
+    server_name $host;
+    rewrite ^/$ https://$host/_plugin/dashboards redirect;
 </pre>

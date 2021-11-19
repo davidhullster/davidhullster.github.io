@@ -87,3 +87,6 @@ aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Res
 <pre>
 for i in `aws iam list-users --profile $PROFILE_NAME | jq ".[] | .[] | .UserName" | sed 's/"//g'`; do aws iam add-user-to-group --user-name ${i} --group-name ReadOnly --profile $PROFILE_NAME; done 
 </pre>
+
+#### Search for an IAM user across multiple profiles
+<pre>for i in dev qa production; do echo $i; aws iam list-users --profile $i  | jq '.[] | .[] | select(.UserName | startswith("jdoe"))'; done</pre>

@@ -90,3 +90,6 @@ for i in `aws iam list-users --profile $PROFILE_NAME | jq ".[] | .[] | .UserName
 
 #### Search for an IAM user across multiple profiles
 <pre>for i in dev qa production; do echo $i; aws iam list-users --profile $i  | jq '.[] | .[] | select(.UserName | startswith("jdoe"))'; done</pre>
+
+#### Search for instances with Name tags
+<pre> aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1  | jq -c '.Reservations | .[] | .Instances  |.[] | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .PublicDnsName ]'</pre>

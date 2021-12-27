@@ -1,6 +1,20 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
+title: AWS CLI run-instances with keyname and region
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- aws
+- aws cli
+- aws ec2
+tags: []
+meta:
+author:
+  'Scratches'
 ---
 
 <pre>aws ec2 run-instances \

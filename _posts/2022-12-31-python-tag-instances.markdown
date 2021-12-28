@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: AWS CLI describe-images from describe-instances
+title: Python function to tag aws instances based on AMI name
 type: post
 parent_id: '0'
 published: true

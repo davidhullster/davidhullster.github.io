@@ -98,3 +98,8 @@ for i in `aws iam list-users --profile $PROFILE_NAME | jq ".[] | .[] | .UserName
 <pre>
 aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[]  | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .InstanceId, .PrivateIpAddress, .KeyName ]'
 </pre>
+
+####List instance profiles (Roles)####
+<pre>
+aws ec2 describe-instances  --region us-east-1 --profile $PROFILE_NAME  | jq '.Reservations | .[] | .Instances | .[] | (.Tags[]|select(.Key=="Name")|.Value), .IamInstanceProfile'
+</pre>

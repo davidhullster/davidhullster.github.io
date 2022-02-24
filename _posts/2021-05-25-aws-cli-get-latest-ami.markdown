@@ -13,6 +13,13 @@ tags:
 ---
 
 #### Using SSM: 
+
+#### Amazon Linux2
+<pre>
+aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 --region us-east-2
+</pre>
+
+#### Amazon Linux1
 <pre>aws ssm get-parameters-by-path --path "/aws/service/ami-amazon-linux-latest" --region us-east-1</pre>
 
 <pre>

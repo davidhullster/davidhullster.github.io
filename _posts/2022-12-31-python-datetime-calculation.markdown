@@ -19,6 +19,6 @@ author:
 
 <pre>
 for page in page_iterator['Contents']:  
-  if page['Contents'][0]['LastModified'] <= utc.localize(datetime.datetime.now()) - datetime.timedelta(days=1):  
+  if page['LastModified'] <= utc.localize(datetime.datetime.now()) - datetime.timedelta(days=1):  
     print('Object is less than one day old')
 </pre>

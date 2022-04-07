@@ -94,12 +94,20 @@ for i in `aws iam list-users --profile $PROFILE_NAME | jq ".[] | .[] | .UserName
 #### Search for instances with Name tags
 <pre> aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1  | jq -c '.Reservations | .[] | .Instances  |.[] | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .PublicDnsName ]'</pre>
 
+#### Search for instances with Name and Patch Group tags
+<pre>
+aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1  | jq -c '.Reservations | .[] | .Instances  |.[] | [(.Tags[]|select(.Key=="Patch Group")|.Value), (.Tags[]|select(.Key=="Name")|.Value), .LaunchTime ]'                
+
+["dev-windows","windows_server","2022-04-07T05:10:41+00:00"]
+</pre>
+
 #### Search for instances, return Name, LaunchTime, InstanceId, PrivateIp, KeyName
 <pre>
 aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Reservations | .[] | .Instances | .[]  | [(.Tags[]|select(.Key=="Name")|.Value), .LaunchTime, .InstanceId, .PrivateIpAddress, .KeyName ]'
 </pre>
 
-####List instance profiles (Roles)####
+#### List instance profiles (Roles)####
 <pre>
 aws ec2 describe-instances  --region us-east-1 --profile $PROFILE_NAME  | jq '.Reservations | .[] | .Instances | .[] | (.Tags[]|select(.Key=="Name")|.Value), .IamInstanceProfile'
 </pre>
+

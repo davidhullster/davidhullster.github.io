@@ -111,3 +111,8 @@ aws ec2 describe-instances --profile $PROFILE_NAME --region us-east-1 | jq '.Res
 aws ec2 describe-instances  --region us-east-1 --profile $PROFILE_NAME  | jq '.Reservations | .[] | .Instances | .[] | (.Tags[]|select(.Key=="Name")|.Value), .IamInstanceProfile'
 </pre>
 
+#### List instances with searched Tag Values
+Returns InstanceId for all instances, maybe try a --query to limit?
+<pre>
+aws ec2 describe-instances --profile exp-dev --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | (.Tags[]|select(.Value | startswith("expzk"))), .InstanceId'
+</pre>

@@ -114,10 +114,42 @@ aws ec2 describe-instances  --region us-east-1 --profile $PROFILE_NAME  | jq '.R
 #### List instances with searched Tag Values
 Returns InstanceId for all instances, maybe try a --query to limit?
 <pre>
-aws ec2 describe-instances --profile exp-dev --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | (.Tags[]|select(.Value | startswith("expzk"))), .InstanceId'
+aws ec2 describe-instances --profile tools-dev --region us-east-1 | jq '.Reservations | .[] | .Instances | .[] | (.Tags[]|select(.Value | startswith("tools"))), .InstanceId'
 </pre>
 
 #### List Lambda Functions on Python 3.6
 <pre>
-aws lambda list-functions --function-version ALL --region us-east-1 --output text --query "Functions[?Runtime=='python3.6'].FunctionArn" --profile exp-root
+aws lambda list-functions --function-version ALL --region us-east-1 --output text --query "Functions[?Runtime=='python3.6'].FunctionArn" --profile tools-root
+</pre>
+
+### Scratch -- Searching on Tag Names
+<pre>
+for PROFILE in dev prod; do echo $PROFILE; do aws ec2 describe-instances --profile $PROFILE --region us-east-1  | jq -c '.Reservations | .[] | .Instances  |.[] | [(.Tags[]|select(.Value | contains("tools"))), .State ]'; done 
+
+aws ec2 describe-instances  --profile tools-dev --region us-east-1 | jq '.Reservations[].Instances[] | (.Tags[]|select(.Value | contains("bastion"))), .InstanceId'
+	"i-0c2438fb1429c3e35"
+	"i-0d5e202b039b57392"
+	"i-0ad65948bfcb6f0b7"
+	"i-094507623837eef6f"
+	{
+	  "Key": "Name",
+	  "Value": "dev-tools"
+	}
+
+
+
+aws ec2 describe-instances --query 'Reservations[].Instances[].{InstanceId:InstanceId, Tag:Tags[?Key==`Name`].Value}'  --profile tools-dev --region us-east-1
+	[
+	    {
+	        "InstanceId": "i-0c2438fb1429c3e35",
+	        "Tag": [
+	            "windows-tools"
+	        ]
+	    },
+	    {
+	        "InstanceId": "i-0d5e202b039b57392",
+	        "Tag": [
+	            "tools-1"
+	        ]
+	    },
 </pre>

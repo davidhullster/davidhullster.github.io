@@ -122,6 +122,11 @@ aws ec2 describe-instances --profile tools-dev --region us-east-1 | jq '.Reserva
 aws lambda list-functions --function-version ALL --region us-east-1 --output text --query "Functions[?Runtime=='python3.6'].FunctionArn" --profile tools-root
 </pre>
 
+#### List CloudFormation Stacks
+<pre>
+aws cloudformation list-stacks --profile ${PROFILE} --region us-west-2  | jq -c '.StackSummaries | .[] | (select(.StackStatus | contains("COMPLETE")))' | grep ${STRING_TO_GREP_FOR}
+</pre>
+
 ### Scratch -- Searching on Tag Names
 <pre>
 for PROFILE in dev prod; do echo $PROFILE; do aws ec2 describe-instances --profile $PROFILE --region us-east-1  | jq -c '.Reservations | .[] | .Instances  |.[] | [(.Tags[]|select(.Value | contains("tools"))), .State ]'; done 

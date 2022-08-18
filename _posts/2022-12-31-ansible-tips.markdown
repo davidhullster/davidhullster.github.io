@@ -233,13 +233,188 @@ IP ADDRESS: {{ ansible_default_ipv4.address }}
 OS DISTRO: {{ ansible_distribution }}
 ```
 
-###
+### Ansible playbook to deploy a file created with a template
 ```yaml
 ---
-- hosts: local
+- hosts: localhost
   tasks:
   - name: deploy local net file
     template:
       src: /home/user/template/network.j2
       dest: /home/user/template/network.txt
+```
+
+### Ansible Variables and Facts
+* ansible variables
+ * vars, var_files and vars_prompt
+ * ansible-playbook play.yml -e '{"varKey":"varValue","varKey2":"varValue2"}'
+ * - debug: msg="This is the variable: { varKey }"
+* dictionary variables
+ * varName['KeyName'] or varName.KeyName
+* magic variables and filters
+ * special variables i.e. `hostvars` allows looking at facts about _other_ hosts in inventory
+ * `{{ hostvars['node1']['ansible_distribution'] }}` - look at ansible_distribution fact for node1
+ * `{{ groups['labservers'] }}` - get list of servers in a group in inventory
+ * Jinja2 filters can be used to modify ansible variables
+  * `{{ groups['labservers']|join(' ') }}` turn list of hosts into space-separated list
+  * https://jinja.palletsprojects.com/en/3.1.x/templates/#list-of-builtin-filters
+* ansible facts
+* Facts.d - create your own custom facts
+ * To use facts.d, create an /etc/ansible/facts.d directory on the remote host or hosts.
+ * Add files to the directory to supply your custom facts. All file names must end with .fact. 
+ * The files can be JSON, INI, or executable files returning JSON.
+ ```ini
+[general]
+users=[dsmith,bjones,rthompson]
+flowers=[daisy,hyacinth,rose]
+ ```
+ * To view custom facts: `ansible <hostname> -m ansible.builtin.setup -a "filter=ansible_local"`
+### Use a variable in a playbook
+```yaml
+---
+- hosts: localhost
+  vars:
+    inv_file: /home/ansible/vars/inv.txt
+  tasks:
+  - name:
+    file:
+      path: "{{ inv_file }}"
+      state: touch
+  - name: generate content in inv_file
+    lineinfile:
+      path: "{{ inv_file }}"
+      line: "{{ groups['labservers']|join(' ') }}"
+```
+### yaml list
+```yaml
+staff:
+  - joe
+  - john
+  - bob
+  - sam
+  - mark
+faculty:
+  - matt
+  - alex
+  - frank
+other:
+  - will
+  - jack
+```
+### Playbook to create a list of users from users.lst
+* use @ symbol to designate pulling data from a file ("@filename.txt")
+```bash
+ansible-playbook userList.yaml -e "@users.lst"
+```
+```yaml
+---
+- hosts: localhost
+  vars:
+    userFile: /home/ansible/vars/list
+  tasks:
+  - name: create file
+    file:
+      state: touch
+      path: "{{ userFile }}"
+  - name: list users
+    lineinfile:
+      path: "{{ userFile }}"
+      line: "{{ item }}"
+    with_items:
+      - "{{ staff }}"
+      - "{{ faculty }}"
+      - "{{ other }}"
+```
+### Ansible Facts
+* filter facts for ipv4 information
+```bash
+ansible all -m setup -a "filter=*ipv4*"
+"{{ ansible_default_ipv4.address }}"
+```
+* custom facts can be created on the remote systems
+* create in /etc/ansible/facts.d (default)
+* create on remote systems, not on ansible host
+```bash
+ansible all -m setup -a "filter=ansible_local"
+<remote_system> $ cat /etc/ansible/facts.d/prefs.fact
+[location]
+type=physical
+datacenter=Alexandria
+```
+### Template to create sudoers file, plus validation
+```yaml
+---
+- hosts: all
+  vars:
+    sudoers_directory: /etc/sudoers.d
+    sudoers_file: hardened
+  tasks:
+  - name: create directory
+    file:
+      state: directory
+      mode: "0755"
+  - name: create file
+    template:
+      src: /home/ansible/template/sudoers.j2
+      dest: "{{ sudoers_directory }}/{{ sudoers_file }}"
+      validate: /usr/sbin/visudo -cf %s
+```
+### jinja2 template file for sudoers
+```jinja
+%sysops "{{ ansible_default_ipv4.address }}" = (ALL) ALL
+Host_Alias WEBSERVERS = "{{ groups['web']|join(',') }}"
+Host_Alias DBSERVERS = "{{ groups['database']|join(',') }}"
+%httpd WEBSERVERS = /bin/su - webuser
+%dba DBSERVERS = /bin/su - dbuser
+```
+### Create and apply an ansible role
+* /etc/ansible/roles/apache/main.yml
+```yaml
+---
+- name: install apache
+  yum: name=httpd state=latest
+
+- name: copy httpd.conf template
+  template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+  notify: restart httpd
+
+- name: enable and start service
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+```
+### jinja2 template for httpd.conf role file
+* /etc/ansible/roles/apache/templates/httpd.j2
+```jinja
+ServerAdmin "{{ apache_server_admin }}"
+```
+### define variable for apache_server_admin in ansible role defaults
+```yaml
+apache_server_admin: admin@example.com
+```
+### apache role defaults file
+* /etc/ansible/roles/apache/defaults/main.yml
+```yaml
+apache_server_admin: admin@example.com
+```
+### apache role handler file
+* /etc/ansible/roles/apache/handlers/main.yml
+```yaml 
+---
+- name: restart apache service
+  service: name=httpd state=restarted
+  listen: "restart httpd"
+```
+### install.yml to install role
+```yaml
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - apache
+  vars:
+    apache_server_admin: example@example.com
 ```

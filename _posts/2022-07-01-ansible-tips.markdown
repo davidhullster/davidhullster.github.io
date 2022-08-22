@@ -418,3 +418,200 @@ apache_server_admin: admin@example.com
   vars:
     apache_server_admin: example@example.com
 ```
+### alternative way to call a role - dynamically
+* doesn't pre-load role, less verification before run
+```yaml
+---
+- hosts: websrvers
+  tasks:
+  - include_role:
+    name: apache
+  tags:
+  - RH_HTTPD
+  when: "ansible_os_family" == "RedHat"
+  ```
+### encrypt a file with ansible-vault
+* requires plain-text file on file-system
+* use no_log parameter in playbooks when retrieving password from vault
+```bash
+[ansible@control1 ~]$ vim secure # password
+[ansible@control1 ~]$ vim secret # 'the rain in spain'
+[ansible@control1 ~]$ ansible-vault encrypt secret --vault-id dev@secure
+Encryption successful
+[ansible@control1 ~]$ cat secret
+$ANSIBLE_VAULT;1.2;AES256;dev
+30343231373030356365663339636235306262313639653036613961316631666334366132616534
+3161333366356462613438373537326266343638366539320a363937366437386365396265393437
+30333938393931666438386636363164343939376232633237663936343266663037393565356531
+3266656562626331640a303334303566366335643439656339366165323261326261643037353035
+63616263396663636339646337343436396538316564303765343562306336653766
+[ansible@control1 ~]$ cat secure
+password
+[ansible@control1 ~]$ ansible-vault decrypt secret
+Vault password: 
+Decryption successful
+[ansible@control1 ~]$ cat secret
+the rain in spain
+```
+### decrypt a password using a playbook, passing the vault-id on the command line
+```bash
+[ansible@control1 ~]$ vim secure # password
+[ansible@control1 ~]$ ansible-vault view secret
+Vault password: 
+secure_user: bond
+secure_password: james
+[ansible@control1 ~]$ ansible-vault encrypt secret
+New Vault password: 
+Confirm New Vault password: 
+Encryption successful
+[ansible@control1 ~]$ cat secret 
+$ANSIBLE_VAULT;1.1;AES256
+31323265306133343635633465646531343338623332393464386330383336633362343233616464
+6566376163333335373766383063383665303835396636390a653434303533643966366636313837
+38366330666235396563326134653835656435383661393036363763643065366462666532643037
+6233623965356338640a646136633063363861623535303736623161613532356364636231336665
+31376362303731656633656539323862316533346234353965663466653565653361396135333730
+3362386537643462666436376239363431643738636337626563
+[ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
+---
+```
+### snippet of ansible playbook creating variable from encrypted 'secret' file, decrypted at runtime by commandline arg
+```yaml
+- hosts: webservers
+  become: yes
+  vars_files: 
+    - /home/ansible/secret
+  - name: create users for basic auth
+    htpasswd:
+      path: /var/www/html/secure/.passwdfile
+      name: "{{ secure_user }}"         # dictionary key from 'vault' file
+      password: "{{ secure_password }}" # dictionary key from 'vault' file
+```
+```bash
+[ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
+#### After playbook completes
+[ansible@control1 ~]$ curl -u bond http://10.0.1.80/secure/classified.html
+Enter host password for user 'bond': # value of 'secure_password': james
+It's always sunny in Moscow this time of year....
+```
+## ansible playbook to create page secured by htpassword 
+```yaml
+---
+- hosts: webservers
+  become: yes
+  vars_files: 
+    - /home/ansible/secret
+  tasks:
+  - name: install apache
+    yum: name=httpd state=latest
+  - name: configure httpd as necessary
+    template:
+      src: /home/ansible/assets/httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+  - name: create secure directory
+    file: state=directory path=/var/www/html/secure mode=0755
+  - name: deploy htaccess file
+    template:
+      src: /home/ansible/assets/htaccess.j2
+      dest: /var/www/html/secure/.htaccess
+  - name: make sure passlib is installed for htpasswd module
+    yum: name=python-passlib state=latest
+  - name: create users for basic auth
+    htpasswd:
+      path: /var/www/html/secure/.passwdfile
+      name: "{{ secure_user }}"
+      password: "{{ secure_password }}"
+      crypt_scheme: md5_crypt
+  - name: start and enable apache
+    service: name=httpd state=started enabled=yes
+  - name: install secure files
+    copy:
+      src: /home/ansible/assets/classified.html
+      dest: /var/www/html/secure/classified.html
+```
+### install ansible on RHEL server
+```bash
+sudo yum install ansible -y
+sudo useradd ansible
+sudo passwd ansible
+sudo visudo ## add ansible user with nopasswd option
+>>> ansible     ALL=(ALL)     NOPASSWD: ALL
+sudo vim /etc/hosts
+>>> 12.34.167.890 labserver.mylabserver.com
+>>> 98.76.543.210 lab1
+>>> 87.65.432.109 lab2
+sudo vim /etc/ansible/hosts
+[labservers]
+lab1
+lab2
+[local]
+localhost
+```
+### shell script to run ansible ad-hoc command
+```bash
+#!/bin/bash
+# command line first argument is $1
+
+if [ -n $1 ]; then
+    echo "Package to install is $1"
+else
+    echo "Package to install was not supplied"
+    exit
+fi
+
+ansible all -b -m yum -a "name=$1 state=present"
+```
+### install firewalld, shorthand syntax with 'action'
+```bash
+install-firewalld.yml
+```
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: install firewalld
+      action: yum name=firewalld state=installed
+    - name: enable firewalld on system reboot
+      service: name=firewalld enabled=yes
+    - name: start service firewalld, if not started
+      service:
+        name: firewalld
+        state: started
+```
+## install apache with firewalld blocking access
+* the previous playbook installs and starts firewalld
+* but doesn't open any ports, so httpd will fail to start
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: install elinks
+      action: yum name=elinks state=installed
+    - name: install httpd
+      action: yum name=httpd state=installed
+    - name: enable & start apache on system reboot
+      service: name=httpd enabled=yes state=started
+```
+### update firewalld to allow http access
+```yaml
+ ---
+ - hosts: all
+   user: ansible
+   become: yes
+   gather_facts: no
+   tasks:
+     - firewalld:
+         service: http
+         permanent: yes
+         state: enabled
+     - name:
+       service:
+         name: firewalld
+         state: restarted
+```

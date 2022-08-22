@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: Python function to tag aws instances based on AMI name
+title: Symlink log files to stdout and stderr
 type: post
 parent_id: '0'
 published: true

@@ -608,11 +608,12 @@ install-firewalld.yml
    become: yes
    gather_facts: no
    tasks:
-     - firewalld:
+     - name: set http port open in firewalld 
+       firewalld:
          service: http
          permanent: yes
          state: enabled
-     - name:
+     - name: restart firewalld with http port opened
        service:
          name: firewalld
          state: restarted

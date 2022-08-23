@@ -263,11 +263,11 @@ OS DISTRO: {{ ansible_distribution }}
  * To use facts.d, create an /etc/ansible/facts.d directory on the remote host or hosts.
  * Add files to the directory to supply your custom facts. All file names must end with .fact. 
  * The files can be JSON, INI, or executable files returning JSON.
- ```ini
+```ini
 [general]
 users=[dsmith,bjones,rthompson]
 flowers=[daisy,hyacinth,rose]
- ```
+```
  * To view custom facts: `ansible <hostname> -m ansible.builtin.setup -a "filter=ansible_local"`
 ### Use a variable in a playbook
 ```yaml

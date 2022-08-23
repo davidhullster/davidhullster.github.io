@@ -489,10 +489,12 @@ $ANSIBLE_VAULT;1.1;AES256
 ```
 ```bash
 [ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
+```
 #### After playbook completes
+```bash
 [ansible@control1 ~]$ curl -u bond http://10.0.1.80/secure/classified.html
 Enter host password for user 'bond': # value of 'secure_password': james
-It's always sunny in Moscow this time of year....
+"It's always sunny in Moscow this time of year...."
 ```
 ## ansible playbook to create page secured by htpassword 
 ```yaml
@@ -552,7 +554,7 @@ localhost
 #!/bin/bash
 # command line first argument is $1
 
-if [ -n $1 ]; then
+if [ -n "$1" ]; then
     echo "Package to install is $1"
 else
     echo "Package to install was not supplied"

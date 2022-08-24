@@ -263,7 +263,7 @@ OS DISTRO: {{ ansible_distribution }}
  * To use facts.d, create an /etc/ansible/facts.d directory on the remote host or hosts.
  * Add files to the directory to supply your custom facts. All file names must end with .fact. 
  * The files can be JSON, INI, or executable files returning JSON.
-```ini
+```
 [general]
 users=[dsmith,bjones,rthompson]
 flowers=[daisy,hyacinth,rose]
@@ -473,10 +473,10 @@ $ANSIBLE_VAULT;1.1;AES256
 31376362303731656633656539323862316533346234353965663466653565653361396135333730
 3362386537643462666436376239363431643738636337626563
 [ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
----
 ```
 ### snippet of ansible playbook creating variable from encrypted 'secret' file, decrypted at runtime by commandline arg
 ```yaml
+---
 - hosts: webservers
   become: yes
   vars_files: 

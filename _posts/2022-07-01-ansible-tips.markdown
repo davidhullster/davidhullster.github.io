@@ -360,7 +360,7 @@ datacenter=Alexandria
       validate: /usr/sbin/visudo -cf %s
 ```
 ### jinja2 template file for sudoers
-```jinja
+```
 %sysops "{{ ansible_default_ipv4.address }}" = (ALL) ALL
 Host_Alias WEBSERVERS = "{{ groups['web']|join(',') }}"
 Host_Alias DBSERVERS = "{{ groups['database']|join(',') }}"
@@ -617,4 +617,35 @@ install-firewalld.yml
        service:
          name: firewalld
          state: restarted
+```
+### using the Archive module to compress files
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Compress directory /var/log/ into /home/ansible/logs.zip
+    archive:
+      path: /var/log
+      dest: /home/ansible/logs.tar.gz
+      owner: ansible
+      group: ansible
+      format: gz
+```
+### ansible playbook to update crontab using cron module
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: ensure a job exists that runs between 5am/5pm. Create an entry like "0 5,17 * * * df-h >> /tmp/diskspace"
+    cron:
+      name: "Job 0001"
+      minute: "0"
+      hour: "5,17"
+      job: "df-h >> /tmp/diskspace"
 ```

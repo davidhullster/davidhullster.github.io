@@ -49,10 +49,11 @@ other:
 ```
 ### Playbook to create a list of users from users.lst
 * use @ symbol to designate pulling data from a file ("@filename.txt")
-```bash
+```
 ansible-playbook userList.yaml -e "@users.lst"
 ```
-### playbook
+
+### playbook to loop over list of users
 ```yaml
 ---
 - hosts: localhost

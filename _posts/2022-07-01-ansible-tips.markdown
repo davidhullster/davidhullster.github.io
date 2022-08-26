@@ -270,7 +270,7 @@ flowers=[daisy,hyacinth,rose]
 ```
  * To view custom facts: `ansible <hostname> -m ansible.builtin.setup -a "filter=ansible_local"`
 ### Use a variable in a playbook
-```yaml
+```
 ---
 - hosts: localhost
   vars:

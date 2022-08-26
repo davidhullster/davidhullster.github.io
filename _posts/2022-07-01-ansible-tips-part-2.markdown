@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: Ansible playbooks and templates
+title: Ansible playbooks and templates - part two
 type: post
 parent_id: "0"
 published: true

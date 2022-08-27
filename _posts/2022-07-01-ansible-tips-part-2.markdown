@@ -397,3 +397,130 @@ install-firewalld.yml
       hour: "5,17"
       job: "df-h >> /tmp/diskspace"
 ```
+### add environment variables to crontab playbook
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: creates an entry like "PATH=/opt/bin" at top of crontab
+    cron:
+      name: PATH
+      env: yes
+      job: /opt/bin
+  - name: creates an entry like "APP_HOME=/srv/app" and inserts it after PATH declaration above
+    cron:
+      name: APP_HOME
+      env: yes
+      job: /srv/app
+      insertbefore: PATH
+  - name: ensure a job exists that runs between 5am/5pm. Create an entry like "0 5,17 * * * df-h >> /tmp/diskspace"
+    cron:
+      name: "Job 0001"
+      minute: "0"
+      hour: "5,17"
+      job: "df-h >> /tmp/diskspace"
+```
+### Install AT module to schedule and run one-time tasks
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: install the at command for job scheduling
+      service:
+        name: atd
+        enabled: yes
+        state: started
+```
+### Create a task to schedule a task in AT
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: no
+  gather_facts: no
+  tasks:
+    - name: Schedule a command to execute in 20 minutes as the ansible user
+      at:
+        command: df -h > /tmp/diskspace
+        count: 20
+        units: minutes
+```
+### Ansible for Security selinux-check.yml
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Enable SELinux
+    selinux:
+      policy: targeted
+      state: enforcing
+```
+### Install firewalld and ensure it's started
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: 
+    action: yum name=firewalld state=installed
+  - name: enable firewalld on system reboot
+    service: name=firewalld enabled=yes
+  - name: start service firewalld, if not started
+    service:
+      name: firewalld
+      state: started
+```
+### Create linux user that expires, and belongs to a group
+* create group
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: ensure group 'developers' exists
+    group:
+      name: developers
+      state: present
+```
+* get password hash for password
+```sh
+# create user
+sudo adduser tmpuser
+# create a known password for user
+sudo passwd tmpuser
+# get password hash from /etc/shadow
+sudo grep tmpuser /etc/shadow
+>>> tmpuser:$randomstring....
+# pwdhash is between first and second colon ':' in $randomstring
+```
+* convert desired user expiration date to epoch time https://www.epochconverter.com
+### Playbook to create user in a group, add password and expiration in epoch time
+```yaml
+---
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: add a user account that will expire on a specific date
+    user:
+      name: james20
+      shell: /bin/bash
+      groups: developers
+      append: yes
+      expires: REPLACE-WITH-EPOCH-TIME
+      password: REPLACE-WITH-HASH
+```

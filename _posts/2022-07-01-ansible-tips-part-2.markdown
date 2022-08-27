@@ -88,6 +88,7 @@ ansible all -m setup -a "filter=*ipv4*"
 * custom facts can be created on the remote systems
 * create in /etc/ansible/facts.d (default)
 * create on remote systems, not on ansible host
+{% ram %}
 ```
 ansible all -m setup -a "filter=ansible_local"
 <remote_system> $ cat /etc/ansible/facts.d/prefs.fact
@@ -95,6 +96,7 @@ ansible all -m setup -a "filter=ansible_local"
 type=physical
 datacenter=Alexandria
 ```
+{% endraw %}
 ### Template to create sudoers file, plus validation
 {% raw %}
 ```yaml

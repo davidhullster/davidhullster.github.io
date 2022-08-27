@@ -84,6 +84,7 @@ ansible-playbook userList.yaml -e "@users.lst"
 ansible all -m setup -a "filter=*ipv4*"
 {{ ansible_default_ipv4.address }}
 ```
+{% endraw %}
 * custom facts can be created on the remote systems
 * create in /etc/ansible/facts.d (default)
 * create on remote systems, not on ansible host
@@ -94,8 +95,8 @@ ansible all -m setup -a "filter=ansible_local"
 type=physical
 datacenter=Alexandria
 ```
-{% endraw %}
 ### Template to create sudoers file, plus validation
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -110,10 +111,12 @@ datacenter=Alexandria
   - name: create file
     template:
       src: /home/ansible/template/sudoers.j2
-      dest: "{{ sudoers_directory }}/{{ sudoers_file }}"
+      dest: {{ sudoers_directory }}/{{ sudoers_file }}
       validate: /usr/sbin/visudo -cf %s
 ```
+{% endraw %}
 ### jinja2 template file for sudoers
+{% raw %}
 ```
 %sysops "{{ ansible_default_ipv4.address }}" = (ALL) ALL
 Host_Alias WEBSERVERS = "{{ groups['web']|join(',') }}"
@@ -121,6 +124,7 @@ Host_Alias DBSERVERS = "{{ groups['database']|join(',') }}"
 %httpd WEBSERVERS = /bin/su - webuser
 %dba DBSERVERS = /bin/su - dbuser
 ```
+{% endraw %}
 ### Create and apply an ansible role
 * /etc/ansible/roles/apache/main.yml
 ```yaml
@@ -142,9 +146,11 @@ Host_Alias DBSERVERS = "{{ groups['database']|join(',') }}"
 ```
 ### jinja2 template for httpd.conf role file
 * /etc/ansible/roles/apache/templates/httpd.j2
+{% raw %}
 ```jinja
 ServerAdmin "{{ apache_server_admin }}"
 ```
+{% endraw %}
 ### define variable for apache_server_admin in ansible role defaults
 ```yaml
 apache_server_admin: admin@example.com

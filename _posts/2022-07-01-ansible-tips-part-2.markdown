@@ -63,15 +63,15 @@ ansible-playbook userList.yaml -e "@users.lst"
   - name: create file
     file:
       state: touch
-      path: {% raw %}{{ userFile }}{% raw %}
+      path: {% raw %}{{ userFile }}{% endraw %}
   - name: list users
     lineinfile:
-      path: {% raw %}{{ userFile }}{% raw %}
-      line: {% raw %}{{ item }}{% raw %}
+      path: {% raw %}{{ userFile }}{% endraw %}
+      line: {% raw %}{{ item }}{% endraw %}
     with_items:
-      - {% raw %}{{ staff }}{% raw %}
-      - {% raw %}{{ faculty }}{% raw %}
-      - {% raw %}{{ other }}{% raw %}
+      - {% raw %}{{ staff }}{% endraw %}
+      - {% raw %}{{ faculty }}{% endraw %}
+      - {% raw %}{{ other }}{% endraw %}
 ```
 ### Ansible Facts
 * filter facts for ipv4 information

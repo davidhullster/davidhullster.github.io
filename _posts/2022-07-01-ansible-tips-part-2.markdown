@@ -366,6 +366,7 @@ install-firewalld.yml
 ## install apache with firewalld blocking access
 * the previous playbook installs and starts firewalld
 * but doesn't open any ports, so httpd will fail to start
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -380,7 +381,9 @@ install-firewalld.yml
     - name: enable & start apache on system reboot
       service: name=httpd enabled=yes state=started
 ```
+{% endraw %}
 ### update firewalld to allow http access
+{% raw %}
 ```yaml
  ---
  - hosts: all
@@ -398,7 +401,9 @@ install-firewalld.yml
          name: firewalld
          state: restarted
 ```
+{% endraw %}
 ### using the Archive module to compress files
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -414,7 +419,9 @@ install-firewalld.yml
       group: ansible
       format: gz
 ```
+{% endraw %}
 ### ansible playbook to update crontab using cron module
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -429,7 +436,9 @@ install-firewalld.yml
       hour: "5,17"
       job: "df-h >> /tmp/diskspace"
 ```
+{% endraw %}
 ### add environment variables to crontab playbook
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -455,7 +464,9 @@ install-firewalld.yml
       hour: "5,17"
       job: "df-h >> /tmp/diskspace"
 ```
+{% endraw %}
 ### Install AT module to schedule and run one-time tasks
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -469,7 +480,9 @@ install-firewalld.yml
         enabled: yes
         state: started
 ```
+{% endraw %}
 ### Create a task to schedule a task in AT
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -483,7 +496,9 @@ install-firewalld.yml
         count: 20
         units: minutes
 ```
+{% endraw %}
 ### Ansible for Security selinux-check.yml
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -496,7 +511,9 @@ install-firewalld.yml
       policy: targeted
       state: enforcing
 ```
+{% endraw %}
 ### Install firewalld and ensure it's started
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -513,8 +530,10 @@ install-firewalld.yml
       name: firewalld
       state: started
 ```
+{% endraw %}
 ### Create linux user that expires, and belongs to a group
 * create group
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -527,7 +546,9 @@ install-firewalld.yml
       name: developers
       state: present
 ```
+{% endraw %}
 * get password hash for password
+{% raw %}
 ```sh
 # create user
 sudo adduser tmpuser
@@ -538,8 +559,10 @@ sudo grep tmpuser /etc/shadow
 >>> tmpuser:$randomstring....
 # pwdhash is between first and second colon ':' in $randomstring
 ```
+{% endraw %}
 * convert desired user expiration date to epoch time https://www.epochconverter.com
 ### Playbook to create user in a group, add password and expiration in epoch time
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -556,3 +579,4 @@ sudo grep tmpuser /etc/shadow
       expires: REPLACE-WITH-EPOCH-TIME
       password: REPLACE-WITH-HASH
 ```
+{% endraw %}

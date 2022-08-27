@@ -190,6 +190,7 @@ apache_server_admin: admin@example.com
 {% endraw %}
 ### alternative way to call a role - dynamically
 * doesn't pre-load role, less verification before run
+{% raw %}
 ```yaml
 ---
 - hosts: websrvers
@@ -200,9 +201,11 @@ apache_server_admin: admin@example.com
   - RH_HTTPD
   when: "ansible_os_family" == "RedHat"
 ```
+{% endraw %}
 ### encrypt a file with ansible-vault
 * requires plain-text file on file-system
 * use no_log parameter in playbooks when retrieving password from vault
+{% raw %}
 ```bash
 [ansible@control1 ~]$ vim secure # password
 [ansible@control1 ~]$ vim secret # 'the rain in spain'
@@ -223,7 +226,9 @@ Decryption successful
 [ansible@control1 ~]$ cat secret
 the rain in spain
 ```
+{% endraw %}
 ### decrypt a password using a playbook, passing the vault-id on the command line
+{% raw %}
 ```bash
 [ansible@control1 ~]$ vim secure # password
 [ansible@control1 ~]$ ansible-vault view secret
@@ -244,6 +249,7 @@ $ANSIBLE_VAULT;1.1;AES256
 3362386537643462666436376239363431643738636337626563
 [ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
 ```
+{% endraw %}
 ### snippet of ansible playbook creating variable from encrypted 'secret' file, decrypted at runtime by commandline arg
 {% raw %}
 ```yaml

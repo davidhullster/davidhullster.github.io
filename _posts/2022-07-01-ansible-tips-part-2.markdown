@@ -16,6 +16,7 @@ meta:
 author: "Scratches"
 ---
 ### Use a variable in a playbook
+{% raw %}
 ```yaml
 ---
 - hosts: localhost
@@ -24,13 +25,14 @@ author: "Scratches"
   tasks:
   - name:
     file:
-      path: "{{ inv_file }}"
+      path: {{ inv_file }}
       state: touch
   - name: generate content in inv_file
     lineinfile:
-      path: "{{ inv_file }}"
-      line: "{{ groups['labservers']|join(' ') }}"
+      path: {{ inv_file }}
+      line: {{ groups['labservers']|join(' ') }}
 ```
+{% endraw %}
 ### yaml list
 ```yaml
 staff:
@@ -54,6 +56,7 @@ ansible-playbook userList.yaml -e "@users.lst"
 ```
 
 ### playbook to loop over list of users
+{% raw %}
 ```yaml
 ---
 - hosts: localhost
@@ -63,21 +66,23 @@ ansible-playbook userList.yaml -e "@users.lst"
   - name: create file
     file:
       state: touch
-      path: {% raw %}{{ userFile }}{% endraw %}
+      path: {{ userFile }}
   - name: list users
     lineinfile:
-      path: {% raw %}{{ userFile }}{% endraw %}
-      line: {% raw %}{{ item }}{% endraw %}
+      path: {{ userFile }}
+      line: {{ item }}
     with_items:
-      - {% raw %}{{ staff }}{% endraw %}
-      - {% raw %}{{ faculty }}{% endraw %}
-      - {% raw %}{{ other }}{% endraw %}
+      - {{ staff }}
+      - {{ faculty }}
+      - {{ other }}
 ```
+{% endraw %}
 ### Ansible Facts
 * filter facts for ipv4 information
+{% raw %}
 ```bash
 ansible all -m setup -a "filter=*ipv4*"
-{% raw %}{{ ansible_default_ipv4.address }}{% raw %}
+{{ ansible_default_ipv4.address }}
 ```
 * custom facts can be created on the remote systems
 * create in /etc/ansible/facts.d (default)
@@ -89,6 +94,7 @@ ansible all -m setup -a "filter=ansible_local"
 type=physical
 datacenter=Alexandria
 ```
+{% endraw %}
 ### Template to create sudoers file, plus validation
 ```yaml
 ---
@@ -223,6 +229,7 @@ $ANSIBLE_VAULT;1.1;AES256
 [ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
 ```
 ### snippet of ansible playbook creating variable from encrypted 'secret' file, decrypted at runtime by commandline arg
+{% raw %}
 ```yaml
 ---
 - hosts: webservers
@@ -232,9 +239,10 @@ $ANSIBLE_VAULT;1.1;AES256
   - name: create users for basic auth
     htpasswd:
       path: /var/www/html/secure/.passwdfile
-      name: {% raw %}{{ secure_user }}{% raw %}         # dictionary key from 'vault' file
-      password: {% raw %}{{ secure_password }}{% raw %} # dictionary key from 'vault' file
+      name: {{ secure_user }}      # dictionary key from 'vault' file
+      password: {{ secure_password }} # dictionary key from 'vault' file
 ```
+{% endraw %}
 ```bash
 [ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
 ```
@@ -245,6 +253,7 @@ Enter host password for user 'bond': # value of 'secure_password': james
 "It's always sunny in Moscow this time of year...."
 ```
 ## ansible playbook to create page secured by htpassword 
+{% raw %}
 ```yaml
 ---
 - hosts: webservers
@@ -269,8 +278,8 @@ Enter host password for user 'bond': # value of 'secure_password': james
   - name: create users for basic auth
     htpasswd:
       path: /var/www/html/secure/.passwdfile
-      name: {% raw %}{{ secure_user }}{% raw %}
-      password: {% raw %}{{ secure_password }}{% raw %}
+      name: {{ secure_user }}
+      password: {{ secure_password }}
       crypt_scheme: md5_crypt
   - name: start and enable apache
     service: name=httpd state=started enabled=yes
@@ -279,6 +288,7 @@ Enter host password for user 'bond': # value of 'secure_password': james
       src: /home/ansible/assets/classified.html
       dest: /var/www/html/secure/classified.html
 ```
+{% endraw %}
 ### install ansible on RHEL server
 ```bash
 sudo yum install ansible -y

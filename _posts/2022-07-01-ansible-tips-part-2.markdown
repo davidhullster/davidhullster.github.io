@@ -177,6 +177,7 @@ apache_server_admin: admin@example.com
 ```
 {% endraw %}
 ### install.yml to install role
+{% raw %}
 ```yaml
 ---
 - hosts: localhost
@@ -186,6 +187,7 @@ apache_server_admin: admin@example.com
   vars:
     apache_server_admin: example@example.com
 ```
+{% endraw %}
 ### alternative way to call a role - dynamically
 * doesn't pre-load role, less verification before run
 ```yaml
@@ -197,7 +199,7 @@ apache_server_admin: admin@example.com
   tags:
   - RH_HTTPD
   when: "ansible_os_family" == "RedHat"
-  ```
+```
 ### encrypt a file with ansible-vault
 * requires plain-text file on file-system
 * use no_log parameter in playbooks when retrieving password from vault

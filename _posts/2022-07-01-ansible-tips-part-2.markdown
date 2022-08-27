@@ -154,22 +154,28 @@ ServerAdmin "{{ apache_server_admin }}"
 ```
 {% endraw %}
 ### define variable for apache_server_admin in ansible role defaults
+{% raw %}
 ```yaml
 apache_server_admin: admin@example.com
 ```
+{% endraw %}
 ### apache role defaults file
 * /etc/ansible/roles/apache/defaults/main.yml
+{% raw %}
 ```yaml
 apache_server_admin: admin@example.com
 ```
+{% endraw %}
 ### apache role handler file
 * /etc/ansible/roles/apache/handlers/main.yml
+{% raw %}
 ```yaml 
 ---
 - name: restart apache service
   service: name=httpd state=restarted
   listen: "restart httpd"
 ```
+{% endraw %}
 ### install.yml to install role
 ```yaml
 ---

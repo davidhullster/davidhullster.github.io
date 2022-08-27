@@ -560,8 +560,8 @@ sudo grep tmpuser /etc/shadow
 # pwdhash is between first and second colon ':' in $randomstring
 ```
 {% endraw %}
-* convert desired user expiration date to epoch time https://www.epochconverter.com
 ### Playbook to create user in a group, add password and expiration in epoch time
+* convert desired user expiration date to epoch time https://www.epochconverter.com
 {% raw %}
 ```yaml
 ---

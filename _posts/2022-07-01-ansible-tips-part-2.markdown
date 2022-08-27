@@ -63,21 +63,21 @@ ansible-playbook userList.yaml -e "@users.lst"
   - name: create file
     file:
       state: touch
-      path: "{{ userFile }}"
+      path: {% raw %}{{ userFile }}{% raw %}
   - name: list users
     lineinfile:
-      path: "{{ userFile }}"
-      line: "{{ item }}"
+      path: {% raw %}{{ userFile }}{% raw %}
+      line: {% raw %}{{ item }}{% raw %}
     with_items:
-      - "{{ staff }}"
-      - "{{ faculty }}"
-      - "{{ other }}"
+      - {% raw %}{{ staff }}{% raw %}
+      - {% raw %}{{ faculty }}{% raw %}
+      - {% raw %}{{ other }}{% raw %}
 ```
 ### Ansible Facts
 * filter facts for ipv4 information
 ```bash
 ansible all -m setup -a "filter=*ipv4*"
-"{{ ansible_default_ipv4.address }}"
+{% raw %}{{ ansible_default_ipv4.address }}{% raw %}
 ```
 * custom facts can be created on the remote systems
 * create in /etc/ansible/facts.d (default)
@@ -232,8 +232,8 @@ $ANSIBLE_VAULT;1.1;AES256
   - name: create users for basic auth
     htpasswd:
       path: /var/www/html/secure/.passwdfile
-      name: "{{ secure_user }}"         # dictionary key from 'vault' file
-      password: "{{ secure_password }}" # dictionary key from 'vault' file
+      name: {% raw %}{{ secure_user }}{% raw %}         # dictionary key from 'vault' file
+      password: {% raw %}{{ secure_password }}{% raw %} # dictionary key from 'vault' file
 ```
 ```bash
 [ansible@control1 ~]$ ansible-playbook secPage.yml --vault-id dev@vault
@@ -269,8 +269,8 @@ Enter host password for user 'bond': # value of 'secure_password': james
   - name: create users for basic auth
     htpasswd:
       path: /var/www/html/secure/.passwdfile
-      name: "{{ secure_user }}"
-      password: "{{ secure_password }}"
+      name: {% raw %}{{ secure_user }}{% raw %}
+      password: {% raw %}{{ secure_password }}{% raw %}
       crypt_scheme: md5_crypt
   - name: start and enable apache
     service: name=httpd state=started enabled=yes

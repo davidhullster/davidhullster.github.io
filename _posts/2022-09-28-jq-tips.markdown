@@ -12,6 +12,12 @@ tags:
 - describe-instances
 - describe-subnets
 ---
+### list cidrs for VPC's accross accounts
+<pre>
+for acct in acct1 acct2 acct3 acct4 acct5 acct6; do aws ec2 describe-vpcs --profile ${acct} --region us-east-1 | jq '.Vpcs[] | if .Tags then [.OwnerId, (.Tags[]|select(.Key | startswith("Name")).Value), .CidrBlock] else [.OwnerId, "Default", .CidrBlock]  end'; done
+</pre>
+
+
 #### list instances with instanceId, launchTime, state and stateReason
 <pre>aws ec2 describe-instances --region us-east-2 |
     jq "[.Reservations | .[] | .Instances | .[] |

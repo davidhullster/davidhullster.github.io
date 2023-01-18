@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: AWS SystemsManager CLI Examples
+title: Python Loop over List and swap elements
 categories:
 - python
 - list

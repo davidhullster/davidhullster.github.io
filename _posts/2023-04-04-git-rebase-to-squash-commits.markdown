@@ -9,7 +9,7 @@ categories:
 tags:
 - git
 ---
-<pre>
+
 you can squash multiple commits on a local branch into a single commit using the git rebase command with the -i or --interactive option.
 
 <h3>Steps:</h3>
@@ -39,4 +39,3 @@ Finally, force push the branch to update the remote with the squashed commit:
 git push -f
 </pre>
 Note that squashing commits changes the commit history, so use it carefully and avoid doing it on branches that are being shared with other people.
-</pre>

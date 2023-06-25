@@ -22,9 +22,14 @@ Then, run the following command to start an interactive rebase session:
 <pre>
 git rebase -i HEAD~n
 </pre>
-Replace n with the number of commits you want to squash. For example, if you want to squash the last 3 commits, use git rebase -i HEAD~3.
+Replace n with the number of commits you want to squash. 
+For example, if you want to squash the last 3 commits, use git rebase -i HEAD~3.
 
-An editor will open with a list of the commits that are being rebased. Each commit will be listed with the word "pick" in front of it. Change "pick" to "squash" or "s" for all the commits except the first one. Leave the first commit as "pick". For example, if you have four commits, your file should look like this:
+An editor will open with a list of the commits that are being rebased. 
+Each commit will be listed with the word "pick" in front of it. 
+Change "pick" to "squash" or "s" for all the commits except the first one. 
+Leave the first commit as "pick". For example, if you have four commits, 
+your file should look like this:
 <pre>
 pick a1b2c3d First commit
 squash e4f5g6h Second commit

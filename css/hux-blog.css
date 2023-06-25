@@ -756,6 +756,7 @@ hr.small {
   margin: 15px auto;
   border-width: 4px;
   border-color: white;
+  white-space: pre;
 }
 pre,
 .table-responsive {

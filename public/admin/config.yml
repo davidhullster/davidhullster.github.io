@@ -2,22 +2,30 @@ backend:
   name: github
   repo: davidhullster/davidhullster.github.io
   branch: master
-  base_url: https://auth.static-cms.com # Keeping this as a placeholder
-local_backend: true
+  # If using a Cloudflare Worker as an OAuth gateway (recommended for mobile/remote access)
+  # Set the base_url to your worker's URL.
+  # base_url: https://your-worker.workers.dev
+  # If base_url is omitted, Sveltia CMS will fallback to "Sign In with Token" (PAT method).
 
-media_folder: "public/img" # Media files will be stored in the public/img folder
-public_folder: "/img" # The src attribute for images in Markdown
+publish_mode: editorial_workflow
+media_folder: "public/img"
+public_folder: "/img"
+site_url: https://davidhullster.github.io
+local_backend: true
 
 collections:
   - name: "blog"
     label: "Blog Posts"
+    label_singular: "Blog Post"
     folder: "src/content/posts"
     create: true
+    delete: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} ({{date}})"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }

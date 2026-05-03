@@ -19,7 +19,7 @@ export function getAllPosts(): PostData[] {
   const allPostsData = fileNames
     .filter(fileName => fileName.endsWith('.md') || fileName.endsWith('.markdown'))
     .map((fileName) => {
-      const slug = fileName.replace(/\.md(arkdown)?$/, '');
+      const slug = fileName.replace(/\.(md|markdown)$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);

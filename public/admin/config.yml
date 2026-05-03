@@ -1,7 +1,8 @@
 backend:
   name: github
-  repo: davidhullster/davidhullster.github.io # We will update this if the repo name changes
-  branch: main # or whatever branch the user uses
+  repo: davidhullster/davidhullster.github.io
+  branch: master
+  base_url: https://auth.static-cms.com # Free proxy for GitHub Pages users
 
 media_folder: "public/img" # Media files will be stored in the public/img folder
 public_folder: "/img" # The src attribute for images in Markdown

@@ -1,7 +1,7 @@
 ---
 layout: posts
 header-img: "img/post-bg-2015a.jpeg"
-title: Python Loop over List and swap elements
+title: list of all listening TCP ports with lsof
 categories:
 - lsof
 - linux

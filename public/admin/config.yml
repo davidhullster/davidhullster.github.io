@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: davidhullster/davidhullster.github.io # We will update this if the repo name changes
+  branch: main # or whatever branch the user uses
+
+media_folder: "public/img" # Media files will be stored in the public/img folder
+public_folder: "/img" # The src attribute for images in Markdown
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

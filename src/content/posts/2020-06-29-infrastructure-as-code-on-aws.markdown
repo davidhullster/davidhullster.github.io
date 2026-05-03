@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Infrastructure as Code on AWS
-date: 2020-06-29 03:15:01.000000000 -07:00
+date: '2024-12-09T02:36:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '45974775750'
   timeline_notification: '1593400505'
-author:
-  'Scratches'
-permalink: "/2020/06/29/infrastructure-as-code-on-aws/"
+author: Scratches
+permalink: /2020/06/29/infrastructure-as-code-on-aws/
 ---
 
 <strong>Introduction</strong>

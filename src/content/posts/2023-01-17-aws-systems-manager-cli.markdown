@@ -1,14 +1,15 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS SystemsManager CLI Examples
 categories:
-- aws
-- systems manager
-- patching
-- yum
+  - aws
+  - systems manager
+  - patching
+  - yum
 tags:
-- aws
+  - aws
+date: '2024-10-07T00:02:00.000Z'
 ---
 ### Run yum update against specific Patch Group Tag
 <pre>

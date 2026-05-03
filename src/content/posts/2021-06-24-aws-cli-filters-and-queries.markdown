@@ -1,16 +1,16 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CLI Filters and Queries
 categories:
-- aws
-- awscli
+  - aws
+  - awscli
 tags:
-- aws
-- awscli
-- queries
-- filters
-
+  - aws
+  - awscli
+  - queries
+  - filters
+date: '2024-06-30T15:57:00.000Z'
 ---
 #### list load balancer attributes for each LoadBalancerArn
 <pre>

@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Git Tips
 type: post
 parent_id: '0'
@@ -8,12 +8,12 @@ published: true
 password: ''
 status: publish
 categories:
-- git
-- Tech
+  - git
+  - Tech
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-07-27T02:41:00.000Z'
 ---
 ### Git's HEAD pointer
 For me, the key to understanding how git works came when I grasped that the HEAD notation is similar to

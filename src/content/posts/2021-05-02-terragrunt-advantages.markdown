@@ -1,6 +1,7 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
+date: '2024-06-08T16:30:00.000Z'
 ---
 
 

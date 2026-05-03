@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Nginx Tips
 type: post
 parent_id: '0'
@@ -8,12 +8,12 @@ published: true
 password: ''
 status: publish
 categories:
-- nginx
-- Tech
+  - nginx
+  - Tech
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-08-09T00:18:00.000Z'
 ---
 ### Create Self-Signed SSL Certificate for Nginx
 <pre>

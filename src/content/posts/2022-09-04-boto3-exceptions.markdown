@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: try and catch boto3 client exceptions
 type: post
 parent_id: '0'
@@ -8,13 +8,13 @@ published: true
 password: ''
 status: publish
 categories:
-- aws
-- boto3
-- python
+  - aws
+  - boto3
+  - python
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-09-04T16:39:00.000Z'
 ---
 
 <pre>

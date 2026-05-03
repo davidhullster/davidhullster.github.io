@@ -1,16 +1,17 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Get Size of S3 Buckets with Boto3
 categories:
-- aws
-- python
+  - aws
+  - python
 tags:
-- aws
-- boto3
-- python
-- s3
-- cloudwatch
+  - aws
+  - boto3
+  - python
+  - s3
+  - cloudwatch
+date: '2024-07-24T01:55:00.000Z'
 ---
 #### Get Size of S3 Buckets with Boto3
 https://www.slsmk.com/getting-the-size-of-an-s3-bucket-using-boto3-for-aws/

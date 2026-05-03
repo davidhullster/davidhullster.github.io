@@ -1,10 +1,10 @@
 ---
 layout: posts
 tags:
-- bash
-- file rename
-author:
-    Scratches
+  - bash
+  - file rename
+author: Scratches
+date: '2024-06-21T00:39:00.000Z'
 ---
 
 <pre>

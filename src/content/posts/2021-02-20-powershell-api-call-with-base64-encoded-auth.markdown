@@ -1,26 +1,29 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Powershell API Call with base64 encoded auth
-date: 2021-02-20 00:05:53.000000000 -08:00
+date: '2025-03-29T01:07:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- powershell
-- script
-- api automation
-- base64
-tags: ['powershell', 'script', 'api automation', 'base64']
+  - powershell
+  - script
+  - api automation
+  - base64
+tags:
+  - powershell
+  - script
+  - api automation
+  - base64
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '55022020408'
   timeline_notification: '1613779555'
-author:
-  'Scratches'
-permalink: "/2021/02/20/powershell-api-call-with-base64-encoded-auth/"
+author: Scratches
+permalink: /2021/02/20/powershell-api-call-with-base64-encoded-auth/
 ---
 <pre># Ignore Certificate Issues
 >add-type @"

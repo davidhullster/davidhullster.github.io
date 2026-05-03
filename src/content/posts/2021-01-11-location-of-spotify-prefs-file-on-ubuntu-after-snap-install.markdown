@@ -1,22 +1,24 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Location of Spotify prefs file on Ubuntu after Snap install
-date: 2021-01-11 23:51:55.000000000 -08:00
+date: '2025-03-18T00:31:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories: []
-tags: ['spotify', 'ubuntu', 'snap']
+tags:
+  - spotify
+  - ubuntu
+  - snap
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '53318408403'
   timeline_notification: '1610409121'
-author:
-  'Scratches'
-permalink: "/2021/01/11/location-of-spotify-prefs-file-on-ubuntu-after-snap-install/"
+author: Scratches
+permalink: /2021/01/11/location-of-spotify-prefs-file-on-ubuntu-after-snap-install/
 ---
 
 #### Spotify Prefs file location on Ubuntu

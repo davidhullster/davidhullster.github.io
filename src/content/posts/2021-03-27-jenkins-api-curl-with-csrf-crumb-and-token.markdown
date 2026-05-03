@@ -1,24 +1,23 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: 'Jenkins API: curl with CSRF crumb and token'
-date: 2021-03-27 21:01:39.000000000 -07:00
+date: '2025-04-04T20:38:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- jenkins
-- Tech
+  - jenkins
+  - Tech
 tags: []
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1616878903'
   _publicize_job_id: '56463341544'
-author:
-  'Scratches'
-permalink: "/2021/03/27/jenkins-api-curl-with-csrf-crumb-and-token/"
+author: Scratches
+permalink: /2021/03/27/jenkins-api-curl-with-csrf-crumb-and-token/
 ---
 
 ### Create CSRF Crumb and save to Environment Variable $CRUMB

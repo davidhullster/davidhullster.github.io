@@ -1,28 +1,27 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS create-stack aws cli capabilities and parameters
-date: 2021-02-23 23:21:27.000000000 -08:00
+date: '2025-03-30T02:28:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- aws
-- CAPABILITY_IAM
+  - aws
+  - CAPABILITY_IAM
 tags:
-- capability
-- aws
-- awscli
-- create-stack
+  - capability
+  - aws
+  - awscli
+  - create-stack
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1614122491'
   _publicize_job_id: '55183843388'
-author:
-  'Scratches'
-permalink: "/2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters/"
+author: Scratches
+permalink: /2021/02/23/aws-create-stack-aws-cli-capabilities-and-parameters/
 ---
 
 <a href="https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/">https://aws.amazon.com/blogs/devops/passing-parameters-to-cloudformation-stacks-with-the-aws-cli-and-powershell/</a>

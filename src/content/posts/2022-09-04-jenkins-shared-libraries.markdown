@@ -1,3 +1,6 @@
+---
+date: '2024-09-07T01:58:00.000Z'
+---
 ### run shared libraries from github
 * https://github.com/darinpope/github-api-global-lib/blob/main/vars/helloWorld.groovy
 <pre>

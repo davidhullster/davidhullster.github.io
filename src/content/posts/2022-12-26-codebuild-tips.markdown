@@ -1,19 +1,20 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CodeBuild Sample buildspec.yaml
 type: post
-parent_id: "0"
+parent_id: '0'
 published: true
-password: ""
+password: ''
 status: publish
 categories:
   - aws
   - codebuild
   - buildspec.yaml
 tags: []
-meta:
-author: "Scratches"
+meta: null
+author: Scratches
+date: '2024-10-03T01:01:00.000Z'
 ---
 
 ### CodeBuild buildspec.yaml example

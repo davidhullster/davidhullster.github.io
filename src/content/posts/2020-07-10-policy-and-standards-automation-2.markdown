@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Policy and Standards Automation (2)
-date: 2020-07-10 02:01:10.000000000 -07:00
+date: '2024-12-31T23:35:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '46393717255'
   timeline_notification: '1594346473'
-author:
-  'Scratches'
-permalink: "/2020/07/10/policy-and-standards-automation-2/"
+author: Scratches
+permalink: /2020/07/10/policy-and-standards-automation-2/
 ---
 
 <strong>AWS Secrets Manager</strong>

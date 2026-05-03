@@ -1,13 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Jenkinsfile using AWS assumed-role
 categories:
-- aws
-- assumed-role
-- 
+  - aws
+  - assumed-role
+  - null
 tags:
-- aws
+  - aws
+date: '2024-10-15T02:36:00.000Z'
 ---
 
 ### Jenkinsfile using AWS assumed role to deploy a docker container

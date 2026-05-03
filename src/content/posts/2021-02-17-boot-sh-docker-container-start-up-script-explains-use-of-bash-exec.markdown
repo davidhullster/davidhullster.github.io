@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: 'boot.sh: Docker container start-up script -- explains use of ''bash exec'''
-date: 2021-02-17 00:09:29.000000000 -08:00
+date: '2025-03-24T21:01:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -14,9 +14,9 @@ meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1613520573'
   _publicize_job_id: '54879014856'
-author:
-  'Scratches'
-permalink: "/2021/02/17/boot-sh-docker-container-start-up-script-explains-use-of-bash-exec/"
+author: Scratches
+permalink: >-
+  /2021/02/17/boot-sh-docker-container-start-up-script-explains-use-of-bash-exec/
 ---
 
 

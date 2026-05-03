@@ -1,16 +1,16 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CLI Filters and Queries
 categories:
-- aws
-- awscli
+  - aws
+  - awscli
 tags:
-- aws
-- awscli
-- s3
-- bucket-owner-full-control
-
+  - aws
+  - awscli
+  - s3
+  - bucket-owner-full-control
+date: '2024-07-01T23:41:00.000Z'
 ---
 #### allow bucket owner to read objects written by other accounts
 <pre>

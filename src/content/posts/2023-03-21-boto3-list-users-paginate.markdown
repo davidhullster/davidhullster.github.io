@@ -1,13 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS SystemsManager CLI Examples
 categories:
-- aws
-- boto3
-- paginate
+  - aws
+  - boto3
+  - paginate
 tags:
-- aws
+  - aws
+date: '2024-10-21T18:47:00.000Z'
 ---
 ### Loop over many users with paginate
 <pre>

@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Python function to tag aws instances based on AMI name
 type: post
 parent_id: '0'
@@ -8,12 +8,12 @@ published: true
 password: ''
 status: publish
 categories:
-- jenkins
-- git
+  - jenkins
+  - git
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-09-12T23:31:00.000Z'
 ---
 ### sample jenkinsfile to run script from git repo
 ```groovy

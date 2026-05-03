@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: ansible install on ubuntu
-date: 2020-09-19 17:53:22.000000000 -07:00
+date: '2025-01-18T21:57:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1600538004'
   _publicize_job_id: '49001483580'
-author:
-  'Scratches'
-permalink: "/2020/09/19/ansible-install-on-ubuntu/"
+author: Scratches
+permalink: /2020/09/19/ansible-install-on-ubuntu/
 ---
 #### Add ppa repo for ansible install on ubuntu
 <pre>

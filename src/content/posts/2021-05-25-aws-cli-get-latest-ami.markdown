@@ -1,15 +1,16 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CLI get latest AMI
 categories:
-- aws
-- jq
+  - aws
+  - jq
 tags:
-- aws
-- awscli
-- describe-images
-- most_recent
+  - aws
+  - awscli
+  - describe-images
+  - most_recent
+date: '2024-06-23T22:02:00.000Z'
 ---
 
 #### Using SSM: 

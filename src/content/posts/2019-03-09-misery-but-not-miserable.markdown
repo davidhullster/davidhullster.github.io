@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
-title: Misery, but not miserable
-date: 2019-03-09 01:30:50.000000000 -08:00
+header-img: img/post-bg-2015a.jpeg
+title: 'Misery, but not miserable'
+date: '2024-11-17T17:39:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -10,15 +10,14 @@ password: ''
 status: publish
 categories: []
 tags:
-- existential
-- misery
-- transcendant
+  - existential
+  - misery
+  - transcendant
 meta:
   _publicize_job_id: '28427756594'
   timeline_notification: '1552095053'
-author:
-  'Scratches'
-permalink: "/2019/03/09/misery-but-not-miserable/"
+author: Scratches
+permalink: /2019/03/09/misery-but-not-miserable/
 ---
 
 Miserable can mean physical poverty, to the point of hunger and despair.

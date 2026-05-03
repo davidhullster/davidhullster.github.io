@@ -1,13 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Python Loop over List and swap elements
 categories:
-- python
-- list
-- 
+  - python
+  - list
+  - null
 tags:
-- aws
+  - aws
+date: '2024-10-10T22:44:00.000Z'
 ---
 ### Swap elements in a list of any size
  * assign length variable with the current list's length for convenience

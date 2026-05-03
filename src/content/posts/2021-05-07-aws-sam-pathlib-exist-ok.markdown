@@ -1,6 +1,7 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
+date: '2024-06-14T00:47:00.000Z'
 ---
 Using python3.8 with AWS SAM to create a lambda from a script 
 that runs without error before applying changes for SAM.

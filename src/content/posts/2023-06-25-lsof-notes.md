@@ -1,13 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: list of all listening TCP ports with lsof
 categories:
-- lsof
-- linux
-- 
+  - lsof
+  - linux
+  - null
 tags:
-- linux
+  - linux
+date: '2024-10-28T22:56:00.000Z'
 ---
 
 <pre>

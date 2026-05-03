@@ -1,15 +1,15 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Combine Two Json API responses into a dict of lists
 categories:
-- aws
+  - aws
 tags:
-- python
-- json
-- dict
-- api
-
+  - python
+  - json
+  - dict
+  - api
+date: '2024-07-06T21:52:00.000Z'
 ---
 #### Take json response for 'apps' and combine it with json response for 'branches'
 #### Makes dictionary of app names, each with a list of app branches in a list

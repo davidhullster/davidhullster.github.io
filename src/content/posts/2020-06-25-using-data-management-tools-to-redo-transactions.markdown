@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Using Data Management tools to redo transactions
-date: 2020-06-25 14:12:59.000000000 -07:00
+date: '2024-12-06T20:31:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '45847887305'
   timeline_notification: '1593094383'
-author:
-  'Scratches'
-permalink: "/2020/06/25/using-data-management-tools-to-redo-transactions/"
+author: Scratches
+permalink: /2020/06/25/using-data-management-tools-to-redo-transactions/
 ---
 
 <ul>

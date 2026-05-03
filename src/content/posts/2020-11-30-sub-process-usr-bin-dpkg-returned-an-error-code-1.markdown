@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: sub-process /usr/bin/dpkg returned an error code (1)
-date: 2020-11-30 15:37:03.000000000 -08:00
+date: '2025-02-09T22:54:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -10,19 +10,18 @@ password: ''
 status: publish
 categories: []
 tags:
-- apt
-- dpkg
-- error
-- linux
-- ubuntu
-- wsl
+  - apt
+  - dpkg
+  - error
+  - linux
+  - ubuntu
+  - wsl
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '51663856091'
   timeline_notification: '1606750628'
-author:
-  'Scratches'
-permalink: "/2020/11/30/sub-process-usr-bin-dpkg-returned-an-error-code-1/"
+author: Scratches
+permalink: /2020/11/30/sub-process-usr-bin-dpkg-returned-an-error-code-1/
 ---
 #### This was the help on dpkg errors when running yum updates in Windows WSL Ubuntu
 <pre>

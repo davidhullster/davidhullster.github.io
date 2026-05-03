@@ -1,15 +1,15 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CLI Filters and Queries
 categories:
-- aws
+  - aws
 tags:
-- aws
-- aws-cli
-- efs
-- backups
-
+  - aws
+  - aws-cli
+  - efs
+  - backups
+date: '2024-09-01T23:16:00.000Z'
 ---
 #### delete aws backup recovery points, so you can delete the vault
 <pre>

@@ -1,7 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Windows java installer research
+date: '2024-06-02T18:33:00.000Z'
 ---
 #### Researching how to Automate a Java-based installer in Windows
 <strong>extract .msi from .exe</strong>

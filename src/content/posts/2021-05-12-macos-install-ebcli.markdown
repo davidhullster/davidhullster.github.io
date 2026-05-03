@@ -1,6 +1,7 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
+date: '2024-06-14T15:48:00.000Z'
 ---
 
 1. install Xcode

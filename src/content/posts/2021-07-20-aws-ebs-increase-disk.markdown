@@ -1,15 +1,15 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CLI Filters and Queries
 categories:
-- aws
+  - aws
 tags:
-- aws
-- ebs
-- ec2
-- disk space
-
+  - aws
+  - ebs
+  - ec2
+  - disk space
+date: '2024-07-03T15:42:00.000Z'
 ---
 #### allow bucket owner to read objects written by other accounts
 <pre>

@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Docker Notes
-date: 2020-10-05 19:40:57.000000000 -07:00
+date: '2025-01-26T20:33:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -10,17 +10,16 @@ password: ''
 status: publish
 categories: []
 tags:
-- alpine
-- docker
-- docker run
-- dockerfile
+  - alpine
+  - docker
+  - docker run
+  - dockerfile
 meta:
   timeline_notification: '1601926860'
   _publicize_job_id: '49596908832'
   _last_editor_used_jetpack: block-editor
-author:
-  'Scratches'
-permalink: "/2020/10/05/docker-notes/"
+author: Scratches
+permalink: /2020/10/05/docker-notes/
 ---
 
 #### Dockerfile:

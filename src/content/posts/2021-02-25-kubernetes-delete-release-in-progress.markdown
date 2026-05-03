@@ -1,8 +1,10 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
-title: 'Kubernetes: UPGRADE FAILED: another operation (install/upgrade/rollback) is
-  in progress'
+header-img: img/post-bg-2015a.jpeg
+title: >-
+  Kubernetes: UPGRADE FAILED: another operation (install/upgrade/rollback) is in
+  progress
+date: '2024-06-03T23:38:00.000Z'
 ---
 
 # troubleshoot error: 

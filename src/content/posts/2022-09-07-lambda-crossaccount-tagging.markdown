@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Python aws lambda cross account tagging
 type: post
 parent_id: '0'
@@ -8,14 +8,14 @@ published: true
 password: ''
 status: publish
 categories:
-- python
-- aws lambda
-- tagging
-- cross-account
+  - python
+  - aws lambda
+  - tagging
+  - cross-account
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-09-14T19:33:00.000Z'
 ---
 ### Format Specification Mini-Language
 ```python

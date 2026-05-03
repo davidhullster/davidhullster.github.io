@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Writing Data to Amazon Kinesis Data Streams
-date: 2020-06-29 05:00:36.000000000 -07:00
+date: '2024-12-13T19:53:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1593406839'
   _publicize_job_id: '45976804461'
-author:
-  'Scratches'
-permalink: "/2020/06/29/writing-data-to-amazon-kinesis-data-streams/"
+author: Scratches
+permalink: /2020/06/29/writing-data-to-amazon-kinesis-data-streams/
 ---
 
 <ul>

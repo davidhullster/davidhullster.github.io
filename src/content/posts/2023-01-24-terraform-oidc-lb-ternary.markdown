@@ -1,13 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Python Loop over List and swap elements
 categories:
-- python
-- list
-- 
+  - python
+  - list
+  - null
 tags:
-- aws
+  - aws
+date: '2024-10-18T01:36:00.000Z'
 ---
 
 ### Terraform module aws_lb_listener_rule oidc

@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Boom Load Tester Tips
 type: post
 parent_id: '0'
@@ -8,13 +8,13 @@ published: true
 password: ''
 status: publish
 categories:
-- boom
-- python
-- Tech
+  - boom
+  - python
+  - Tech
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-08-14T18:33:00.000Z'
 ---
 ### Run Boom against localhost passing a custom header
 <b> 30 concurrent requests, total requests of 3000

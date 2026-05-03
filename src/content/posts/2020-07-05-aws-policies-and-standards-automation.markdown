@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS Policies and Standards Automation
-date: 2020-07-05 02:51:35.000000000 -07:00
+date: '2024-12-15T20:58:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1593917498'
   _publicize_job_id: '46202682996'
-author:
-  'Scratches'
-permalink: "/2020/07/05/aws-policies-and-standards-automation/"
+author: Scratches
+permalink: /2020/07/05/aws-policies-and-standards-automation/
 ---
 
 <strong>AWS Config</strong>

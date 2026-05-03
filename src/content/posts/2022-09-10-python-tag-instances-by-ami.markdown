@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Python function to tag aws instances based on AMI name
 type: post
 parent_id: '0'
@@ -8,14 +8,14 @@ published: true
 password: ''
 status: publish
 categories:
-- aws
-- aws cli
-- tags
-- python
+  - aws
+  - aws cli
+  - tags
+  - python
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-09-22T23:48:00.000Z'
 ---
 
 <pre>

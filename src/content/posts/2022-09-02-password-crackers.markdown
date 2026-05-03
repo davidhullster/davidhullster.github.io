@@ -1,3 +1,6 @@
+---
+date: '2024-08-28T02:39:00.000Z'
+---
 ### PASSWORD CRACKERS
 
 #### Although there are some Windows tools, including the infamous Cain and L0phtcrack (l0phtcrack.com) tools, most password crackers run primarily on Linux.

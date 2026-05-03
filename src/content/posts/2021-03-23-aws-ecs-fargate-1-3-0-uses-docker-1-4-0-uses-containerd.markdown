@@ -1,25 +1,24 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
-title: AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd
-date: 2021-03-23 20:50:59.000000000 -07:00
+header-img: img/post-bg-2015a.jpeg
+title: 'AWS ECS FarGate 1.3.0 uses Docker, 1.4.0 uses containerd'
+date: '2025-04-03T19:11:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- aws
-- Tech
-- terraform
+  - aws
+  - Tech
+  - terraform
 tags: []
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1616532663'
   _publicize_job_id: '56302580752'
-author:
-  'Scratches'
-permalink: "/2021/03/23/aws-ecs-fargate-1-3-0-uses-docker-1-4-0-uses-containerd/"
+author: Scratches
+permalink: /2021/03/23/aws-ecs-fargate-1-3-0-uses-docker-1-4-0-uses-containerd/
 ---
 
 In terraform the ECS version can be specified.<br>

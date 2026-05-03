@@ -1,11 +1,11 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS EC2 Userdata to install docker and set systemd config
 type: post
-parent_id: "0"
+parent_id: '0'
 published: true
-password: ""
+password: ''
 status: publish
 categories:
   - userdata
@@ -13,8 +13,9 @@ categories:
   - systemd
   - systemctl
 tags: []
-meta:
-author: "Scratches"
+meta: null
+author: Scratches
+date: '2024-09-27T20:49:00.000Z'
 ---
 
 ### UserData install Docker/systemctl config

@@ -1,14 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Resolve JavaScript error 'cannot add EventListener of null'
 categories:
-- javascript
+  - javascript
 tags:
-- error
-- eventlistener
-- 'null'
-
+  - error
+  - eventlistener
+  - 'null'
+date: '2024-07-10T23:49:00.000Z'
 ---
 #### this was causing an error 'cannot add EventListener of null', until I moved the script tag in index.html to after the element I was listening for
 <pre>

@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Linux command line Password Generator
-date: 2020-09-19 17:40:07.000000000 -07:00
+date: '2025-01-15T00:36:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '49001166444'
   timeline_notification: '1600537210'
-author:
-  'Scratches'
-permalink: "/2020/09/19/linux-command-line-password-generator/"
+author: Scratches
+permalink: /2020/09/19/linux-command-line-password-generator/
 ---
 #### use apg to create passwords on the CLI
 <pre>

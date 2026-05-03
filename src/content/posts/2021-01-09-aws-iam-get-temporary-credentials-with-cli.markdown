@@ -1,27 +1,26 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS IAM - get temporary credentials with cli
-date: 2021-01-09 16:01:40.000000000 -08:00
+date: '2025-03-10T02:24:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- aws
+  - aws
 tags:
-- aws cli
-- aws iam
-- mfa
-- security
+  - aws cli
+  - aws iam
+  - mfa
+  - security
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1610208104'
   _publicize_job_id: '53221187555'
-author:
-  'Scratches'
-permalink: "/2021/01/09/aws-iam-get-temporary-credentials-with-cli/"
+author: Scratches
+permalink: /2021/01/09/aws-iam-get-temporary-credentials-with-cli/
 ---
 
 Run the&nbsp;<a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-session-token.html" target="_blank" rel="noreferrer noopener">sts get-session-token</a>&nbsp;AWS CLI command, replacing the variables with information from your account, resources, and MFA device:

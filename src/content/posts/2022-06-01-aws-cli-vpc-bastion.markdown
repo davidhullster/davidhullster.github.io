@@ -1,17 +1,18 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Use AWS CLI to build a VPC with a Bastion
 categories:
-- aws
-- cli
-- vpc
-- bastion
+  - aws
+  - cli
+  - vpc
+  - bastion
 tags:
-- aws
-- cli
-- vpc
-- bastion
+  - aws
+  - cli
+  - vpc
+  - bastion
+date: '2024-07-12T16:11:00.000Z'
 ---
 #### Create VPC
 <pre>aws ec2 create-vpc --cidr-block $VPC_CIDR --tag-specifications 'ResourceType=vpc,Tags=[{Key="Name",Value="TOOLS_VPC"}]'</pre>

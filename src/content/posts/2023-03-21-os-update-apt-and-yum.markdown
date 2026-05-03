@@ -1,16 +1,17 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS SystemsManager CLI Examples
 categories:
-- aws
-- yum
-- apt-get
-- apt
-- ubuntu
-- security
+  - aws
+  - yum
+  - apt-get
+  - apt
+  - ubuntu
+  - security
 tags:
-- aws
+  - aws
+date: '2024-10-25T15:53:00.000Z'
 ---
 ### Ubuntu install only security updates
 <pre>

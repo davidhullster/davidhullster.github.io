@@ -1,3 +1,6 @@
+---
+date: '2024-08-31T16:07:00.000Z'
+---
 ### get info about domains/websites
 <pre>
 There are hundreds of tools relevant to security assessments, network reconnaissance, vulnerability scanning, and penetration testing. Security distributions specialize in bundling these tools for Linux—notably KALI (kali.org) plus ParrotOS (parrotlinux.org)—and Windows (fireeye.com/blog/threat-research/2019/03/commando-vm-windows-offensive-distribution.html).

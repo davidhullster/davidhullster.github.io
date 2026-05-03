@@ -1,6 +1,7 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
+date: '2024-06-18T18:36:00.000Z'
 ---
 
 AWS Control Tower sets up a number of required rules in each account’s Config service to protect the integrity of the configuration checks and logs. 

@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Incident and Event Response
-date: 2020-07-06 01:36:24.000000000 -07:00
+date: '2024-12-23T18:45:00.000Z'
 type: post
 parent_id: '0'
 published: true

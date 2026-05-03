@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Kinesis Data Streams Terminology
-date: 2020-07-03 03:02:49.000000000 -07:00
+date: '2024-12-14T21:36:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '46131132084'
   timeline_notification: '1593745372'
-author:
-  'Scratches'
-permalink: "/2020/07/03/kinesis-data-streams-terminology/"
+author: Scratches
+permalink: /2020/07/03/kinesis-data-streams-terminology/
 ---
 
 <strong>Kinesis Data Stream</strong>

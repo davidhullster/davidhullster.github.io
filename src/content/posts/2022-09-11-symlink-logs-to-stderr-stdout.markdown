@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Symlink log files to stdout and stderr
 type: post
 parent_id: '0'
@@ -8,14 +8,14 @@ published: true
 password: ''
 status: publish
 categories:
-- symlink
-- logs
-- stdout
-- stderr
+  - symlink
+  - logs
+  - stdout
+  - stderr
 tags: []
-meta:
-author:
-  'Scratches'
+meta: null
+author: Scratches
+date: '2024-09-23T23:05:00.000Z'
 ---
 ### Symlink logfile writes to stdout and stderr
 <pre>

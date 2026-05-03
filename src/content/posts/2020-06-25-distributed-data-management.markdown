@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Distributed Data Management
-date: 2020-06-25 04:33:34.000000000 -07:00
+date: '2024-12-05T19:42:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1593059618'
   _publicize_job_id: '45831442862'
-author:
-  'Scratches'
-permalink: "/2020/06/25/distributed-data-management/"
+author: Scratches
+permalink: /2020/06/25/distributed-data-management/
 ---
 
 <ul>

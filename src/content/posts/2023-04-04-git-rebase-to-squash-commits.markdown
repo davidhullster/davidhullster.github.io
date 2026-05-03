@@ -1,13 +1,14 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Git Rebase to Squash Commits
 categories:
-- git
-- rebase
-- squash
+  - git
+  - rebase
+  - squash
 tags:
-- git
+  - git
+date: '2024-10-27T23:47:00.000Z'
 ---
 
 you can squash multiple commits on a local branch into a single commit using the git rebase command with the -i or --interactive option.

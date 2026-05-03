@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS App Mesh
-date: 2020-06-25 04:09:32.000000000 -07:00
+date: '2024-12-04T17:43:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1593058175'
   _publicize_job_id: '45830907065'
-author:
-  'Scratches'
-permalink: "/2020/06/25/aws-app-mesh/"
+author: Scratches
+permalink: /2020/06/25/aws-app-mesh/
 ---
 
 <ul>

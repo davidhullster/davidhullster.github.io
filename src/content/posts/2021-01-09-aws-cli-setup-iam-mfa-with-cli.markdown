@@ -1,27 +1,26 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS CLI - setup iam mfa with cli
-date: 2021-01-09 16:05:33.000000000 -08:00
+date: '2025-03-13T18:47:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- aws
+  - aws
 tags:
-- aws cli
-- aws iam
-- mfa
-- security
+  - aws cli
+  - aws iam
+  - mfa
+  - security
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1610208338'
   _publicize_job_id: '53221318804'
-author:
-  'Scratches'
-permalink: "/2021/01/09/aws-cli-setup-iam-mfa-with-cli/"
+author: Scratches
+permalink: /2021/01/09/aws-cli-setup-iam-mfa-with-cli/
 ---
 #### Use AWS CLI to setup virtual MFA device token
 <pre>aws iam create-virtual-mfa-device 

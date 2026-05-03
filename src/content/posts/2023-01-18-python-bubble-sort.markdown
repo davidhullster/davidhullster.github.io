@@ -1,6 +1,6 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Python Bubble Sort
 categories:
   - python
@@ -8,6 +8,7 @@ categories:
   - bubble sort
 tags:
   - python
+date: '2024-10-07T22:15:00.000Z'
 ---
 
 ### Bubble Sort a List of Numbers

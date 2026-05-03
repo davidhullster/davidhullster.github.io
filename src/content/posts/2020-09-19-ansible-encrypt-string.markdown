@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Ansible encrypt string
-date: 2020-09-19 17:51:03.000000000 -07:00
+date: '2025-01-16T18:29:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1600537865'
   _publicize_job_id: '49001427581'
-author:
-  'Scratches'
-permalink: "/2020/09/19/ansible-encrypt-string/"
+author: Scratches
+permalink: /2020/09/19/ansible-encrypt-string/
 ---
 
 ### Encrypt string for use in ansible vault

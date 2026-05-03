@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Software Development Life Cycle Automation
-date: 2020-07-05 14:38:41.000000000 -07:00
+date: '2024-12-22T00:04:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '46219819485'
   timeline_notification: '1593959925'
-author:
-  'Scratches'
-permalink: "/2020/07/05/software-development-life-cycle/"
+author: Scratches
+permalink: /2020/07/05/software-development-life-cycle/
 ---
 
 <strong>Using CodePipeline Build and Deploy .Net Application</strong>

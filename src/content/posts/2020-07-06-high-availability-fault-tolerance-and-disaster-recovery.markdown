@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
-title: High Availability, Fault Tolerance and Disaster Recovery
-date: 2020-07-06 02:00:45.000000000 -07:00
+header-img: img/post-bg-2015a.jpeg
+title: 'High Availability, Fault Tolerance and Disaster Recovery'
+date: '2024-12-26T00:06:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '46236056302'
   timeline_notification: '1594000848'
-author:
-  'Scratches'
-permalink: "/2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/"
+author: Scratches
+permalink: /2020/07/06/high-availability-fault-tolerance-and-disaster-recovery/
 ---
 
 <strong>AWS Solution to migrate data from relational database to DynamoDB</strong>

@@ -1,6 +1,7 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
+date: '2024-06-06T02:25:00.000Z'
 ---
 you can define your backend configuration just once in the root terragrunt.hcl file
    <pre> # stage/terragrunt.hcl

@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: AWS Monitoring and Logging
-date: 2020-07-06 02:04:39.000000000 -07:00
+date: '2024-12-28T17:03:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   _publicize_job_id: '46236136174'
   timeline_notification: '1594001082'
-author:
-  'Scratches'
-permalink: "/2020/07/06/aws-monitoring-and-logging/"
+author: Scratches
+permalink: /2020/07/06/aws-monitoring-and-logging/
 ---
 
 <strong>AWS Lambda Monitoring</strong>

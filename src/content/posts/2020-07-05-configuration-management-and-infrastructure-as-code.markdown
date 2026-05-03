@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Configuration Management and Infrastructure as Code
-date: 2020-07-05 14:15:47.000000000 -07:00
+date: '2024-12-17T18:18:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1593958550'
   _publicize_job_id: '46219159643'
-author:
-  'Scratches'
-permalink: "/2020/07/05/configuration-management-and-infrastructure-as-code/"
+author: Scratches
+permalink: /2020/07/05/configuration-management-and-infrastructure-as-code/
 ---
 
 <strong>CloudFormation Template Errors</strong>

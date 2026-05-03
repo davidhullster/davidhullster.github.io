@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Powershell sendKeys to Java installer
-date: 2021-01-05 23:13:29.000000000 -08:00
+date: '2025-03-05T19:46:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -14,9 +14,8 @@ meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '53066181332'
   timeline_notification: '1609888413'
-author:
-  'Scratches'
-permalink: "/2021/01/05/powershell-sendkeys-to-java-installer/"
+author: Scratches
+permalink: /2021/01/05/powershell-sendkeys-to-java-installer/
 ---
 ##### We used this to enable sending keystrokes to a Java-based installer in Windows
 <pre>

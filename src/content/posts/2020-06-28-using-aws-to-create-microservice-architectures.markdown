@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Using AWS to Create Microservice Architectures
-date: 2020-06-28 19:20:23.000000000 -07:00
+date: '2024-12-07T23:00:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -13,9 +13,8 @@ tags: []
 meta:
   timeline_notification: '1593372027'
   _publicize_job_id: '45964160588'
-author:
-  'Scratches'
-permalink: "/2020/06/28/using-aws-to-create-microservice-architectures/"
+author: Scratches
+permalink: /2020/06/28/using-aws-to-create-microservice-architectures/
 ---
 
 <strong>User Interfaces</strong>

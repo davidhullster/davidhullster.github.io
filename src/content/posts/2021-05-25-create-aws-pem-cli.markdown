@@ -1,14 +1,15 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Create AWS pem file with CLI
 categories:
-- aws
-- jq
+  - aws
+  - jq
 tags:
-- aws
-- ssh-keygen
-- openssl
+  - aws
+  - ssh-keygen
+  - openssl
+date: '2024-06-24T21:10:00.000Z'
 ---
 
 #### use openssl to create a pem file to ssh into an aws instance 

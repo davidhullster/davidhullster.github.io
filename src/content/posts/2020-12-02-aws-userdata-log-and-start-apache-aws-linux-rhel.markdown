@@ -1,24 +1,23 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: aws userdata log and start apache (aws linux/rhel)
-date: 2020-12-02 03:48:51.000000000 -08:00
+date: '2025-02-15T03:07:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- aws
-- Tech
+  - aws
+  - Tech
 tags: []
 meta:
   _last_editor_used_jetpack: block-editor
   _publicize_job_id: '51727951523'
   timeline_notification: '1606880937'
-author:
-  'Scratches'
-permalink: "/2020/12/02/aws-userdata-log-and-start-apache-aws-linux-rhel/"
+author: Scratches
+permalink: /2020/12/02/aws-userdata-log-and-start-apache-aws-linux-rhel/
 ---
 <pre>
 !/bin/bash -xe

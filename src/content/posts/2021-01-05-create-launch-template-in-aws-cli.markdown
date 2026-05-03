@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Create launch template in AWS CLI
-date: 2021-01-05 15:49:35.000000000 -08:00
+date: '2025-03-02T20:19:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -14,9 +14,8 @@ meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1609861779'
   _publicize_job_id: '53052242116'
-author:
-  'Scratches'
-permalink: "/2021/01/05/create-launch-template-in-aws-cli/"
+author: Scratches
+permalink: /2021/01/05/create-launch-template-in-aws-cli/
 ---
 <pre>
 aws ec2 create-launch-template 

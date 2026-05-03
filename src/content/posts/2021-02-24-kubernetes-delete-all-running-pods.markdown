@@ -1,26 +1,28 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Kubernetes delete all running pods
-date: 2021-02-24 04:18:46.000000000 -08:00
+date: '2025-04-01T22:15:00.000Z'
 type: post
 parent_id: '0'
 published: true
 password: ''
 status: publish
 categories:
-- aws
-- kubernetes
-- Tech
-tags: ['k8s','kubctl','pods']
+  - aws
+  - kubernetes
+  - Tech
+tags:
+  - k8s
+  - kubctl
+  - pods
 meta:
   _last_editor_used_jetpack: block-editor
   timeline_notification: '1614140330'
   _publicize_job_id: '55191812593'
-  _oembed_3d72ede95a24fba1156b40fa0984fd18: "{{unknown}}"
-author:
-  'Scratches'
-permalink: "/2021/02/24/kubernetes-delete-all-running-pods/"
+  _oembed_3d72ede95a24fba1156b40fa0984fd18: '{{unknown}}'
+author: Scratches
+permalink: /2021/02/24/kubernetes-delete-all-running-pods/
 ---
 
 <pre>kubectl delete pods -n development 

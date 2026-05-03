@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: The Lost Generation
-date: 2019-03-13 22:18:35.000000000 -07:00
+date: '2024-11-20T20:38:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -10,16 +10,15 @@ password: ''
 status: publish
 categories: []
 tags:
-- art
-- classics
-- literature
-- music
+  - art
+  - classics
+  - literature
+  - music
 meta:
   _publicize_job_id: '28606471394'
   timeline_notification: '1552515517'
-author:
-  'Scratches'
-permalink: "/2019/03/13/the-lost-generation/"
+author: Scratches
+permalink: /2019/03/13/the-lost-generation/
 ---
 
 I have a BA in French Literature, and spent a couple years in grad school working on a Master's degree in that subject. I loved interpretation of lit, finding hidden meaning in french films from the 50's, making wild parallels between medieval folk tales and modern books and stories.

@@ -1,19 +1,20 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: Ansible playbooks and templates - part two
 type: post
-parent_id: "0"
+parent_id: '0'
 published: true
-password: ""
+password: ''
 status: publish
 categories:
   - ansible
   - replace
   - regex
 tags: []
-meta:
-author: "Scratches"
+meta: null
+author: Scratches
+date: '2024-08-18T22:25:00.000Z'
 ---
 ### Use a variable in a playbook
 {% raw %}

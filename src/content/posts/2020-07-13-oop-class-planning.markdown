@@ -1,8 +1,8 @@
 ---
 layout: posts
-header-img: "img/post-bg-2015a.jpeg"
+header-img: img/post-bg-2015a.jpeg
 title: OOP Class Planning
-date: 2020-07-13 05:01:36.000000000 -07:00
+date: '2025-01-11T00:46:00.000Z'
 type: post
 parent_id: '0'
 published: true
@@ -10,15 +10,14 @@ password: ''
 status: publish
 categories: []
 tags:
-- classes
-- methods
-- OOP
+  - classes
+  - methods
+  - OOP
 meta:
   timeline_notification: '1594616500'
   _publicize_job_id: '46506370289'
-author:
-  'Scratches'
-permalink: "/2020/07/13/oop-class-planning/"
+author: Scratches
+permalink: /2020/07/13/oop-class-planning/
 ---
 
 Before you decide to define a new class, there are a few things to keep in mind, and questions you should ask yourself:

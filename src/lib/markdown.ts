@@ -25,15 +25,15 @@ export function getAllPosts(): PostData[] {
   const allPostsData = fileNames
     .filter(fileName => fileName.endsWith('.md') || fileName.endsWith('.markdown'))
     .map((fileName) => {
-      const slug = fileName.replace(/\.(md|markdown)$/, '');
+      const fileSlug = fileName.replace(/\.(md|markdown)$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
 
       return {
-        slug,
+        slug: data.slug || fileSlug,
         content,
-        title: data.title || slug,
+        title: data.title || fileSlug,
         date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
         ...data,
       } as PostData;
@@ -43,25 +43,8 @@ export function getAllPosts(): PostData[] {
 }
 
 export function getPostBySlug(slug: string): PostData | null {
-  const extensions = ['.md', '.markdown'];
-  
-  for (const ext of extensions) {
-    const fullPath = path.join(postsDirectory, `${slug}${ext}`);
-    if (fs.existsSync(fullPath)) {
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-
-      return {
-        slug,
-        content,
-        title: data.title || slug,
-        date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
-        ...data,
-      } as PostData;
-    }
-  }
-  
-  return null;
+  const posts = getAllPosts();
+  return posts.find((post) => post.slug === slug) || null;
 }
 
 export async function markdownToHtml(markdown: string) {

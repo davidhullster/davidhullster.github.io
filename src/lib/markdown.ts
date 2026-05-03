@@ -1,6 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+import gfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts');
 
@@ -56,4 +62,14 @@ export function getPostBySlug(slug: string): PostData | null {
   }
   
   return null;
+}
+
+export async function markdownToHtml(markdown: string) {
+  const result = await remark()
+    .use(gfm)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeStringify)
+    .process(markdown);
+  return result.toString();
 }

@@ -1,5 +1,4 @@
-import { getPostBySlug, getAllPosts } from '@/lib/markdown';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { getPostBySlug, getAllPosts, markdownToHtml } from '@/lib/markdown';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { Calendar, Tag, ChevronLeft } from 'lucide-react';
@@ -19,6 +18,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
   if (!post) {
     notFound();
   }
+
+  const contentHtml = await markdownToHtml(post.content);
 
   return (
     <article className="max-w-3xl mx-auto px-4 py-20 w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -49,9 +50,10 @@ export default async function PostPage({ params }: { params: { slug: string } })
       </header>
 
       <div className="glass p-8 sm:p-12 rounded-3xl overflow-hidden">
-        <div className="prose prose-invert prose-emerald max-w-none">
-          <MDXRemote source={post.content} />
-        </div>
+        <div 
+          className="prose prose-invert prose-emerald max-w-none prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
       </div>
     </article>
   );

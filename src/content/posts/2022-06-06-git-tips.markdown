@@ -1,0 +1,69 @@
+---
+layout: posts
+header-img: "img/post-bg-2015a.jpeg"
+title: Git Tips
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- git
+- Tech
+tags: []
+meta:
+author:
+  'Scratches'
+---
+### Git's HEAD pointer
+For me, the key to understanding how git works came when I grasped that the HEAD notation is similar to
+a window that can slide over a set of commits. The window can be moved to show a different commit, which
+makes it become the current commit. 
+
+HEAD is actually a reference, or a pointer, to a particular commit. There's a separate HEAD for your local 
+repository, and the remote repository (normally called 'origin'). When you complete a merge both the local and remote HEAD's will point to the same commit.
+
+### Set git difftool and mergetool to use vimdiff
+<pre>git difftool --tool=vimdiff --no-prompt</pre>
+<pre>git config --global diff.tool vimdiff</pre>
+<pre>git config --global merge.tool vimdiff</pre>
+
+### Git delete remote branch
+<pre>git push origin --delete feature/worthless-hack-branch</pre>
+
+### Git undo last commit (that's a tilde, not a dash)
+__soft leaves change in staging__
+<pre>git reset --soft HEAD~1</pre>
+__hard deletes change__
+<pre>
+git reset --hard HEAD~1
+</pre>
+
+### Git change date of commit
+<pre>git commit --amend --no-edit --date="2018-04-09"</pre>
+
+OR
+
+<pre>export GIT_COMMITTER_DATE="Tues 20 Oct 1987 12:00:00 PST" 
+git commit --amend --no-edit --date $GIT_COMMITTER_DATE
+</pre>
+
+### Git change committer name and email
+<pre>
+#!/bin/sh
+git filter-branch --env-filter 
+'OLD_EMAIL="bad-email-address@example.com"
+CORRECT_NAME="FULL NAME"
+CORRECT_EMAIL="EMAIL ADDRESS@example.com"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+  export GIT_COMMITTER_NAME="$CORRECT_NAME"
+  export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+  then
+  export GIT_AUTHOR_NAME="$CORRECT_NAME"
+  export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi' --tag-name-filter cat -- --branches --tags
+</pre>
+

@@ -12,15 +12,15 @@ export const Comments = () => {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.setAttribute('data-repo', 'davidhullster/davidhullster.github.io');
-    script.setAttribute('data-repo-id', ''); // USER: Fill this in after enabling Discussions
-    script.setAttribute('data-category', 'Announcements');
-    script.setAttribute('data-category-id', ''); // USER: Fill this in after enabling Discussions
+    script.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkyMjA5MDE2NDY=');
+    script.setAttribute('data-category', 'General');
+    script.setAttribute('data-category-id', 'DIC_kwDODSqxDs4C8Rva');
     script.setAttribute('data-mapping', 'pathname');
     script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'top');
-    script.setAttribute('data-theme', 'transparent_dark');
+    script.setAttribute('data-theme', 'dark_dimmed');
     script.setAttribute('data-lang', 'en');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { Calendar, Tag, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
+import { Comments } from '@/components/Comments';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -55,6 +56,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </div>
+
+      <Comments />
     </article>
   );
 }

@@ -10,7 +10,7 @@
     "cms-proxy": "npx sveltia-cms-proxy-server"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
